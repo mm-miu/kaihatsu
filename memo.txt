@@ -1,0 +1,88 @@
+新しいweb_appを作る手順          Page, newFiles, path
+29  web_app名                   webApps/web_app名
+38  WEB-INF, classes, src       kaihatsu/WEB-INF/classes, src
+40  compile.bat                 kaihatsu/WEB-INF/src/compile.bat
+43  META-INF, context.xml       kaihatsu/META-INF/context.xml
+59  web.xml                     kaihatsu/WEB-INF/web.xml
+62  Page.java                   kaihatsu/WEB-INF/src/tool/Page.java
+105 header.html, footer.html    kaihatsu/header.html, footer.html
+144 EncodingFilter.java         kaihatsu/WEB-INF/src/tool/EncodingFilter.java
+182 h2                          jdbc:h2:tcp://localhost/~/web_app名
+194 lib, ~.jar                  kaihatsu/WEB-INF/lib/~.jar
+197 context.xml                 kaihatsu/META-INF/context.xml
+228 bean                        kaihatsu/WEB-INF/src/bean
+233 dao, DAO.java               kaihatsu/WEB-INF/src/dao/DAO.java
+364 Action.java                 kaihatsu/WEB-INF/src/tool/Action.java
+365 FrontController.java        kaihatsu/WEB-INF/src/tool/FrontController.java
+
+
+完成順
+src/scoremanager/main/StudentListAction.java
+dao/StudentDAO.java
+dao/ClassNumDAO.java
+dao/SchoolDao.java
+tool/FrontController.java
+compile.bat
+tool/Action.java
+tool/EncodingFilter.java
+WEB-INF/lib, ~.jar
+META-INF/context.xml
+scoremanager/main/student_list.jsp
+dao/DAO.java
+bean/School.java
+bean/Student.java
+bean/ClassNum.java
+bean/Teacher.java
+bean/User.java
+scoremanager/main/menu.jsp
+dao/TeacherDao.java
+scoremanager/login.jsp
+error.jsp
+scoremanager/LoginAction.java
+scoremanager/main/logout.jsp
+scoremanager/main/MenuAction.java
+tool/LoginCheckFilter.java
+scoremanager/main/LogoutAction.java
+common/base.jsp
+scoremanager/main/StudentCreateAction.java
+scoremanager/main/student_create.jsp
+scoremanager/main/StudentCreateExecuteAction.java
+scoremanager/main/student_create_done.jsp
+student_update.jsp
+student_update_done.jsp
+StudentUpdateAction.java
+StudentUpdateExecuteAction.java
+bean/Subject.java
+dao/SubjectDao.java
+SubjectListAction.java
+
+login.jsp
+menu.jsp
+student_list.jsp
+student_create.jsp
+student_create_done.jsp
+student_update.jsp
+student_update_done.jsp
+subject_list.jsp
+error.jsp
+
+
+途中
+
+
+残り
+
+test_regist.jsp
+test_regist_done.jsp
+test_list.jsp
+test_list_subject.jsp
+test_list_student.jsp
+subject_create.jsp
+subject_create_done.jsp
+subject_update.jsp
+subject_update_done.jsp
+subject_delete.jsp
+subject_delete_done.jsp
+
+LoginCheckFilter.java
+https://java-frameworks.com/jakartaee/88
