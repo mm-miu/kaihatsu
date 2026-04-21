@@ -263,7 +263,7 @@ public class StudentDao extends Dao {
     }
 
     public boolean existsStudentNo(String schoolCd, String no) throws Exception {
-        // コネクションを確率
+        // コネクションを確立
         Connection con=getConnection();
         // プリペアードステートメント
         PreparedStatement st=null;
