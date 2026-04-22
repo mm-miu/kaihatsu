@@ -10,6 +10,7 @@ tool/EncodingFilter.java
 WEB-INF/lib, ~.jar
 META-INF/context.xml
 
+
 dao/DAO.java
 bean/School.java
 bean/Student.java
@@ -72,6 +73,46 @@ SubjectDeleteAction.java
 SubjectDeleteExecuteAction.java
 
 TestDao.java
+
+
+
+DAO
+    科目DAO
+    得点DAO
+    学生別成績一覧DAO
+    クラス別成績一覧DAO
+
+Bean
+    科目Bean
+    得点Bean
+    学生別成績一覧Bean
+    クラス別成績一覧Bean
+
+科目管理機能
+    科目一覧（画面）
+    科目一覧（サーブレット実装）
+    科目登録（画面）
+    科目登録（サーブレット実装）
+    科目変更（画面）
+    科目変更（サーブレット実装）
+    科目削除（画面）
+    科目削除（サーブレット実装）
+
+成績管理機能
+    成績管理一覧（画面）
+    成績管理一覧（サーブレット実装）
+    成績登録（画面）
+    成績登録（サーブレット実装）
+    成績変更（画面）
+    成績変更（サーブレット実装）
+    成績削除（画面）
+    成績削除（サーブレット実装）
+    科目別成績一覧（画面）
+    科目別成績一覧（サーブレット実装）
+    学生別成績一覧（画面）
+    学生別成績一覧（サーブレット実装）
+
+
 
 LoginCheckFilter.java
 https://java-frameworks.com/jakartaee/88
