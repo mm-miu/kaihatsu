@@ -1,50 +1,55 @@
 package bean;
 
-public class Test {
-    private String studentNo; //STUDENT_NO（学生番号)
-    private String subjectCd; //SUBJECT_CD(科目番号)
-    private String schoolCd; //SCHOOL_CD(学校コード)
-    private int no; //NO（回数)
-    private int point; //POINT(得点)
-    private String classNum; //CLASS_NUM(クラス番号)
+public class Test implements java.io.Serializable {
+
+    private Student student;     // 学生
+    private Subject subject;     // 科目
+    private School school;       // 学校
+    private ClassNum classNum;   // クラス
+    private int no;             // 回数（NO）
+    private int point;           // 得点（POINT）
 
     //ゲッター
-    public String getStudentNo() {
-        return studentNo;
+    public Student getStudent() {
+        return student;
     }
-    public String getSubjectCd() {
-        return subjectCd;
+    public void setStudent(Student student) {
+        this.student = student;
     }
-    public String getSchhoolCd() {
-        return schoolCd;
+
+    public ClassNum getClassNum() {
+        return classNum;
     }
+    public void setClassNum(ClassNum classNum) {
+        this.classNum = classNum;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
     public int getNo() {
         return no;
     }
-    public int getPoint() {
-        return point;
-    }
-    public String getClassNum() {
-        return classNum;
-    }
 
-    //セッター
-    public void setStudentNo(String studentNo) {
-        this.studentNo = studentNo;
-    }
-    public void setSubjectCd(String subjectCd) {
-        this.subjectCd = subjectCd;
-    }
-    public void setSchoolCd(String schoolCd) {
-        this.schoolCd = schoolCd;
-    }
     public void setNo(int no) {
         this.no = no;
     }
+
+    public int getPoint() {
+        return point;
+    }
     public void setPoint(int point) {
         this.point = point;
-    }
-    public void setClassNum(String classNum) {
-        this.classNum = classNum;
     }
 }
