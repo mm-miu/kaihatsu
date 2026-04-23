@@ -30,7 +30,8 @@ public class SubjectUpdateAction extends Action {
         // レスポンス値をセット
             // 科目コードと学校コードから科目を取得
             Subject subject=subDao.get(cd, scDao.get(school_cd));
-            request.setAttribute("subject", subject);
+            request.setAttribute("cd", subject.getCd());
+            request.setAttribute("name", subject.getName());
 
         // JSPへフォワード
         request.getRequestDispatcher("subject_update.jsp").forward(request, response);
