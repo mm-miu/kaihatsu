@@ -1,3 +1,49 @@
+CREATE TABLE CLASS_NUM (
+ SCHOOL_CD CHAR(3) NOT NULL,
+ CLASS_NUM VARCHAR(5) NOT NULL,
+ PRIMARY KEY(SCHOOL_CD, CLASS_NUM)
+)
+
+CREATE TABLE SCHOOL (
+ CD CHAR(3) PRIMARY KEY NOT NULL,
+ NAME VARCHAR(20) DEFAULT NULL
+)
+
+CREATE TABLE STUDENT (
+ NO VARCHAR(10) PRIMARY KEY NOT NULL,
+ NAME VARCHAR(10) DEFAULT NULL,
+ ENT_YEAR INTEGER DEFAULT NULL,
+ CLASS_NUM CHAR(3) DEFAULT NULL,
+ IS_ATTEND BOOLEAN DEFAULT NULL,
+ SCHOOL_CD CHAR(3) DEFAULT NULL
+)
+
+CREATE TABLE SUBJECT (
+ SCHOOL_CD CHAR(3) NOT NULL,
+ CD CHAR(3) NOT NULL,
+ NAME VARCHAR(20) DEFAULT NULL,
+ PRIMARY KEY(SCHOOL_CD, CD)
+)
+
+CREATE TABLE TEACHAR (
+ ID VARCHAR(10) PRIMARY KEY NOT NULL,
+ PASSWORD VARCHAR(30) DEFAULT NULL,
+ NAME VARCHAR(10) DEFAULT NULL,
+ SCHOOL_CD CHAR(3) DEFAULT NULL
+)
+
+CREATE TABLE TEST (
+ STUDENT_NO VARCHAR(10) NOT NULL,
+ SUBJECT_CD CHAR(3) NOT NULL,
+ SCHOOL_CD CHAR(10) NOT NULL,
+ NO INTEGER NOT NULL,
+ POINT INTEGER DEFAULT NULL,
+ CLASS_NUM VARCHAR(5) DEFAULT NULL,
+ PRIMARY KEY(STUDENT_NO, SUBJECT_CD, SCHOOL_CD, NO)
+)
+
+
+
 完成順
 src/scoremanager/main/StudentListAction.java
 dao/StudentDAO.java
@@ -48,6 +94,7 @@ error.jsp
 
 
 途中
+subject_update.jsp
 
 
 残り
@@ -57,7 +104,6 @@ test_regist_done.jsp
 test_list.jsp
 test_list_subject.jsp
 test_list_student.jsp
-subject_update.jsp
 subject_update_done.jsp
 subject_delete.jsp
 subject_delete_done.jsp
@@ -72,7 +118,13 @@ SubjectUpdateExecuteAction.java
 SubjectDeleteAction.java
 SubjectDeleteExecuteAction.java
 
-TestDao.java
+bean/Test.java
+bean/TestListStudent.java
+bean/TestListSubject.java
+
+dao/TestDao.java
+dao/TestListStudentDao.java
+dao/TestListSubjectDao.java
 
 
 
