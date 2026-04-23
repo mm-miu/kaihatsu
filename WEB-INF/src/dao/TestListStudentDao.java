@@ -11,8 +11,14 @@ import bean.Student;
 import bean.TestListStudent;
 
 public class TestListStudentDao extends Dao{
-    //subject 
-    private String baseSql="select * from subject join test where school_cd=?";
+    
+    private String baseSql="SELECT aub.name, sub.cd, te.no, te.point" 
+        + "FROM student AS st " 
+        + "JOIN test AS ts "
+        + "ON st.no = ts.student_no "
+        + "JOIN subject AS sub "
+        + "ON sub.cd = ts.subject_cd "
+        + "WHERE st.school_cd = ? ";
     
     public List<TestListStudent> postFilter(ResultSet rSet) throws Exception{
 
@@ -36,15 +42,17 @@ public class TestListStudentDao extends Dao{
         }
         return list;
     }
-    //入学年度、クラス、科目、学生番号
+
     public List<TestListStudent> filter(Student student) throws Exception{
         List<TestListStudent> list=new ArrayList<>();
         Connection con=getConnection();
         PreparedStatement st=null;
         ResultSet rs=null;
-        String condition="and ent_year=? and classnun=? and no";
+        String condition=" and s.no=?";
 
-
+        try{
+            st=con.prepareStatement(baseSql+condition);
+        }
         
     } 
 }
