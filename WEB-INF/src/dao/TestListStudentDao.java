@@ -16,8 +16,9 @@ public class TestListStudentDao extends Dao{
         + "FROM student AS st " 
         + "JOIN test AS ts "
         + "ON st.no = ts.student_no "
-        + "JOIN subject as sub "
-        + "ON sub.cd = ts.subject_cd ";
+        + "JOIN subject AS sub "
+        + "ON sub.cd = ts.subject_cd "
+        + "WHERE st.school_cd = ? ";
     
     public List<TestListStudent> postFilter(ResultSet rSet) throws Exception{
 
@@ -47,9 +48,11 @@ public class TestListStudentDao extends Dao{
         Connection con=getConnection();
         PreparedStatement st=null;
         ResultSet rs=null;
-        String condition=" and no=?";
+        String condition=" and s.no=?";
 
-
+        try{
+            st=con.prepareStatement(baseSql+condition);
+        }
         
     } 
 }
