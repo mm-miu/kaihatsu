@@ -21,7 +21,7 @@ public class SubjectUpdateExecuteAction extends Action {
 
         String cd="";// 入力された科目コード
         String name="";// 入力された科目名
-        Subject subject=null;// 学生
+        Subject subject=null;// 科目
         SubjectDao sDao=new SubjectDao();// 科目DAO
         Map<String, String> errors=new HashMap<>();// エラーメッセージ
 
@@ -30,23 +30,13 @@ public class SubjectUpdateExecuteAction extends Action {
         name=request.getParameter("name");
 
         // ビジネスロジック
-        if (cd.length()!=3) {
-            errors.put("cd_count", "科目コードは3文字で入力してください");
-            request.setAttribute("errors", errors);
-            request.setAttribute("cd", cd);
-            request.setAttribute("name", name);
-            request.getRequestDispatcher("subject_create.jsp")
-                .forward(request, response);
-            return;
-        }
-
          // 変更中に別画面から対象の科目が削除された場合
-        if () {
-            errors.put("cd", "科目コードが重複しています");
+        if (sDao.get(cd, teacher.getSchool())==null) {
+            errors.put("cd", "科目が存在していません");
             request.setAttribute("errors", errors);
             request.setAttribute("cd", cd);
             request.setAttribute("name", name);
-            request.getRequestDispatcher("subject_create.jsp")
+            request.getRequestDispatcher("subject_update.jsp")
                 .forward(request, response);
             return;
         }
@@ -59,7 +49,7 @@ public class SubjectUpdateExecuteAction extends Action {
         boolean result=sDao.save(subject);
 
         // JSPへフォワード
-        request.getRequestDispatcher("subject_create_done.jsp").forward(request, response);
+        request.getRequestDispatcher("subject_update_done.jsp").forward(request, response);
 
     }
 }
