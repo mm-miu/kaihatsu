@@ -24,6 +24,7 @@ public class SubjectListAction extends Action {
 
         // レスポンス値をセット
         request.setAttribute("subjects", list);
+        request.setAttribute("school_cd", teacher.getSchool().getCd());
 
         // JSPへフォワード
         request.getRequestDispatcher("subject_list.jsp").forward(request, response);

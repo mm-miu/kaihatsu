@@ -94,7 +94,6 @@ error.jsp
 
 
 途中
-subject_update.jsp
 
 
 残り
@@ -104,6 +103,7 @@ test_regist_done.jsp
 test_list.jsp
 test_list_subject.jsp
 test_list_student.jsp
+subject_update.jsp
 subject_update_done.jsp
 subject_delete.jsp
 subject_delete_done.jsp

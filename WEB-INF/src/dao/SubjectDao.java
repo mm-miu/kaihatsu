@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 public class SubjectDao extends Dao {
 
+    // 科目コードと学校コードから科目情報を取得するメソッド
     public Subject get(String cd, School school) throws Exception {
         // クラス番号インスタンスを初期化
         Subject subject=new Subject();
