@@ -4,7 +4,7 @@
 <c:import url="/common/base.jsp">
     <c:param name="title">成績一覧</c:param>
 
-    <c:param="content">
+    <c:param name="content">
         <section class="container mt-4">
 
             <h2 class="h4 mb-3">成績一覧</h2>
@@ -48,7 +48,7 @@
             <c:if test="${empty list && not empty studentNo}">
                 <p>検索結果はありません。</p>
             </c:if>
-            
+
         </section>
     </c:param>
 </c:import>
