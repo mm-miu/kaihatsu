@@ -105,9 +105,9 @@ public class StudentDao extends Dao {
         PreparedStatement st=null;
         // リザルトセット
         ResultSet rs=null;
-        // SQL文の条件
+        // SQL文の条件 入学年度　クラス番号
         String condition="and ent_year=? and class_num=?";
-        // SQL文のソート
+        // SQL文のソート 在学フラグ
         String order=" order by no asc";
 
         // SQL文の在学フラグ条件
