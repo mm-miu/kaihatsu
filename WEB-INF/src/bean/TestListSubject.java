@@ -25,9 +25,12 @@ public class TestListSubject {
     public Map<Integer,Integer> getPoints() {
         return points;
     }
-    public String getPoint(key:int) {
-    //？
+    //pointはMapの要素Pointsの(key)に対して(valueを取り出す)ハッシュみたいなやつ)
+    public String getPoint(int key) {
+    Integer value = points.get(key);
+    return value == null ? "" : value.toString();
     }
+
 
 
     public void setEntYear(int entYear) {
@@ -45,7 +48,7 @@ public class TestListSubject {
     public void setPoints(Map<Integer,Integer> points) {
         this.points = points;
     }
-    public void putPoint(int key,int value) {
-    //ここだけわからないので放置   
+    public void putPoint(int key, int value) {
+        points.put(key, value);
     }
 }
