@@ -9,6 +9,7 @@ import bean.ClassNum;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,6 +82,12 @@ public class TestDao extends Dao {
             // Student
             Student stu = new Student();
             stu.setNo(rSet.getString("STUDENT_NO"));
+            try {
+                stu.setEntYear(rSet.getInt("STUDENT_ENT_YEAR"));
+            } catch (SQLException e) {
+
+            }
+            stu.setName(rSet.getString("STUDENT_NAME"));
             t.setStudent(stu);
 
             // Subject
@@ -91,7 +98,7 @@ public class TestDao extends Dao {
             // School
             t.setSchool(school);
 
-            // ClassNum（← 修正済み）
+            // ClassNum
             ClassNum cn = new ClassNum();
             cn.setClass_num(rSet.getString("CLASS_NUM"));
             t.setClassNum(cn);
@@ -115,7 +122,8 @@ public class TestDao extends Dao {
 
         StringBuilder sql = new StringBuilder();
         sql.append(
-            "SELECT T.STUDENT_NO, T.SUBJECT_CD, T.SCHOOL_CD, T.CLASS_NUM, T.NO, T.POINT " +
+            "SELECT T.STUDENT_NO, T.SUBJECT_CD, T.SCHOOL_CD, T.CLASS_NUM, T.NO, T.POINT, " +
+            "S.ENT_YEAR AS STUDENT_ENT_YEAR, S.NAME AS STUDENT_NAME " +
             "FROM TEST T " +
             "JOIN STUDENT S ON T.STUDENT_NO = S.NO " +
             "WHERE T.SCHOOL_CD = ? "

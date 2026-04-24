@@ -40,9 +40,9 @@
                 <label class="form-label" for="f3">科目
                     <select class="form-select" id="f3" name="f3">
                         <option value="0">--------</option>
-                        <c:forEach var="subject" items="${subject_name_set}">
+                        <c:forEach var="subject" items="${subject_set}">
                             <!-- 現在のsubjectと選択されていたf3が一致していた場合selectedを追記 -->
-                            <option value="${subject}" <c:if test="${subject==f3}">selected></c:if>>${subject}</option>
+                            <option value="${subject.cd}" <c:if test="${subject.cd==f3}">selected></c:if>>${subject.name}</option>
                         </c:forEach>
                     </select>
                 </label>
@@ -66,8 +66,8 @@
         </form>
 
         <c:choose>
-            <c:when test="${tests.size()>0}">
-                <div>科目：${subject} (${count}回)</div>
+            <c:when test="${list.size()>0}">
+                <div>科目：${subject.name} (${f4}回)</div>
                 <table class="table table-hover">
                     <tr>
                         <th>入学年度</th>
@@ -76,11 +76,11 @@
                         <th>氏名</th>
                         <th>点数</th>
                     </tr>
-                    <c:forEach var="test" items="${tests}">
+                    <c:forEach var="test" items="${list}">
                         <tr>
                             <td>${test.student.entYear}</td>
-                            <td>${test.classNum}</td>
-                            <td>${test.studentName}</td>
+                            <td>${test.classNum.class_num}</td>
+                            <td>${test.student.name}</td>
                             <td>${test.point}</td>
                             <td><input type="text" value="${test.no}"></td>
                             <td class="text-center">

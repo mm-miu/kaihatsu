@@ -33,7 +33,7 @@
       </nav>
     </div>
   </c:if>
-  ${param.content }
+  <c:out value="${param.content}" escapeXml="false" ></c:out>
 
   <footer>
     <p>© 2023 TIC</p>
