@@ -107,9 +107,15 @@ public class TestRegistAction extends Action {
 
         Subject subject = new Subject();
         subject.setCd(subjectCd);
+        subject.setName(subDao.get(subjectCd, school).getName());
 
         TestDao dao = new TestDao();
         List<Test> list = dao.filter(entYear, classNum, subject, no, school);
+        for (Test test : list) {
+            System.out.println(test.getStudent().getName());
+            System.out.println(test.getPoint());
+            System.out.println(test.getSchool().getName());
+        }
 
         //JSP に渡す属性
         req.setAttribute("list", list);
@@ -118,6 +124,7 @@ public class TestRegistAction extends Action {
         req.setAttribute("f3", subjectCd);
         req.setAttribute("f4", noStr);
         req.setAttribute("subjectCd", subjectCd);
+        req.setAttribute("subject", subject);
 
         //成績入力画面へ
         req.getRequestDispatcher("test_regist.jsp").forward(req, res);

@@ -66,8 +66,8 @@
         </form>
 
         <c:choose>
-            <c:when test="${tests.size()>0}">
-                <div>科目：${subject} (${count}回)</div>
+            <c:when test="${list.size()>0}">
+                <div>科目：${subject.name} (${f4}回)</div>
                 <table class="table table-hover">
                     <tr>
                         <th>入学年度</th>
@@ -76,11 +76,11 @@
                         <th>氏名</th>
                         <th>点数</th>
                     </tr>
-                    <c:forEach var="test" items="${tests}">
+                    <c:forEach var="test" items="${list}">
                         <tr>
                             <td>${test.student.entYear}</td>
-                            <td>${test.classNum}</td>
-                            <td>${test.studentName}</td>
+                            <td>${test.classNum.class_num}</td>
+                            <td>${test.student.name}</td>
                             <td>${test.point}</td>
                             <td><input type="text" value="${test.no}"></td>
                             <td class="text-center">
