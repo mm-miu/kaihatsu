@@ -40,9 +40,9 @@
                 <label class="form-label" for="f3">科目
                     <select class="form-select" id="f3" name="f3">
                         <option value="0">--------</option>
-                        <c:forEach var="subject" items="${subject_name_set}">
+                        <c:forEach var="subject" items="${subject_set}">
                             <!-- 現在のsubjectと選択されていたf3が一致していた場合selectedを追記 -->
-                            <option value="${subject}" <c:if test="${subject==f3}">selected></c:if>>${subject}</option>
+                            <option value="${subject.cd}" <c:if test="${subject.cd==f3}">selected></c:if>>${subject.name}</option>
                         </c:forEach>
                     </select>
                 </label>
