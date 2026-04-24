@@ -91,7 +91,7 @@ public class TestDao extends Dao {
             // School
             t.setSchool(school);
 
-            // ClassNum（← 修正済み）
+            // ClassNum
             ClassNum cn = new ClassNum();
             cn.setClass_num(rSet.getString("CLASS_NUM"));
             t.setClassNum(cn);
