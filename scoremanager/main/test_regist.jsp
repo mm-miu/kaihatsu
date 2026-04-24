@@ -68,25 +68,36 @@
         <c:choose>
             <c:when test="${list.size()>0}">
                 <div>科目：${subject.name} (${f4}回)</div>
-                <table class="table table-hover">
-                    <tr>
-                        <th>入学年度</th>
-                        <th>クラス</th>
-                        <th>学生番号</th>
-                        <th>氏名</th>
-                        <th>点数</th>
-                    </tr>
-                    <c:forEach var="test" items="${list}">
+                <form action="testRegistExecute.action">
+                    <table class="table table-hover">
                         <tr>
-                            <td>${test.student.entYear}</td>
-                            <td>${test.classNum.class_num}</td>
-                            <td>${test.student.name}</td>
-                            <td>${test.point}</td>
-                            <td><input type="text" value="${test.no}"></td>
-                            <td class="text-center">
+                            <th>入学年度</th>
+                            <th>クラス</th>
+                            <th>学生番号</th>
+                            <th>氏名</th>
+                            <th>点数</th>
                         </tr>
-                    </c:forEach>
-                </table>
+                        <c:forEach var="test" items="${list}">
+                            <tr>
+                                <td>${test.student.entYear}</td>
+                                <td>${test.classNum.class_num}</td>
+                                <td>${test.student.no}</td>
+                                <td>${test.student.name}</td>
+                                <td><input type="text" name="point_${test.student.no}" value="${test.point}"></td>
+                                <td class="text-center">
+                                <c:if test="${not empty errors.range}">
+                                    <p style="color:gold">${errors.range}</p>
+                                </c:if>
+                                <td>
+                                    <input type="hidden" name="regist" value="${test.student.no}">
+                                    <input type="hidden" name="count" value="${f4}">
+                                    <input type="hidden" name="subject" value="${f3}">
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                    <button type="submit">登録して終了</button>
+                </form>
             </c:when>
         </c:choose>
         </section>
