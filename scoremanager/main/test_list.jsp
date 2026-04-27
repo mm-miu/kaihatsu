@@ -50,6 +50,11 @@
                     </div>
                 </div>
             </form>
+
+            <!-- ★ 科目検索エラー表示 -->
+            <c:if test="${not empty error}">
+                <p style="color:red">${error}</p>
+            </c:if>
         </section>
 
         <hr/>
@@ -70,6 +75,11 @@
                     </div>
                 </div>
             </form>
+
+            <!-- ★ 学生検索エラー表示 -->
+            <c:if test="${not empty error_student}">
+                <p style="color:red">${error_student}</p>
+            </c:if>
         </section>
 
     </c:param>
