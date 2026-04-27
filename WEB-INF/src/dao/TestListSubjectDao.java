@@ -12,17 +12,17 @@ public class TestListSubjectDao extends Dao {
 
     private final String baseSql =
         "SELECT " +
-        " s.ent_year, s.student_no, s.student_name, s.class_num, " +
+        " s.ent_year, s.NO, s.NAME, s.class_num, " +
         " sc.No AS test_id, " +
         " sc.POINT " +
         "FROM student s " +
-        "JOIN test sc ON s.student_no = sc.student_no " +
+        "JOIN test sc ON s.NO = sc.student_no " +
         "AND s.class_num = sc.class_num " +
         "WHERE s.ent_year = ? " +
         " AND s.class_num = ? " +
         " AND sc.SUBJECT_CD = ? " +
         " AND sc.SCHOOL_CD = ? " +//AIにはいらないといわれたが設計書通りならいるはず
-        "ORDER BY s.student_no, sc.NO";
+        "ORDER BY s.NO, sc.NO";
 
     public List<TestListSubject> filter(int entYear, String classNum, Subject subject, School school) {
 
@@ -55,7 +55,7 @@ public class TestListSubjectDao extends Dao {
 
         while (rs.next()) {
 
-            String studentNo = rs.getString("student_no");
+            String studentNo = rs.getString("NO");
 
             // 学生が変わったら新しい Bean を作る
             if (currentStudentNo == null || !studentNo.equals(currentStudentNo)) {
@@ -65,7 +65,7 @@ public class TestListSubjectDao extends Dao {
                 bean = new TestListSubject();
                 bean.setEntYear(rs.getInt("ent_year"));
                 bean.setStudentNo(studentNo);
-                bean.setStudentName(rs.getString("student_name"));
+                bean.setStudentName(rs.getString("NAME"));
                 bean.setClassNum(rs.getString("class_num"));
                 bean.setPoints(new HashMap<>());
 
