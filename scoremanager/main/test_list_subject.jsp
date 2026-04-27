@@ -63,7 +63,6 @@
 <section>
     <h4>検索結果：<c:out value="${subject.name}" /></h4>
 
-    //検索結果０の場合に表示
     <c:if test="${empty tests}">
         <p>学生情報が存在しませんでした。</p>
     </c:if>
