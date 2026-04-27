@@ -29,40 +29,39 @@
     span{
       margin: 5px;
     }
-
+    /*サイドバー全体*/
     .layout{
       display: flex;
     }
+    /* サイドバー */
     .sidebar{
       width: 200px;
       background-color: #eee;
       padding: 15px;
       margin-top: 10px;
     }
+    /* メイン */
     .main{
       flex: 1;
       padding: 20px;
     }
-
+    /* サイドバー 文字全体*/
     .sidebar ul {
       list-style: none;
       padding: 0;
     }
-
-    .sidebar li {
-      margin-bottom: 10px;
-    }
-
-    .menu-title {
+    /*　サイドバー成績管理　*/
+    .sideber_title {
       font-weight: bold;
       margin-top: 15px;
     }
-
+    /* サイドバー文字*/
     .sidebar a {
       text-decoration: none;
+      margin-bottom: 5px;
       color: blue;
     }
-
+    /* フッター */
     footer{
       text-align: center;
       background-color: #EEEEEE;
@@ -89,12 +88,12 @@
       <div class="sidebar">
         <nav>
           <ul>
-            <a href="/kaihatsu/scoremanager/main/Menu.action">メニュー</a><br>
-            <a href="/kaihatsu/scoremanager/main/StudentList.action">学生管理</a><br>
-            <label class="menu_title">成績管理</label>
-            <li><a href="/kaihatsu/scoremanager/main/TestRegist.action">成績登録</a></li>
-            <li><a href="/kaihatsu/scoremanager/main/TestList.action">成績参照</a></li><br>
-            <a href="/kaihatsu/scoremanager/main/SubjectList.action">科目管理</a>
+            <li><a href="/kaihatsu/scoremanager/main/Menu.action">メニュー</a></li><br>
+            <li><a href="/kaihatsu/scoremanager/main/StudentList.action">学生管理</a></li><br>
+            <label class="sideber_title">成績管理</label>
+            <li><a href="/kaihatsu/scoremanager/main/TestRegist.action">　　成績登録</a></li>
+            <li><a href="/kaihatsu/scoremanager/main/TestList.action">　　成績参照</a></li><br>
+            <li><a href="/kaihatsu/scoremanager/main/SubjectList.action">科目管理</a></li>
           </ul>
         </nav>
       </div>
