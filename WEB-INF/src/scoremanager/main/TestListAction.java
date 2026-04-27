@@ -167,7 +167,7 @@ public class TestListAction extends Action {
             return;
         }
 
-        // フォールバック
+        
         req.getRequestDispatcher("test_list.jsp").forward(req, res);
     }
 }
