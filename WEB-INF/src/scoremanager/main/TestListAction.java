@@ -128,7 +128,7 @@ public class TestListAction extends Action {
             return;
         }
 
-        // フォールバック（通常ここには来ない）
+        
         req.getRequestDispatcher("test_list.jsp").forward(req, res);
     }
 }
