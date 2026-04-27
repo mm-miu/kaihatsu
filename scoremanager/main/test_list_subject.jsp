@@ -80,10 +80,10 @@
 
             <c:forEach var="row" items="${tests}">
                 <tr>
-                    <td><c:out value="${row.entYear}" /></td>
-                    <td><c:out value="${row.classNum}" /></td>
-                    <td><c:out value="${row.studentNo}" /></td>
-                    <td><c:out value="${row.studentName}" /></td>
+                    <td><c:out value="${row.student.entYear}" /></td>
+                    <td><c:out value="${row.student.classNum}" /></td>
+                    <td><c:out value="${row.student.studentNo}" /></td>
+                    <td><c:out value="${row.student.studentName}" /></td>
                     <!-- 1回目 -->
                      <td>
                         <c:choose>

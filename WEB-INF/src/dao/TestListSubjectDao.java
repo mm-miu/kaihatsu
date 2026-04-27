@@ -17,6 +17,7 @@ public class TestListSubjectDao extends Dao {
         " sc.POINT " +
         "FROM student s " +
         "JOIN test sc ON s.student_no = sc.student_no " +
+        "AND s.class_num = sc.class_num " +
         "WHERE s.ent_year = ? " +
         " AND s.class_num = ? " +
         " AND sc.SUBJECT_CD = ? " +
@@ -57,7 +58,7 @@ public class TestListSubjectDao extends Dao {
             String studentNo = rs.getString("student_no");
 
             // 学生が変わったら新しい Bean を作る
-            if (!studentNo.equals(currentStudentNo)) {
+            if (currentStudentNo == null || !studentNo.equals(currentStudentNo)) {
                 //(currentStudentNo == null || !studentNo.equals(currentStudentNo)) 
                 //AIはこれが安全版だと言っていた↑
                 
