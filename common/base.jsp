@@ -43,6 +43,30 @@
       flex: 1;
       padding: 20px;
     }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .menu-title {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: blue;
+    }
+
+    footer{
+      text-align: center;
+      background-color: #EEEEEE;
+    }
   </style>
 
 </head>
