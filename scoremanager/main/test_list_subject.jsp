@@ -87,8 +87,8 @@
                     <!-- 1回目 -->
                      <td>
                         <c:choose>
-                            <c:when test="${row.points['1'] != null}">
-                                <c:out value="${row.points['1']}" />
+                            <c:when test="${row.points[1] != null}">
+                                <c:out value="${row.points[1]}" />
                             </c:when>
                             <c:otherwise>-</c:otherwise>
                         </c:choose>
@@ -97,8 +97,8 @@
                     <!-- 2回目 -->
                      <td>
                         <c:choose>
-                            <c:when test="${row.points['2'] != null}">
-                                <c:out value="${row.points['2']}" />
+                            <c:when test="${row.points[2] != null}">
+                                <c:out value="${row.points[2]}" />
                             </c:when>
                             <c:otherwise>-</c:otherwise>
                         </c:choose>
