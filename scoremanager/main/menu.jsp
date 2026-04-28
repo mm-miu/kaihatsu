@@ -12,8 +12,8 @@
                 </div>
                     <div class="menu-card score">
                         <div class="menu-title">成績管理</div>
-                        <a href="TestRegist.action">成績登録</a>
-                        <a href="TestList.action">成績参照</a>
+                            <a href="TestRegist.action">成績登録</a>
+                            <a href="TestList.action">成績参照</a>
                     </div>
                 <div class="menu-card subject">
                     <a href="SubjectList.action">科目管理</a>
