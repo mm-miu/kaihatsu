@@ -16,8 +16,7 @@ public class TestListSubjectDao extends Dao {
         " t.No AS test_id, " +
         " t.POINT " +
         "FROM student s " +
-        "JOIN test sc ON s.NO = t.student_no " +
-        "AND s.class_num = t.class_num " +
+        "JOIN test t ON s.NO = t.student_no "+
         "WHERE s.ent_year = ? " +
         " AND s.class_num = ? " +
         " AND t.SUBJECT_CD = ? " +
