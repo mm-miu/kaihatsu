@@ -81,7 +81,7 @@
             <c:forEach var="row" items="${tests}">
                 <tr>
                     <td><c:out value="${row.student.entYear}" /></td>
-                    <td><c:out value="${row.classNum.classNum}" /></td>
+                    <td><c:out value="${row.classNum.class_num}" /></td>
                     <td><c:out value="${row.student.no}" /></td>
                     <td><c:out value="${row.student.name}" /></td>
                     <!-- 1回目 -->
