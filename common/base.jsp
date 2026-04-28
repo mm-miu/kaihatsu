@@ -13,26 +13,31 @@
       background-color: #f5f5f5;
       font-family: sans-serif;
     }
+
     /* タイトル背景 */
     h1 {
       text-align: center;
       padding: 10px 0;
       margin: 0px;
     }
+
     /* ヘッダー */
     header{
       text-align: right;
       background-color: #dfdffd;
       padding: 10px;
     }
+
     /* span　ユーザー名 */
     span{
       margin: 5px;
     }
+
     /*サイドバー全体*/
     .layout{
       display: flex;
     }
+
     /* サイドバー */
     .sidebar{
       width: 200px;
@@ -40,32 +45,38 @@
       padding: 15px;
       margin-top: 10px;
     }
+
     /* メイン */
     .main{
       flex: 1;
       padding: 20px;
     }
+
     /* サイドバー 文字全体*/
     .sidebar ul {
       list-style: none;
       padding: 0;
     }
+
     /*　サイドバー成績管理　*/
     .sideber_title {
       font-weight: bold;
       margin-top: 15px;
     }
+
     /* サイドバー文字*/
     .sidebar a {
       text-decoration: none;
       margin-bottom: 5px;
       color: blue;
     }
+
     /* フッター */
     footer{
       text-align: center;
       background-color: #EEEEEE;
     }
+    
   </style>
 
 </head>
