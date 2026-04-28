@@ -21,7 +21,7 @@ public class TestListSubjectDao extends Dao {
         " AND s.class_num = ? " +
         " AND t.SUBJECT_CD = ? " +
         " AND t.SCHOOL_CD = ? " +//AIにはいらないといわれたが設計書通りならいるはず
-        "ORDER BY s.NO, sc.NO";
+        "ORDER BY s.NO, t.NO";
 
     public List<TestListSubject> filter(int entYear, String classNum, Subject subject, School school) {
 
@@ -55,11 +55,6 @@ public class TestListSubjectDao extends Dao {
         while (rs.next()) {
 
             String studentNo = rs.getString("student_no");
-
-            System.out.println("==== 1行取得 ====");
-            System.out.println("studentNo=" + studentNo);
-            System.out.println("test_id=" + rs.getInt("test_id"));
-            System.out.println("point=" + rs.getInt("point"));
 
 
             // 学生が変わったら新しい Bean を作る
