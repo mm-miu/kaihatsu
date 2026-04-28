@@ -124,7 +124,7 @@
     }
 
 
-    /* ログアウト画面*/
+    /* ログアウト画面 logout.jsp*/
     /* 画面全体*/
     .logout_main{
       margin: 10px;
@@ -149,11 +149,36 @@
     }
 
 
-     /* メニュー画面 */
-    
+     /* メニュー画面 menu.jsp*/
+    .menu-grid{
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .menu-card{
+      flex: 1;
+      height: 120px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      opacity: 0.9;
+    }
 
 
-    /* 学生一覧画面 */
+    /* 学生一覧画面 
+      student.jsp
+    */
     /* 新規登録 */
     .new{
       text-align: right;  
