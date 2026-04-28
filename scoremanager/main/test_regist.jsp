@@ -10,7 +10,7 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-        <h2>成績管理</h2>
+        <h2 class="main-title">成績管理</h2>
         <form method="get">
             <div class="col-4">
                 <label class="form-label" for="f1">入学年度
@@ -84,7 +84,7 @@
                                 <td>${test.student.no}</td>
                                 <td>${test.student.name}</td>
                                 <td><input type="number" name="point_${test.student.no}" inputmode="numeric" value="${test.point}" required></td>
-                                <td class="text-center">
+                                <!-- <td class="text-center"> -->
                                 <c:if test="${not empty errors[test.student.no]}">
                                     <p style="color:gold">${errors[test.student.no]}</p>
                                 </c:if>
