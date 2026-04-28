@@ -208,9 +208,7 @@
     }
 
 
-    /* 学生一覧画面 
-      student.jsp
-    */
+    /* 学生一覧画面 フォームは共通のcss */
     /* 新規登録 */
     .new{
       text-align: left;  
@@ -292,6 +290,12 @@
     }
     tr:hover{
       background-color: #dde3e9;
+    }
+
+
+    /* 成績管理　検索フォーム */
+    button {
+      padding-top: 10px;
     }
 
   </style>
