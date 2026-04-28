@@ -14,7 +14,7 @@ public class TestListSubjectDao extends Dao {
         "SELECT " +
         " s.ent_year, s.NO AS student_no, s.NAME, s.class_num, " +
         " t.No AS test_id, " +
-        " t.POINT " +
+        " t.POINT AS point " +
         "FROM student s " +
         "JOIN test t ON s.NO = t.student_no "+
         "WHERE s.ent_year = ? " +
@@ -24,6 +24,8 @@ public class TestListSubjectDao extends Dao {
         "ORDER BY s.NO, t.NO";
 
     public List<TestListSubject> filter(int entYear, String classNum, Subject subject, School school) {
+
+        System.out.println("==TestListSubjectDao Start==");
 
         List<TestListSubject> list = new ArrayList<>();
 
@@ -54,6 +56,8 @@ public class TestListSubjectDao extends Dao {
 
         while (rs.next()) {
 
+            System.out.println("point=" + rs.getInt("point"));
+
             String studentNo = rs.getString("student_no");
 
 
@@ -75,9 +79,8 @@ public class TestListSubjectDao extends Dao {
 
             // テストID → 点数 を追加
             int testId = rs.getInt("test_id");
-            int point = rs.getInt("POINT");
+            int point = rs.getInt("point");
             bean.putPoint(testId, point);
-            System.out.println("points中身=" + bean.getPoints());
         }
 
         return list;
