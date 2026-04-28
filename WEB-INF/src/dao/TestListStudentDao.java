@@ -12,7 +12,7 @@ import bean.TestListStudent;
 
 public class TestListStudentDao extends Dao{
     
-    private String baseSql="SELECT sub.name AS subjectName, sub.cd AS subjectCd, ts.no AS num, ts.point" + 
+    private String baseSql="SELECT sub.name AS subjectName, sub.cd AS subjectCd, ts.no AS num, ts.point, ts.student_no AS studentNo, ts.school_cd AS schoolCd," + 
         "FROM student AS st "  + 
         "JOIN test AS ts " + 
         "ON st.no = ts.student_no " + 
@@ -33,6 +33,8 @@ public class TestListStudentDao extends Dao{
                 testliststudent.setSubjectCd(rSet.getString("subjectCd"));
                 testliststudent.setNum(rSet.getInt("num"));
                 testliststudent.setPoint(rSet.getInt("point"));
+                testliststudent.setStudentNo(rSet.getString("student_no"));
+                testliststudent.setSchoolCd(rSet.getString("school_cd"));
                 
                 list.add(testliststudent);
             }

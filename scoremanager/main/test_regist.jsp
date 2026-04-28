@@ -66,9 +66,9 @@
         </form>
 
         <c:choose>
-            <c:when test="${list.size()>0}">
+            <c:when test="${not empty list}">
                 <div>科目：${subject.name} (${f4}回)</div>
-                <form action="testRegistExecute.action">
+                <form action="TestRegistExecute.action">
                     <table class="table table-hover">
                         <tr>
                             <th>入学年度</th>
@@ -83,18 +83,16 @@
                                 <td>${test.classNum.class_num}</td>
                                 <td>${test.student.no}</td>
                                 <td>${test.student.name}</td>
-                                <td><input type="text" name="point_${test.student.no}" value="${test.point}"></td>
+                                <td><input type="number" name="point_${test.student.no}" inputmode="numeric" value="${test.point}" required></td>
                                 <td class="text-center">
-                                <c:if test="${not empty errors.range}">
-                                    <p style="color:gold">${errors.range}</p>
+                                <c:if test="${not empty errors[test.student.no]}">
+                                    <p style="color:gold">${errors[test.student.no]}</p>
                                 </c:if>
-                                <td>
-                                    <input type="hidden" name="regist" value="${test.student.no}">
-                                    <input type="hidden" name="count" value="${f4}">
-                                    <input type="hidden" name="subject" value="${f3}">
-                                </td>
+                                <input type="hidden" name="regist" value="${test.student.no}">
                             </tr>
                         </c:forEach>
+                        <input type="hidden" name="count" value="${f4}">
+                        <input type="hidden" name="subject" value="${f3}">
                     </table>
                     <button type="submit">登録して終了</button>
                 </form>

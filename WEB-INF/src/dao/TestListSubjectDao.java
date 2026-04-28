@@ -12,18 +12,20 @@ public class TestListSubjectDao extends Dao {
 
     private final String baseSql =
         "SELECT " +
-        " s.ent_year, s.student_no, s.student_name, s.class_num, " +
-        " sc.No AS test_id, " +
-        " sc.POINT " +
+        " s.ent_year, s.NO AS student_no, s.NAME, s.class_num, " +
+        " t.No AS test_id, " +
+        " t.POINT AS point " +
         "FROM student s " +
-        "JOIN test sc ON s.student_no = sc.student_no " +
+        "JOIN test t ON s.NO = t.student_no "+
         "WHERE s.ent_year = ? " +
         " AND s.class_num = ? " +
-        " AND sc.SUBJECT_CD = ? " +
-        " AND sc.SCHOOL_CD = ? " +//AIにはいらないといわれたが設計書通りならいるはず
-        "ORDER BY s.student_no, sc.NO";
+        " AND t.SUBJECT_CD = ? " +
+        " AND t.SCHOOL_CD = ? " +//AIにはいらないといわれたが設計書通りならいるはず
+        "ORDER BY s.NO, t.NO";
 
     public List<TestListSubject> filter(int entYear, String classNum, Subject subject, School school) {
+
+        System.out.println("==TestListSubjectDao Start==");
 
         List<TestListSubject> list = new ArrayList<>();
 
@@ -42,7 +44,7 @@ public class TestListSubjectDao extends Dao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
         return list;
     }
 
@@ -54,17 +56,20 @@ public class TestListSubjectDao extends Dao {
 
         while (rs.next()) {
 
+            System.out.println("point=" + rs.getInt("point"));
+
             String studentNo = rs.getString("student_no");
 
+
             // 学生が変わったら新しい Bean を作る
-            if (!studentNo.equals(currentStudentNo)) {
+            if (currentStudentNo == null || !studentNo.equals(currentStudentNo)) {
                 //(currentStudentNo == null || !studentNo.equals(currentStudentNo)) 
                 //AIはこれが安全版だと言っていた↑
                 
                 bean = new TestListSubject();
                 bean.setEntYear(rs.getInt("ent_year"));
                 bean.setStudentNo(studentNo);
-                bean.setStudentName(rs.getString("student_name"));
+                bean.setStudentName(rs.getString("NAME"));
                 bean.setClassNum(rs.getString("class_num"));
                 bean.setPoints(new HashMap<>());
 

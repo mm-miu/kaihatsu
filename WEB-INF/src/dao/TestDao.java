@@ -21,8 +21,11 @@ public class TestDao extends Dao {
     public Test get(Student student, Subject subject, School school, int no) throws Exception {
 
         String sql =
-            "SELECT STUDENT_NO, SUBJECT_CD, SCHOOL_CD, CLASS_NUM, NO, POINT " +
-            "FROM TEST WHERE STUDENT_NO=? AND SUBJECT_CD=? AND SCHOOL_CD=? AND NO=?";
+            "SELECT T.STUDENT_NO, T.SUBJECT_CD, T.SCHOOL_CD, S.CLASS_NUM, T.NO, T.POINT " +
+            "FROM TEST T " +
+            "JOIN STUDENT S " +
+            "ON T.STUDENT_NO = S.NO " +
+            "WHERE T.STUDENT_NO=? AND T.SUBJECT_CD=? AND T.SCHOOL_CD=? AND T.NO=?";
 
         try (Connection con = getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -122,7 +125,7 @@ public class TestDao extends Dao {
 
         StringBuilder sql = new StringBuilder();
         sql.append(
-            "SELECT T.STUDENT_NO, T.SUBJECT_CD, T.SCHOOL_CD, T.CLASS_NUM, T.NO, T.POINT, " +
+            "SELECT T.STUDENT_NO, T.SUBJECT_CD, T.SCHOOL_CD, T.NO, T.POINT, S.CLASS_NUM, " +
             "S.ENT_YEAR AS STUDENT_ENT_YEAR, S.NAME AS STUDENT_NAME " +
             "FROM TEST T " +
             "JOIN STUDENT S ON T.STUDENT_NO = S.NO " +
@@ -195,19 +198,84 @@ public class TestDao extends Dao {
     public boolean save(Test t, Connection con) throws Exception {
 
         String sql =
-            "INSERT INTO TEST(STUDENT_NO, SUBJECT_CD, SCHOOL_CD, CLASS_NUM, NO, POINT) " +
-            "VALUES(?, ?, ?, ?, ?, ?)";
+            "INSERT INTO TEST(STUDENT_NO, SUBJECT_CD, SCHOOL_CD, NO, POINT) " +
+            "VALUES(?, ?, ?, ?, ?)";
 
         try (PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setString(1, t.getStudent().getNo());
-            ps.setString(2, t.getSubject().getCd());
-            ps.setString(3, t.getSchool().getCd());
-            ps.setString(4, t.getClassNum().getClass_num());  // ← 修正済み
-            ps.setInt(5, t.getNo());
-            ps.setInt(6, t.getPoint());
+        ps.setString(1, t.getStudent().getNo());
+        ps.setString(2, t.getSubject().getCd());
+        ps.setString(3, t.getSchool().getCd());
+        ps.setInt(4, t.getNo());
+        ps.setInt(5, t.getPoint());
 
             return ps.executeUpdate() == 1;
+        }
+    }
+
+    // ---------------------------------------------------------
+    // 6. update（List<Test> を更新）
+    // ---------------------------------------------------------
+    public boolean update(List<Test> list) throws Exception {
+
+        try (Connection con = getConnection()) {
+            con.setAutoCommit(false);
+
+            for (Test t : list) {
+                if (!update(t, con)) {
+                    con.rollback();
+                    return false;
+                }
+            }
+
+            con.commit();
+            return true;
+        }
+    }
+
+    // ---------------------------------------------------------
+    // 7. update（1件更新）
+    // ---------------------------------------------------------
+    public boolean update(Test t, Connection con) throws Exception {
+
+        String sql =
+            "UPDATE TEST "+
+               "SET POINT = ? " +
+             "WHERE STUDENT_NO = ? AND " +
+                   "SUBJECT_CD = ? AND " +
+                   "SCHOOL_CD =? AND " +
+                   "NO = ?";
+
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, t.getPoint());
+            ps.setString(2, t.getStudent().getNo());
+            ps.setString(3, t.getSubject().getCd());
+            ps.setString(4, t.getSchool().getCd());
+            ps.setInt(5, t.getNo());
+
+            return ps.executeUpdate() == 1;
+        }
+    }
+
+    //--------------------------------------------------------
+    // 8. delete（一件削除）
+    // -------------------------------------------------------
+    public boolean delete(String studentNo, String subjectCd, String schoolCd, int no) throws Exception {
+
+        String sql =
+            "DELETE FROM TEST " +
+            "WHERE STUDENT_NO = ? AND SUBJECT_CD = ? AND SCHOOL_CD = ? AND NO = ?";
+
+        try (Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, studentNo);
+            ps.setString(2, subjectCd);
+            ps.setString(3, schoolCd);
+            ps.setInt(4, no);
+
+            return ps.executeUpdate() == 1;//なぜいるかわからない
         }
     }
 }
