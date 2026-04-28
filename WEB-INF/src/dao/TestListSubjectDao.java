@@ -13,15 +13,15 @@ public class TestListSubjectDao extends Dao {
     private final String baseSql =
         "SELECT " +
         " s.ent_year, s.NO AS student_no, s.NAME, s.class_num, " +
-        " sc.No AS test_id, " +
-        " sc.POINT " +
+        " t.No AS test_id, " +
+        " t.POINT " +
         "FROM student s " +
-        "JOIN test sc ON s.NO = sc.student_no " +
-        "AND s.class_num = sc.class_num " +
+        "JOIN test sc ON s.NO = t.student_no " +
+        "AND s.class_num = t.class_num " +
         "WHERE s.ent_year = ? " +
         " AND s.class_num = ? " +
-        " AND sc.SUBJECT_CD = ? " +
-        " AND sc.SCHOOL_CD = ? " +//AIにはいらないといわれたが設計書通りならいるはず
+        " AND t.SUBJECT_CD = ? " +
+        " AND t.SCHOOL_CD = ? " +//AIにはいらないといわれたが設計書通りならいるはず
         "ORDER BY s.NO, sc.NO";
 
     public List<TestListSubject> filter(int entYear, String classNum, Subject subject, School school) {
