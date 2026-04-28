@@ -138,7 +138,7 @@ public class TestDao extends Dao {
         }
 
         if (classNum != null && !classNum.isEmpty()) {
-            sql.append("AND S.CLASS_NUM = ? ");
+            sql.append("AND T.CLASS_NUM = ? ");
             params.add(classNum);
         }
 
@@ -206,6 +206,51 @@ public class TestDao extends Dao {
             ps.setString(4, t.getClassNum().getClass_num());  // ← 修正済み
             ps.setInt(5, t.getNo());
             ps.setInt(6, t.getPoint());
+
+            return ps.executeUpdate() == 1;
+        }
+    }
+
+    // ---------------------------------------------------------
+    // 6. update（List<Test> を更新）
+    // ---------------------------------------------------------
+    public boolean update(List<Test> list) throws Exception {
+
+        try (Connection con = getConnection()) {
+            con.setAutoCommit(false);
+
+            for (Test t : list) {
+                if (!update(t, con)) {
+                    con.rollback();
+                    return false;
+                }
+            }
+
+            con.commit();
+            return true;
+        }
+    }
+
+    // ---------------------------------------------------------
+    // 7. update（1件更新）
+    // ---------------------------------------------------------
+    public boolean update(Test t, Connection con) throws Exception {
+
+        String sql =
+            "UPDATE TEST "+
+               "SET POINT = ? " +
+             "WHERE STUDENT_NO = ? AND " +
+                   "SUBJECT_CD = ? AND " +
+                   "SCHOOL_CD =? AND " +
+                   "NO = ?";
+
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, t.getPoint());
+            ps.setString(2, t.getStudent().getNo());
+            ps.setString(3, t.getSubject().getCd());
+            ps.setString(4, t.getSchool().getCd());
+            ps.setInt(5, t.getNo());
 
             return ps.executeUpdate() == 1;
         }
