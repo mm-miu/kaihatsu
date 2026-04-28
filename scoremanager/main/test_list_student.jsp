@@ -44,6 +44,15 @@
                             <td><c:out value="${row.subjectCd}" /></td>
                             <td><c:out value="${row.num}" /></td>
                             <td><c:out value="${row.point}" /></td>
+                            <td><!--削除ボタン-->
+                                <form action="deleteTest.do" method="post" style="display:inline;">
+                                    <input type="hidden" name="student_no" value="${row.studentNo}">
+                                    <input type="hidden" name="subject_cd" value="${row.subjectCd}">
+                                    <input type="hidden" name="school_cd" value="${row.schoolCd}">
+                                    <input type="hidden" name="no" value="${row.num}">
+                                    <button type="submit" onclick="return confirm('本当に削除しますか？')">削除</button>
+                                </form>
+                            </td>
                         </tr>
                     </c:forEach>
                 </tbody>

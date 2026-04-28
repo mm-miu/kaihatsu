@@ -12,7 +12,7 @@ public class TestListSubjectDao extends Dao {
 
     private final String baseSql =
         "SELECT " +
-        " s.ent_year, s.NO, s.NAME, s.class_num, " +
+        " s.ent_year, s.NO AS student_no, s.NAME, s.class_num, " +
         " sc.No AS test_id, " +
         " sc.POINT " +
         "FROM student s " +
@@ -43,7 +43,7 @@ public class TestListSubjectDao extends Dao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
         return list;
     }
 
@@ -55,7 +55,7 @@ public class TestListSubjectDao extends Dao {
 
         while (rs.next()) {
 
-            String studentNo = rs.getString("NO");
+            String studentNo = rs.getString("student_no");
 
             // 学生が変わったら新しい Bean を作る
             if (currentStudentNo == null || !studentNo.equals(currentStudentNo)) {

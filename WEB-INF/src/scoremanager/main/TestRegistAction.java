@@ -111,16 +111,6 @@ public class TestRegistAction extends Action {
 
         TestDao dao = new TestDao();
         List<Test> list = dao.filter(entYear, classNum, subject, no, school);
-        System.out.println("==== DEBUG ====");
-System.out.println("entYear=[" + entYear + "]");
-System.out.println("classNum=[" + classNum + "]");
-System.out.println("subjectCd=[" + subjectCd + "]");
-System.out.println("no=[" + no + "]");
-System.out.println("school=[" + school.getCd() +"]");
-System.out.println("subject=[" + subject + "]");
-
-
-System.out.println("list size=" + list.size());
 
         //JSP に渡す属性
         req.setAttribute("list", list);
