@@ -11,7 +11,7 @@
 <!-- 上段：検索欄（test_list.jsp と同じ） -->
 <section>
     <h4>科目情報</h4>
-    <form method="get" action="TestSubjectExecute.action">
+    <form method="get" action="TestListSubjectExecute.action">
         <div class="row">
             <div class="col-3">
                 <label>入学年度
