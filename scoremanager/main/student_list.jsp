@@ -3,76 +3,18 @@
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-  <style>
-
-    h2 {
-        font-weight: bold;
-        background-color: #e9ecef;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    .new{
-      text-align: right;  
-    }
-
-    form{
-        display: flex;
-        gap: 15px;
-        align-items: flex-end;
-        background: #f8f9fa;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 15px;
-    }
-
-    .row{
-        display: flex;
-    }
-    
-    select{
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .form-check{
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-
-    button{
-        padding: 6px 12px;
-        border: none;
-        background-color: #6c757d;
-        color: white;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    table{
-        width: 100%;
-        border-collapse: collapse;
-        background: white;
-    }
-
-    button:hover{
-        background-color: #5a6268;
-    }
-  </style>
-
 <c:set var="content">
-    <section class="me-4">
-        <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生管理</h2>
+    <section>
+        <h2 class="main-title">学生管理</h2>
         <div class="new">
             <a href="StudentCreate.action">新規登録</a>
         </div>
-        <form method="get">
+        
+        <form method="get" class="form">
             <div class="row">
                 <div class="col-4">
-                    <label class="form-label" for="student-f1-select">入学年度</label>
-                    <select class="form-select" id="student-f1-select" name="f1">
+                    <label for="student-f1-select">入学年度</label>
+                    <select id="student-f1-select" name="f1">
                         <option value="0">--------</option>
                         <c:forEach var="year" items="${ent_year_set}">
                             <!-- 現在のyearと選択されていたf1が一致していた場合selectedを追記 -->
@@ -80,9 +22,10 @@
                         </c:forEach>
                     </select>
                 </div>
+
                 <div class="col-4">
-                    <label class="form-label" for="student-f2-select">クラス</label>
-                    <select class="form-select" id="student-f2-select" name="f2">
+                    <label for="student-f2-select">クラス</label>
+                    <select id="student-f2-select" name="f2">
                         <option value="0">--------</option>
                         <c:forEach var="num" items="${class_num_set}">
                             <!-- 現在のnumと選択されていたf1が一致していた場合selectedを追記 -->
@@ -90,8 +33,9 @@
                         </c:forEach>
                     </select>
                 </div>
-                <div class="col-2 form-check">
-                    <label class="form-check-label" for="student-f3-check">在学中
+
+                <div class="col-2">
+                    <label for="student-f3-check">在学中
                         <!-- パラメーターf3が存在している場合checkedを追加 -->
                         <input class="form-check-input" type="checkbox"
                         id="student-f3-check" name="f3" value="t"
@@ -99,7 +43,7 @@
                     </label>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-secondary" id="filter-botton">絞込み</button>
+                    <button>絞込み</button>
                 </div>
                 <div class="mt-2 text-warning">${errors.get("f1")}</div>
             </div>
@@ -108,14 +52,13 @@
         <c:choose>
             <c:when test="${students.size()>0}">
                 <div>検索結果：${students.size()}件</div>
-                <table class="table table-hover">
+                <table class="table">
                     <tr>
                         <th>入学年度</th>
                         <th>学生番号</th>
                         <th>氏名</th>
                         <th>クラス</th>
                         <th class="text-center">在学中</th>
-                        <th></th>
                         <th></th>
                     </tr>
                     <c:forEach var="student" items="${students}">

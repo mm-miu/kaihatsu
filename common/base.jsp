@@ -40,11 +40,20 @@
       padding: 15px;
       margin-top: 10px;
     }
-    /* メイン */
+    /* コンテンツ 枠*/
     .main{
       flex: 1;
       padding: 20px;
     }
+
+    /* コンテンツタイトル */
+    .main-title {
+      font-weight: bold;
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
     /* サイドバー 文字全体*/
     .sidebar ul {
       list-style: none;
@@ -114,6 +123,118 @@
       border-radius: 5px;
     }
 
+
+    /* ログアウト画面*/
+    /* 画面全体*/
+    .logout_main{
+      margin: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+      text-align: center;
+    }
+    /* h2　ログアウト*/
+    .logout_main h2{
+      background-color: #EEEEEE;
+      padding: 20px;
+      text-align: left;
+    }
+    /* p メッセージ */
+    .logout_main p{
+      background-color: #6699CC;
+      padding: 10px;
+    }
+    /* ログインへのリンク */
+    .logout_main a{
+      padding-top: 10px;
+    }
+
+
+     /* メニュー画面 */
+    
+
+
+    /* 学生一覧画面 */
+    /* 新規登録 */
+    .new{
+      text-align: right;  
+      margin-bottom: 10px;
+    }
+    /* 検索　フォーム */
+    .form{
+      display: flex;
+      gap: 15px;
+      align-items: flex-end;
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    /*入力ボックス　横並び */
+    .row{
+      display: flex;
+      width: 100%;
+      gap: 10px;
+    }
+    /* カラム */
+    .col-4, .col-2 {
+      display: flex;
+      flex-direction: column;
+    }
+    /* 幅 */
+    .col-4 {
+      flex: 1;
+    }
+    .col-2 {
+      width: 120px;
+      padding-top: 25px;
+    }
+    /* ラベル */
+    label {
+      margin-bottom: 5px;
+    }
+    /* セレクト */
+    select{
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    /* フォームのチェックボックス */
+    .form-check{
+      align-items: center;
+    }
+    /* ボタン */
+    button{
+      padding: 6px 12px;
+      border: none;
+      background-color: #6c757d;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #5a6268;
+    }
+    /* テーブル */
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th{
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+      background-color: #e9ecef;
+    }
+    td{
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    tr:hover{
+      background-color: #dde3e9;
+    }
 
   </style>
 
