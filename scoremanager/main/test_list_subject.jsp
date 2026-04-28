@@ -84,25 +84,12 @@
                     <td><c:out value="${row.classNum.class_num}" /></td>
                     <td><c:out value="${row.student.no}" /></td>
                     <td><c:out value="${row.student.name}" /></td>
-                    <!-- 1回目 -->
-                     <td>
-                        <c:choose>
-                            <c:when test="${row.points['1'] != null}">
-                                <c:out value="${row.points['1']}" />
-                            </c:when>
-                            <c:otherwise>-</c:otherwise>
-                        </c:choose>
-                    </td>
                     
+                    <!-- 1回目 -->
+                    <td><c:out value="${row.point[1]}" /></td>
+
                     <!-- 2回目 -->
-                     <td>
-                        <c:choose>
-                            <c:when test="${row.points['2'] != null}">
-                                <c:out value="${row.points['2']}" />
-                            </c:when>
-                            <c:otherwise>-</c:otherwise>
-                        </c:choose>
-                    </td>
+                    <td><c:out value="${row.point[2]}" /></td>
                 </tr>
             </c:forEach>
         </table>
