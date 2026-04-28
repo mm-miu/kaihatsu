@@ -1,5 +1,8 @@
 package bean;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Test implements java.io.Serializable {
 
     private Student student;     // 学生
@@ -8,6 +11,13 @@ public class Test implements java.io.Serializable {
     private ClassNum classNum;   // クラス
     private int no;             // 回数（NO）
     private int point;           // 得点（POINT）
+    private Map<Integer,Integer> points;
+
+    public Test() {
+    this.points = new HashMap<>();
+    }
+
+
 
     //ゲッター
     public Student getStudent() {
@@ -51,5 +61,21 @@ public class Test implements java.io.Serializable {
     }
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    public Map<Integer,Integer> getPoints() {
+        return points;
+    }
+    //pointはMapの要素Pointsの(key)に対して(valueを取り出す)ハッシュみたいなやつ)
+    public String getPoint(int key) {
+    if (points == null) return "";
+    Integer value = points.get(key);
+    return value == null ? "" : value.toString();
+    }
+    public void setPoints(Map<Integer,Integer> points) {
+        this.points = points;
+    }
+    public void putPoint(int key, int value) {
+        points.put(key, value);
     }
 }
