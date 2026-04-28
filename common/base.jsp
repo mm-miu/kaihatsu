@@ -150,29 +150,61 @@
 
 
      /* メニュー画面 menu.jsp*/
+    /* カード全体 */
     .menu-grid{
       display: flex;
       gap: 20px;
       margin-top: 20px;
     }
+    /* カード自体 */
     .menu-card{
       flex: 1;
       height: 120px;
       border-radius: 10px;
-      display: flex;
       justify-content: center;
       align-items: center;
       text-decoration: none;
       color: black;
       font-weight: bold;
-      font-weight: bold;
+      display: flex;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: 0.2s;
     }
-
+    /* ホバー */
     .menu-card:hover {
       transform: translateY(-5px);
       opacity: 0.9;
+    }
+    /* カード　学生管理 */
+    .menu-card.student{
+      background-color: #FFCCCC;
+      text-align: center;
+    }
+    /* カード　成績管理 */
+    .menu-card.score{
+      background-color: #CCFFCC;
+      text-align: center;
+      flex-direction: column;
+    }
+    /* カード　科目管理 */
+    .menu-card.subject{
+      background-color: 	#CCFFFF;
+      text-align: center;
+    }
+    .menu-card.class{
+      background-color: #FFFF99;
+      text-align: center;
+    }
+    /*文字　成績管理*/
+    .menu-title{
+      margin-bottom: 5px;
+    }
+
+    /* 文字　成績登録、参照　 */
+    .menu-card.score a {
+      display: block;
+      margin: 3px;
+      font-weight: normal;
     }
 
 
@@ -181,8 +213,9 @@
     */
     /* 新規登録 */
     .new{
-      text-align: right;  
+      text-align: left;  
       margin-bottom: 10px;
+      padding-left: 10px;
     }
     /* 検索　フォーム */
     .form{
