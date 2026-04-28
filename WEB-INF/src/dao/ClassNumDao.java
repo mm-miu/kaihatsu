@@ -11,27 +11,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClassNumDao extends Dao {
-    
+
     // 取得したクラス番号、学校情報をもとにクラス番号を返却するメソッド
     public ClassNum get(String class_num, School school) throws Exception {
         // クラス番号インスタンスを初期化
-        ClassNum classNum=new ClassNum();
+        ClassNum classNum = new ClassNum();
         // データベースへのコネクションを確立
-        Connection con=getConnection();
+        Connection con = getConnection();
         // プリペアードステートメント
-        PreparedStatement st=null;
+        PreparedStatement st = null;
         try {
             // プリペアードステートメントにSQL文をセット
-            st=con.prepareStatement(
-                "select * from class_num where class_num = ? and school_cd = ?"
-            );
+            st = con.prepareStatement(
+                    "select * from class_num where class_num = ? and school_cd = ?");
             // プリペアードステートメントに値をバインド
             st.setString(1, class_num);
             st.setString(2, school.getCd());
             // プリペアードステートメントを実行
-            ResultSet rs=st.executeQuery();
+            ResultSet rs = st.executeQuery();
             // 学校Daoを初期化
-            SchoolDao sDao=new SchoolDao();
+            SchoolDao sDao = new SchoolDao();
             if (rs.next()) {
                 // リザルトセットが存在する場合
                 // クラス番号インスタンスに検索結果をセット
@@ -40,22 +39,23 @@ public class ClassNumDao extends Dao {
             } else {
                 // リザルトセットが存在しない場合
                 // クラス番号インスタンスにnullをセット
-                classNum=null;
+                classNum = null;
             }
 
         } catch (Exception e) {
             throw e;
         } finally {
             // プリペアードステートメントを閉じる
-            if (st!=null) {
+            if (st != null) {
                 try {
-                    st.close();;
+                    st.close();
+                    ;
                 } catch (SQLException sqle) {
                     throw sqle;
                 }
             }
             // コネクションを閉じる
-            if (con!=null) {
+            if (con != null) {
                 try {
                     con.close();
                 } catch (SQLException sqle) {
@@ -69,20 +69,19 @@ public class ClassNumDao extends Dao {
     // 学校を指定してクラス番号の一覧を取得するメソッド
     public List<String> filter(School school) throws Exception {
         // リストを初期化
-        List<String> list=new ArrayList<>();
-            // データベースへのコネクションを確立
-        Connection con=getConnection();
+        List<String> list = new ArrayList<>();
+        // データベースへのコネクションを確立
+        Connection con = getConnection();
         // プリペアードステートメント
-        PreparedStatement st=null;
+        PreparedStatement st = null;
         try {
             // プリペアードステートメントにSQL文をセット
-            st=con.prepareStatement(
-                "select class_num from class_num where school_cd=? order by class_num"
-            );
+            st = con.prepareStatement(
+                    "select class_num from class_num where school_cd=? order by class_num");
             // プリペアードステートメントに学校コードをバインド
             st.setString(1, school.getCd());
             // プリペアードステートメントを実行
-            ResultSet rs=st.executeQuery();
+            ResultSet rs = st.executeQuery();
 
             // リザルトセットを全件走査
             while (rs.next()) {
@@ -94,15 +93,16 @@ public class ClassNumDao extends Dao {
             throw e;
         } finally {
             // プリペアードステートメントを閉じる
-            if (st!=null) {
+            if (st != null) {
                 try {
-                    st.close();;
+                    st.close();
+                    ;
                 } catch (SQLException sqle) {
                     throw sqle;
                 }
             }
             // コネクションを閉じる
-            if (con!=null) {
+            if (con != null) {
                 try {
                     con.close();
                 } catch (SQLException sqle) {
@@ -112,14 +112,116 @@ public class ClassNumDao extends Dao {
         }
         return list;
     }
-/* 
-    public boolean save(ClassNum classNum) throws Exception {
 
+    // クラス新規作成
+    public boolean save(ClassNum classNum) throws Exception {
+        // コネクションを確立
+        Connection con = getConnection();
+        // プリペアードステートメント
+        PreparedStatement st = null;
+        // 実行件数
+        int count = 0;
+
+        try {
+            ClassNum old = get(classNum.getClass_num(), classNum.getSchool());
+            if (old != null)
+                return false;
+
+            // クラスが存在しなかった場合
+            // プリペアードステートメントにINSERT文をセット
+            st = con.prepareStatement(
+                    "insert into class_num(school_cd, class_num) values(?, ?)");
+
+            // プリペアードステートメントに値をバインド
+            st.setString(1, classNum.getSchool().getCd());
+            st.setString(2, classNum.getClass_num());
+            // プリペアードステートメントを実行
+            count = st.executeUpdate();
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            // プリペアードステートメントを閉じる
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+            // コネクションを閉じる
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+        }
+
+        if (count > 0) {
+            // 実行件数が1件以上ある場合
+            return true;
+        } else {
+            // 実行件数が0件の場合
+            return false;
+        }
     }
+
 
     public boolean save(ClassNum classNum, String newClassNum) throws Exception {
+     
+        // コネクションを確立
+        Connection con = getConnection();
+        // プリペアードステートメント
+        PreparedStatement st = null;
+        // 実行件数
+        int count = 0;
 
+        try {
+            // クラスが存在する場合
+            // プリペアードステートメントにUPDATE文をセット
+            st = con.prepareStatement(
+                "UPDATE CLASS_NUM " +
+                "SET CLASS_NUM = ? " +
+                "WHERE SCHOOL_CD = ? AND CLASS_NUM = ? "    
+                    );
+
+            // プリペアードステートメントに値をバインド
+            st.setString(1, newClassNum);
+            st.setString(2, classNum.getSchool().getCd());
+            st.setString(3, classNum.getClass_num());
+            // プリペアードステートメントを実行
+            count = st.executeUpdate();
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            // プリペアードステートメントを閉じる
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+            // コネクションを閉じる
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+        }
+
+        if (count > 0) {
+            // 実行件数が1件以上ある場合
+            return true;
+        } else {
+            // 実行件数が0件の場合
+            return false;
+        }
     }
-*/
 
 }

@@ -43,7 +43,7 @@
                             <td><c:out value="${row.subjectName}" /></td>
                             <td><c:out value="${row.subjectCd}" /></td>
                             <td><c:out value="${row.num}" /></td>
-                            <td><c:out value="${row.point}" /></td>
+                            <td><c:out value="${row.point}" /></td> 
                             <td><!--削除ボタン-->
                                 <form action="deleteTest.do" method="post" style="display:inline;">
                                     <input type="hidden" name="student_no" value="${row.studentNo}">

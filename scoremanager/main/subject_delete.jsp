@@ -12,21 +12,9 @@
 
     <c:param name="content">
         <style>
-            
-
-            h2{
-                text-align: left;
-                margin-left: 270;
-                margin-right: 40;
-                background-color: rgb(167, 163, 163);
-}
-            
-
-            
-
             button {
                 
-            border: 1px solid #333;
+                border: 1px solid #333;
                 border-radius: 5px;
                 background-color: rgb(216, 64, 64);  
                 color: white;

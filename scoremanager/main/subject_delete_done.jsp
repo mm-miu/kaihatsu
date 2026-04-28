@@ -15,10 +15,8 @@
             p.scses {
                 text-align: center; 
                 background-color: rgb(177, 237, 185); 
-                margin-left: 270;
                     }
-            a.scses{
-                margin-left: 270; 
+            a.scses{ 
                 text-align: center;
                     }
         </style>
