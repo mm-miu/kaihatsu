@@ -2,20 +2,74 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<c:import url="/common/base.jsp">
-    <c:param name="title">
-        得点管理システム
-    </c:param>
 
-    <c:param name="scripts"></c:param>
+  <style>
 
-    <c:param name="content">
-        <section class="me-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生管理</h2>
-            <div class="my-2 text-end px-4">
-                <a href="StudentCreate.action">新規登録</a>
-            </div>
-            <form method="get">
+    h2 {
+        font-weight: bold;
+        background-color: #e9ecef;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .new{
+      text-align: right;  
+    }
+
+    form{
+        display: flex;
+        gap: 15px;
+        align-items: flex-end;
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .row{
+        display: flex;
+    }
+    
+    select{
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-check{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    button{
+        padding: 6px 12px;
+        border: none;
+        background-color: #6c757d;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+
+    button:hover{
+        background-color: #5a6268;
+    }
+  </style>
+
+<c:set var="content">
+    <section class="me-4">
+        <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生管理</h2>
+        <div class="new">
+            <a href="StudentCreate.action">新規登録</a>
+        </div>
+        <form method="get">
+            <div class="row">
                 <div class="col-4">
                     <label class="form-label" for="student-f1-select">入学年度</label>
                     <select class="form-select" id="student-f1-select" name="f1">
@@ -36,7 +90,7 @@
                         </c:forEach>
                     </select>
                 </div>
-                <div class="col-2 form-check text-center">
+                <div class="col-2 form-check">
                     <label class="form-check-label" for="student-f3-check">在学中
                         <!-- パラメーターf3が存在している場合checkedを追加 -->
                         <input class="form-check-input" type="checkbox"
@@ -44,52 +98,59 @@
                         <c:if test="${!empty f3}">checked</c:if> />
                     </label>
                 </div>
-                <div class="col-2 text-center">
+                <div class="col-2">
                     <button class="btn btn-secondary" id="filter-botton">絞込み</button>
                 </div>
                 <div class="mt-2 text-warning">${errors.get("f1")}</div>
-            </form>
+            </div>
+        </form>
 
-            <c:choose>
-                <c:when test="${students.size()>0}">
-                    <div>検索結果：${students.size()}件</div>
-                    <table class="table table-hover">
+        <c:choose>
+            <c:when test="${students.size()>0}">
+                <div>検索結果：${students.size()}件</div>
+                <table class="table table-hover">
+                    <tr>
+                        <th>入学年度</th>
+                        <th>学生番号</th>
+                        <th>氏名</th>
+                        <th>クラス</th>
+                        <th class="text-center">在学中</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <c:forEach var="student" items="${students}">
                         <tr>
-                            <th>入学年度</th>
-                            <th>学生番号</th>
-                            <th>氏名</th>
-                            <th>クラス</th>
-                            <th class="text-center">在学中</th>
-                            <th></th>
-                            <th></th>
+                            <td>${student.entYear}</td>
+                            <td>${student.no}</td>
+                            <td>${student.name}</td>
+                            <td>${student.classNum}</td>
+                            <td class="text-center">
+                                <!-- 在学フラグがたっている場合「〇」それ以外は「✕」を表示 -->
+                                <c:choose>
+                                    <c:when test="${student.isAttend()}">
+                                        〇
+                                    </c:when>
+                                    <c:otherwise>
+                                        ✕
+                                    </c:otherwise>
+                                </c:choose>
+                            </td>
+                            <td><a href="StudentUpdate.action?no=${student.no}">変更</a></td>
                         </tr>
-                        <c:forEach var="student" items="${students}">
-                            <tr>
-                                <td>${student.entYear}</td>
-                                <td>${student.no}</td>
-                                <td>${student.name}</td>
-                                <td>${student.classNum}</td>
-                                <td class="text-center">
-                                    <!-- 在学フラグがたっている場合「〇」それ以外は「✕」を表示 -->
-                                    <c:choose>
-                                        <c:when test="${student.isAttend()}">
-                                            〇
-                                        </c:when>
-                                        <c:otherwise>
-                                            ✕
-                                        </c:otherwise>
-                                    </c:choose>
-                                </td>
-                                <td><a href="StudentUpdate.action?no=${student.no}">変更</a></td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </c:when>
-                <c:otherwise>
-                    <div>学生情報が存在しませんでした。</div>
-                </c:otherwise>
-            </c:choose>
-        </section>
-    </c:param>
+                    </c:forEach>
+                </table>
+            </c:when>
+            <c:otherwise>
+                <div>学生情報が存在しませんでした。</div>
+            </c:otherwise>
+        </c:choose>
+    </section>
+</c:set>
 
+<c:import url="/common/base.jsp">
+    <c:param name="title">
+        得点管理システム
+    </c:param>
+    <c:param name="scripts"></c:param>
+    <c:param name="content" value="${content}"></c:param>
 </c:import>

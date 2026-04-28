@@ -19,6 +19,6 @@ public class DeleteTestAction extends Action {
         dao.delete(studentNo, subjectCd, schoolCd, no);
 
         // 削除後は学生別一覧に戻る
-        return "test_list_student.do?studentNo=" + studentNo;
+        res.sendRedirect("test_list_student.do?studentNo=" + studentNo);
     }
 }
