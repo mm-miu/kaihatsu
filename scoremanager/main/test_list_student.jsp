@@ -45,7 +45,7 @@
                             <td><c:out value="${row.num}" /></td>
                             <td><c:out value="${row.point}" /></td> 
                             <td><!--削除ボタン-->
-                                <form action="deleteTest.do" method="post" style="display:inline;">
+                                <form action="DeleteTest.action" method="post" style="display:inline;">
                                     <input type="hidden" name="student_no" value="${row.studentNo}">
                                     <input type="hidden" name="subject_cd" value="${row.subjectCd}">
                                     <input type="hidden" name="school_cd" value="${row.schoolCd}">
@@ -54,7 +54,7 @@
                                 </form>
                             </td>
                         </tr>
-                    </c:forEach>
+                    </c:forEach> 
                 </tbody>
             </table>
         </c:if>

@@ -16,9 +16,12 @@ public class DeleteTestAction extends Action {
         int no = Integer.parseInt(req.getParameter("no"));
 
         TestDao dao = new TestDao();
-        dao.delete(studentNo, subjectCd, schoolCd, no);
+        boolean deleted = dao.delete(studentNo, subjectCd, schoolCd, no);
 
-        // 削除後は学生別一覧に戻る
-        res.sendRedirect("test_list_student.do?studentNo=" + studentNo);
+        // JSP に削除結果と学生番号を渡してフォワード
+        req.setAttribute("deleted", deleted);
+        req.setAttribute("studentNo", studentNo);
+
+        req.getRequestDispatcher("test_delete.jsp").forward(req, res);
     }
 }
