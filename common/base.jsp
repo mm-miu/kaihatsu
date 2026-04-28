@@ -123,6 +123,36 @@
       border-radius: 5px;
     }
 
+
+    /* ログアウト画面*/
+    /* 画面全体*/
+    .logout_main{
+      margin: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+      text-align: center;
+    }
+    /* h2　ログアウト*/
+    .logout_main h2{
+      background-color: #EEEEEE;
+      padding: 20px;
+      text-align: left;
+    }
+    /* p メッセージ */
+    .logout_main p{
+      background-color: #6699CC;
+      padding: 10px;
+    }
+    /* ログインへのリンク */
+    .logout_main a{
+      padding-top: 10px;
+    }
+
+
+     /* メニュー画面 */
+    
+
+
     /* 学生一覧画面 */
     /* 新規登録 */
     .new{
@@ -130,7 +160,7 @@
       margin-bottom: 10px;
     }
     /* 検索　フォーム */
-    form{
+    .form{
       display: flex;
       gap: 15px;
       align-items: flex-end;
@@ -205,6 +235,7 @@
     tr:hover{
       background-color: #dde3e9;
     }
+
   </style>
 
 </head>

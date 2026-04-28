@@ -10,9 +10,8 @@
             <a href="StudentCreate.action">新規登録</a>
         </div>
         
-        <form method="get">
+        <form method="get" class="form">
             <div class="row">
-
                 <div class="col-4">
                     <label for="student-f1-select">入学年度</label>
                     <select id="student-f1-select" name="f1">
