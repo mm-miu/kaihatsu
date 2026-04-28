@@ -68,10 +68,10 @@
                     <form action="Login.action" method="post">
                         <p>ログイン名<input type="text" name="id" value="${empty id ? '半角でご入力ください' : id}" required>
                         </p>
-                        <p>パスワード<input type="password" name="password" 
+                        <p>パスワード<input type="password" name="password" id="password"
                             placeholder="${empty password ? '30字以内の半角英数字でご入力ください' : ''}" required></p>
                         <p><label>
-                                <input type="checkbox" name="chk_d_ps">
+                                <input type="checkbox" name="chk_d_ps" id="showPassword">
                                 パスワードを表示
                             </label></p>
                         <input type="submit" value="ログイン" name="login">
@@ -92,3 +92,16 @@
     <c:param name="scripts"></c:param>
     <c:param name="content" value="${content}"></c:param>
 </c:import>
+
+<script>
+    const checkbox = document.getElementById("showPassword");
+    const password = document.getElementById("password");
+
+    checkbox.addEventListener("change",function(){
+        if(checkbox.checked){
+            password.type = "text";
+        }else{
+            password.type = "password";
+        }
+    });
+</script>
