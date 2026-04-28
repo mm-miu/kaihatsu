@@ -8,7 +8,7 @@ import dao.TestDao;
 public class DeleteTestAction extends Action {
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+    public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 
         String studentNo = req.getParameter("student_no");
         String subjectCd = req.getParameter("subject_cd");
