@@ -82,8 +82,8 @@
                 <tr>
                     <td><c:out value="${row.student.entYear}" /></td>
                     <td><c:out value="${row.classNum}" /></td>
-                    <td><c:out value="${row.student.No}" /></td>
-                    <td><c:out value="${row.student.Name}" /></td>
+                    <td><c:out value="${row.student.no}" /></td>
+                    <td><c:out value="${row.student.name}" /></td>
                     <!-- 1回目 -->
                      <td>
                         <c:choose>
