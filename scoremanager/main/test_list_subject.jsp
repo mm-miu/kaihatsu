@@ -80,25 +80,26 @@
 
             <c:forEach var="row" items="${tests}">
                 <tr>
-                    <td><c:out value="${row.student.entYear}" /></td>
-                    <td><c:out value="${row.classNum.class_num}" /></td>
-                    <td><c:out value="${row.student.no}" /></td>
-                    <td><c:out value="${row.student.name}" /></td>
+                    <td><c:out value="${row.entYear}" /></td>
+                    <td><c:out value="${row.classNum}" /></td>
+                    <td><c:out value="${row.studentNo}" /></td>
+                    <td><c:out value="${row.studentName}" /></td>
+
                     <!-- 1回目 -->
-                     <td>
+                    <td>
                         <c:choose>
-                            <c:when test="${row.points[1] != null}">
-                                <c:out value="${row.points[1]}" />
+                            <c:when test="${row.getPoint(1) != null}">
+                                <c:out value="${row.getPoint(1)}" />
                             </c:when>
                             <c:otherwise>-</c:otherwise>
                         </c:choose>
                     </td>
-                    
+
                     <!-- 2回目 -->
-                     <td>
+                    <td>
                         <c:choose>
-                            <c:when test="${row.points[2] != null}">
-                                <c:out value="${row.points[2]}" />
+                            <c:when test="${row.getPoint(2) != null}">
+                                <c:out value="${row.getPoint(2)}" />
                             </c:when>
                             <c:otherwise>-</c:otherwise>
                         </c:choose>
