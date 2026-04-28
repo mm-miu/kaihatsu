@@ -75,7 +75,7 @@ public class TestListSubjectDao extends Dao {
 
             // テストID → 点数 を追加
             int testId = rs.getInt("test_id");
-            int point = rs.getInt("point");
+            int point = rs.getInt("POINT");
             bean.putPoint(testId, point);
             System.out.println("points中身=" + bean.getPoints());
         }
