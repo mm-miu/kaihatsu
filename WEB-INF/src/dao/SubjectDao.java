@@ -13,56 +13,25 @@ public class SubjectDao extends Dao {
 
     // 科目コードと学校コードから科目情報を取得するメソッド
     public Subject get(String cd, School school) throws Exception {
-        // クラス番号インスタンスを初期化
-        Subject subject=new Subject();
-        // データベースへのコネクションを確立
-        Connection con=getConnection();
-        // プリペアードステートメント
-        PreparedStatement st=null;
-        try {
-            // プリペアードステートメントにSQL文をセット
-            st=con.prepareStatement(
-                "select * from subject where cd = ? and school_cd = ?"
-            );
-            // プリペアードステートメントに値をバインド
-            st.setString(1, cd);
-            st.setString(2, school.getCd());
-            // プリペアードステートメントを実行
-            ResultSet rs=st.executeQuery();
-            // 学校Daoを初期化
-            SchoolDao sDao=new SchoolDao();
-            if (rs.next()) {
-                // リザルトセットが存在する場合
-                // クラス番号インスタンスに検索結果をセット
-                subject.setCd(rs.getString("cd"));
-                subject.setName(rs.getString("name"));
-                subject.setSchool(sDao.get(rs.getString("school_cd")));
-            } else {
-                // リザルトセットが存在しない場合
-                // クラス番号インスタンスにnullをセット
-                subject=null;
-            }
 
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            // プリペアードステートメントを閉じる
-            if (st!=null) {
-                try {
-                    st.close();
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
-            // コネクションを閉じる
-            if (con!=null) {
-                try {
-                    con.close();
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
+        Subject subject = null;
+
+        Connection con = getConnection();
+        PreparedStatement st = con.prepareStatement(
+            "select * from subject where cd = ? and school_cd = ?"
+        );
+
+        st.setString(1, cd);
+        st.setString(2, school.getCd());
+
+        ResultSet rs = st.executeQuery();
+
+        if (rs.next()) {
+            subject = new Subject();
+            subject.setCd(rs.getString("cd"));
+            subject.setName(rs.getString("name"));
         }
+
         return subject;
     }
 
