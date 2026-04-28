@@ -213,8 +213,9 @@
     */
     /* 新規登録 */
     .new{
-      text-align: right;  
+      text-align: left;  
       margin-bottom: 10px;
+      padding-left: 10px;
     }
     /* 検索　フォーム */
     .form{
