@@ -57,6 +57,12 @@ public class TestListSubjectDao extends Dao {
 
             String studentNo = rs.getString("student_no");
 
+            System.out.println("==== 1行取得 ====");
+            System.out.println("studentNo=" + studentNo);
+            System.out.println("test_id=" + rs.getInt("test_id"));
+            System.out.println("point=" + rs.getInt("point"));
+
+
             // 学生が変わったら新しい Bean を作る
             if (currentStudentNo == null || !studentNo.equals(currentStudentNo)) {
                 //(currentStudentNo == null || !studentNo.equals(currentStudentNo)) 
@@ -77,6 +83,7 @@ public class TestListSubjectDao extends Dao {
             int testId = rs.getInt("test_id");
             int point = rs.getInt("point");
             bean.putPoint(testId, point);
+            System.out.println("points中身=" + bean.getPoints());
         }
 
         return list;
