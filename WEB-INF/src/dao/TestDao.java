@@ -255,4 +255,25 @@ public class TestDao extends Dao {
             return ps.executeUpdate() == 1;
         }
     }
+
+    //--------------------------------------------------------
+    // 8. delete（一件削除）
+    // -------------------------------------------------------
+    public boolean delete(String studentNo, String subjectCd, String schoolCd, int no) throws Exception {
+
+        String sql =
+            "DELETE FROM TEST " +
+            "WHERE STUDENT_NO = ? AND SUBJECT_CD = ? AND SCHOOL_CD = ? AND NO = ?";
+
+        try (Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, studentNo);
+            ps.setString(2, subjectCd);
+            ps.setString(3, schoolCd);
+            ps.setInt(4, no);
+
+            return ps.executeUpdate() == 1;//なぜいるかわからない
+        }
+    }
 }
