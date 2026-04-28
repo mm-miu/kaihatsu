@@ -8,10 +8,16 @@ import tool.Action;
 import dao.ClassNumDao;
 import dao.SubjectDao;
 import dao.TestDao;
+import dao.TestListSubjectDao;
+import dao.TestListStudentDao;
+import dao.StudentDao;
 import bean.Test;
 import bean.Subject;
 import bean.School;
 import bean.Teacher;
+import bean.Student;
+import bean.TestListSubject;
+import bean.TestListStudent;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -133,7 +139,8 @@ public class TestListAction extends Action {
             Subject full = subDao.get(subjectCd, school);
             if (full != null) subject.setName(full.getName());
 
-            List<Test> list = testDao.filter(entYear, classNum, subject, 0, school);
+            TestListSubjectDao tsubDao = new TestListSubjectDao();
+            List<TestListSubject> list = tsubDao.filter(entYear, classNum, subject, school);
 
             req.setAttribute("tests", list);
             req.setAttribute("subject", subject);
@@ -150,12 +157,14 @@ public class TestListAction extends Action {
         // -----------------------------
         if (isStudentSearch) {
 
-            List<Test> all = testDao.filter(0, "", null, 0, school);
-            List<Test> filtered = new ArrayList<>();
+            TestListStudentDao tstuDao = new TestListStudentDao();
+            StudentDao sDao = new StudentDao();
+            List<TestListStudent> all = tstuDao.filter(sDao.get(studentNo));
+            List<TestListStudent> filtered = new ArrayList<>();
 
-            for (Test t : all) {
-                if (t.getStudent() != null &&
-                    studentNo.equals(t.getStudent().getNo())) {
+            for (TestListStudent t : all) {
+                if (sDao.get(t.getStudentNo()) != null &&
+                    studentNo.equals(t.getStudentNo())) {
                     filtered.add(t);
                 }
             }
