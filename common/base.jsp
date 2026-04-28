@@ -59,7 +59,7 @@
     }
 
     /*　サイドバー成績管理　*/
-    .sideber_title {
+    .sidebar_title {
       font-weight: bold;
       margin-top: 15px;
     }
@@ -101,7 +101,7 @@
           <ul>
             <li><a href="/kaihatsu/scoremanager/main/Menu.action">メニュー</a></li><br>
             <li><a href="/kaihatsu/scoremanager/main/StudentList.action">学生管理</a></li><br>
-            <label class="sideber_title">成績管理</label>
+            <label class="sidebar_title">成績管理</label>
             <li><a href="/kaihatsu/scoremanager/main/TestRegist.action">　　成績登録</a></li>
             <li><a href="/kaihatsu/scoremanager/main/TestList.action">　　成績参照</a></li><br>
             <li><a href="/kaihatsu/scoremanager/main/SubjectList.action">科目管理</a></li>
