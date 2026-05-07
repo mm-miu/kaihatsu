@@ -4,7 +4,7 @@
 <c:import url="/common/base.jsp">
   <c:param name="title">得点管理システム - 削除結果</c:param>
   <c:param name="content">
-    <h2>削除結果</h2>
+    <h2 class="main-title">削除結果</h2>
 
     <!-- メッセージを表示 -->
     <p><c:out value="${message}" /></p>

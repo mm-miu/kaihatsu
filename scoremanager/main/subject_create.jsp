@@ -12,29 +12,33 @@
 
     <c:param name="content">
 
-        <h2>科目情報登録</h2>
+        <h2 class="main-title">科目情報登録</h2>
 
         <form action="SubjectCreateExecute.action">
-            <label for="cd">科目コード</label>
-            <input type="text" id="cd" name="cd" 
-                value="${empty cd ? '科目コードを入力してください' : cd}" maxlength="3" required>
-            <br>
-            <c:if test="${not empty errors.cd}">
-                <p style="color:gold">${errors.cd}</p>
-            </c:if>
-            <c:if test="${not empty errors.cd_count}">
-                <p style="color:gold">${errors.cd_count}</p>
-            </c:if>
-
-            <label for="name">科目名</label>
-            <input type="text" id="name" name="name" value="${empty name ? '科目名を入力してください' : name}" maxlength="20" required>
-            <br>
-            <c:if test="${not empty errors.name}">
-                <p style="color:gold">${errors.name}</p>
-            </c:if>
-
-            <button name="end" type="submit">登録</button>
-            <br>
+            <div class="content-input">
+                <label for="cd">科目コード</label>
+                <input type="text" id="cd" name="cd" 
+                    value="${empty cd ? '科目コードを入力してください' : cd}" maxlength="3" required>
+                <br>
+                <c:if test="${not empty errors.cd}">
+                    <p style="color:gold">${errors.cd}</p>
+                </c:if>
+                <c:if test="${not empty errors.cd_count}">
+                    <p style="color:gold">${errors.cd_count}</p>
+                </c:if>
+            </div>
+            <div class="content-input">
+                <label for="name">科目名</label>
+                <input type="text" id="name" name="name" value="${empty name ? '科目名を入力してください' : name}" maxlength="20" required>
+                <br>
+                <c:if test="${not empty errors.name}">
+                    <p style="color:gold">${errors.name}</p>
+                </c:if>
+            </div>
+            <div class="button-2">
+                <button name="end" type="submit">登録</button>
+                <br>
+            </div>
         </form>
 
         <a href="SubjectList.action">戻る</a>

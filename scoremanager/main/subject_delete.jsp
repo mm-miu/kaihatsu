@@ -23,14 +23,15 @@
             
         </style>
         
-        <div class="border"></div>
-        <h2 class="sub">科目情報削除</h2>
-        <main class="contend">
-        <p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
-        <form action="SubjectDeleteExecute.action">
-            <button name="delete" type="submit">削除</button>
+        <div class="border">
+            <h2 class="main-title">科目情報削除</h2>
+            <main class="contend">
+            <p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
+            <form action="SubjectDeleteExecute.action">
+                <button name="delete" type="submit">削除</button>
 
-        </form>
+            </form>
+        </div>
 
         <a href="SubjectList.action">戻る</a>
         

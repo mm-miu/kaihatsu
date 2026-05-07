@@ -5,7 +5,7 @@
     <c:param name="title">得点管理システム - 成績参照（学生別）</c:param>
     <c:param name="content">
 
-        <h2>成績参照（学生別）</h2>
+        <h2 class="main-title">成績参照（学生別）</h2>
 
         <!-- 氏名表示 -->
         <div>
