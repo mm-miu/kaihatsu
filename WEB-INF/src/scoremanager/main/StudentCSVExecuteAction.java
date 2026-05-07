@@ -15,6 +15,6 @@ public class StudentCSVExecuteAction extends Action {
         StudentDao sDao = new StudentDao();
         boolean result = sDao.readInsertCSV(csvPart);
 
-        response.sendRedirect("student_list.jsp");
+        response.sendRedirect("student_create_done.jsp");
     }
 }
