@@ -8,12 +8,16 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
-        <h2>科目管理</h2>
-        <a href="SubjectCreate.action">新規登録</a>
-
+        <h2 class="main-title">科目管理</h2>
+        <div class="new">
+            <a href="SubjectCreate.action">新規登録</a>
+        </div>
+        
         <table>
             <th>科目コード</th>
             <th>科目名</th>
+            <th></th>
+            <th></th>
             <c:forEach var="subject" items="${subjects}">
                 <tr>
                     <td>${subject.cd}</td>

@@ -266,6 +266,7 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    /* ボタン　ホバー */
     button:hover {
       background-color: #5a6268;
     }
@@ -291,7 +292,9 @@
       background-color: #dde3e9;
     }
     
-    /* 新規登録　入力画面 */
+
+
+    /* 新規登録、変更　入力画面 */
     .content-input {
       margin-bottom: 10px;
       margin-top: 10px;
@@ -302,6 +305,12 @@
     }
     .button-2 button{
       margin-top: 20px;
+    }
+
+
+    /* 成績参照 */
+    .content-title{
+      margin-left: 10px;
     }
 
   </style>

@@ -5,11 +5,12 @@
     <c:param name="title">得点管理システム - 成績参照</c:param>
     <c:param name="scripts"></c:param>
     <c:param name="content">
-        <h2>成績参照</h2>
+
+        <h2 class="main-title">成績参照</h2>
 
         <!-- 上段：科目情報で検索 -->
         <section>
-            <h4>科目情報</h4>
+            <h4 class="content-title">科目情報</h4>
             <form method="get" action="TestList.action">
                 <div class="row">
                     <div class="col-3">
@@ -61,12 +62,12 @@
 
         <!-- 下段：学生情報で検索 -->
         <section>
-            <h4>学生情報</h4>
+            <h4 class="content-title">学生情報</h4>
             <form method="get" action="TestList.action">
                 <div class="row">
                     <div class="col-4">
                         <label for="studentNo">学生番号
-                            <input type="text" id="studentNo" name="studentNo" class="form-control"
+                            <input type="text" id="studentNo" name="studentNo" class="content-input"
                                    value="${studentNo}" placeholder="学生番号を入力してください" />
                         </label>
                     </div>

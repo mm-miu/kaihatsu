@@ -21,8 +21,6 @@
                 padding: 3px 3px;
             }
             
-            
-            
         </style>
         
         <div class="border"></div>
