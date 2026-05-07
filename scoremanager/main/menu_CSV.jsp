@@ -8,8 +8,7 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
-        <h2 class="main-title">科目情報変更</h2>
-        <label><p class="message">変更が完了しました</p></label>
-        <a href="SubjectList.action">科目一覧</a>
+        <h2 class="main-title">CSV読み込み</h2>
+        <a href="student_CSV.jsp">学生登録</a>
     </c:param>
 </c:import>

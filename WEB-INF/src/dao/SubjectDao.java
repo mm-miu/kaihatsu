@@ -1,5 +1,7 @@
 package dao;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import bean.Subject;
@@ -206,4 +208,40 @@ public class SubjectDao extends Dao {
             return false;
         }
     }
+
+    public boolean readInsertCSV(
+        Part csv,
+        School school) throws Exception {
+            int count = 0;
+            try (
+                BufferedReader br =
+                new BufferedReader(
+                    new InputStreamReader(
+                    csv.getInputStream(),
+                    "UTF-8"))
+                ) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        // 空行スキップ
+                        if (line.isBlank()) {
+                            continue;
+                        }
+                        String[] data = line.split(",");
+                        // 列不足対策
+                        if (data.length < 2) {
+                            continue;
+                        }
+                        Subject subject = new Subject();
+                        subject.setCd(data[0].trim());
+                        subject.setName(data[1].trim());
+                        // 学校セット
+                        subject.setSchool(school);
+                        // save()呼び出し
+                        if (save(subject)) {
+                            count++;
+                        }
+                    }
+                }
+                return count > 0;
+        }
 }

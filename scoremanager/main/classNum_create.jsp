@@ -12,22 +12,25 @@
 
     <c:param name="content">
 
-        <h2>クラス情報登録</h2>
+        <h2 class="main-title">クラス情報登録</h2>
 
         <form action="ClassCreateExecute.action">
-            <label for="num">クラス番号</label>
-            <input type="text" id="num" name="num" 
-                value="${empty num ? 'クラス番号を入力してください' : num}" pattern="\d+" maxlength="3" required>
-            <br>
-            <c:if test="${not empty errors.num}">
-                <p style="color:gold">${errors.num}</p>
-            </c:if>
-            <c:if test="${not empty errors.num_count}">
-                <p style="color:gold">${errors.num_count}</p>
-            </c:if>
-
-            <button name="end" type="submit">登録</button>
-            <br>
+            <div class="content-input">
+                <label for="num">クラス番号</label>
+                <input type="text" id="num" name="num" 
+                    value="${empty num ? 'クラス番号を入力してください' : num}" pattern="\d+" maxlength="3" required>
+                <br>
+                <c:if test="${not empty errors.num}">
+                    <p style="color:gold">${errors.num}</p>
+                </c:if>
+                <c:if test="${not empty errors.num_count}">
+                    <p style="color:gold">${errors.num_count}</p>
+                </c:if>
+            </div>
+            <div class="button-2">
+                <button name="end" type="submit">登録</button>
+                <br>
+            </div>
         </form>
 
         <a href="ClassList.action">戻る</a>

@@ -9,7 +9,7 @@ pageEncoding="UTF-8" %>
 
     <c:param name="content">
         <h2 class="main-title">成績管理</h2>
-        <label><p>登録が完了しました</p></label>
+        <label><p class="message">登録が完了しました</p></label>
         <a href="TestRegist.action">戻る</a>
         <a href="TestList.action">成績参照</a>
     </c:param>
