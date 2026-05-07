@@ -12,20 +12,22 @@
 
     <c:param name="content">
 
-        <h2>学生情報変更</h2>
+        <h2 class="main-title">学生情報変更</h2>
 
         <form action="StudentUpdateExecute.action">
-            <label for="ent_year">入学年度</label>
-            <input type="text" id="ent_year" name="ent_year" value="${ent_year}" readonly>
-            <br>
+            <div class="content-input">
+                <label for="ent_year">入学年度</label>
+                <input type="text" id="ent_year" name="ent_year" value="${ent_year}" readonly>
+                <br>
 
-            <label for="no">学生番号</label>
-            <input type="text" id="no" name="no" value="${no}" readonly>
-            <br>
+                <label for="no">学生番号</label>
+                <input type="text" id="no" name="no" value="${no}" readonly>
+                <br>
 
-            <label for="name">氏名</label>
-            <input type="text" id="name" name="name" value="${name}" required>
-            <br>
+                <label for="name">氏名</label>
+                <input type="text" id="name" name="name" value="${name}" required>
+                <br>
+            </div>
 
             <label for="class_num">クラス</label>
             <select id="class_num" name="class_num">
@@ -40,7 +42,6 @@
                 </c:forEach>
             </select>
             <br>
-
             <label>
                 在学中
                 <input type="checkbox" name="is_attend"
@@ -48,9 +49,11 @@
                 >
             </label>
             <br>
-
-            <button name="login" type="submit">変更</button>
-            <br>
+            
+            <div class="button-2">
+                <button name="login" type="submit">変更</button>
+                <br>
+            </div>
         </form>
 
         <a href="StudentList.action">戻る</a>

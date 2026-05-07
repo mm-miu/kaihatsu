@@ -12,7 +12,7 @@
 
     <c:param name="content">
 
-        <h2>学生情報登録</h2>
+        <h2 class="main-title">学生情報登録</h2>
 
         <form action="StudentCreateExecute.action">
             <label for="ent_year">入学年度</label>
@@ -25,20 +25,26 @@
                 </c:forEach>
             </select>
             <br>
-            <c:if test="${not empty errors.ent_year}">
-                <p style="color:gold">${errors.ent_year}</p>
-            </c:if>
 
-            <label for="no">学生番号</label>
-            <input type="text" id="no" name="no" value="${empty no ? '学生番号を入力してください' : no}" required>
-            <br>
-            <c:if test="${not empty errors.no}">
-                <p style="color:gold">${errors.no}</p>
-            </c:if>
+            <div class="content-input">
+                <c:if test="${not empty errors.ent_year}">
+                    <p style="color:gold">${errors.ent_year}</p>
+                </c:if>
 
-            <label for="name">氏名</label>
-            <input type="text" id="name" name="name" value="${empty name ? '氏名を入力してください' : name}" required>
-            <br>
+                <label for="no">学生番号</label><br>
+                <input type="text" id="no" name="no" value="${empty no ? '学生番号を入力してください' : no}" required>
+                <br>
+            </div>
+
+            <div class="content-input">
+                <c:if test="${not empty errors.no}">
+                    <p style="color:gold">${errors.no}</p>
+                </c:if>
+
+                <label for="name">氏名</label><br>
+                <input type="text" id="name" name="name" value="${empty name ? '氏名を入力してください' : name}" required>
+                <br>
+            </div>
 
             <label for="class_num">クラス</label>
             <select id="class_num" name="class_num">
@@ -48,9 +54,11 @@
                 </c:forEach>
             </select>
             <br>
-
-            <button name="end" type="submit">登録して終了</button>
-            <br>
+            
+            <div class="button-2">
+                <button name="end" type="submit">登録して終了</button>
+                <br>
+            </div>
         </form>
 
         <a href="StudentList.action">戻る</a>

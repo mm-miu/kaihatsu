@@ -85,7 +85,6 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding-top: 80px;
     }
     /* ボックス 枠*/
     .login-box {
@@ -252,7 +251,6 @@
     select{
       width: 100%;
       padding: 5px;
-      border: 1px solid #ccc;
       border-radius: 4px;
     }
     /* フォームのチェックボックス */
@@ -276,6 +274,7 @@
       width: 100%;
       border-collapse: collapse;
       background: white;
+      margin-bottom: 10px;
     }
     th{
       border: 1px solid #ccc;
@@ -291,11 +290,18 @@
     tr:hover{
       background-color: #dde3e9;
     }
-
-
-    /* 成績管理　検索フォーム */
-    button {
-      padding-top: 10px;
+    
+    /* 新規登録　入力画面 */
+    .content-input {
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+    .content-input input{
+      width: 100%;
+      height: 7%;
+    }
+    .button-2 button{
+      margin-top: 20px;
     }
 
   </style>
