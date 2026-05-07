@@ -46,7 +46,7 @@
                             <td><c:out value="${row.num}" /></td>
                             <td><c:out value="${row.point}" /></td>
                             <td>
-                                <a href="/DeleteTest.action?student_no=${row.studentNo}&subject_cd=${row.subjectCd}&school_cd=${row.schoolCd}&no=${row.num}"
+                                <a href="DeleteTest.action?student_no=${row.studentNo}&subject_cd=${row.subjectCd}&school_cd=${row.schoolCd}&no=${row.num}"
                                  onclick="return confirm('本当に削除しますか？');">削除</a>
                                 <!--ボタンの方がいいと勧められた↓
                                 <button type="submit" class="link-button"
