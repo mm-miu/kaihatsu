@@ -4,7 +4,7 @@ import tool.Action;
 import bean.Teacher;
 import jakarta.servlet.http.*;
 
-public class ClassCreateAction extends Action {
+public class ClassNumCreateAction extends Action {
 
     @Override
     public void execute(

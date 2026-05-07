@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ClassCreateExecuteAction extends Action {
+public class ClassNumCreateExecuteAction extends Action {
 
     @Override
     public void execute(
