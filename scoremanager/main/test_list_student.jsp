@@ -35,6 +35,7 @@
                         <th>科目コード</th>
                         <th>回数</th>
                         <th>点数</th>
+                        <th>削除</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,15 +44,16 @@
                             <td><c:out value="${row.subjectName}" /></td>
                             <td><c:out value="${row.subjectCd}" /></td>
                             <td><c:out value="${row.num}" /></td>
-                            <td><c:out value="${row.point}" /></td> 
-                            <td><!--削除ボタン-->
-                                <form action="DeleteTest.action" method="post" style="display:inline;">
-                                    <input type="hidden" name="student_no" value="${row.studentNo}">
-                                    <input type="hidden" name="subject_cd" value="${row.subjectCd}">
-                                    <input type="hidden" name="school_cd" value="${row.schoolCd}">
-                                    <input type="hidden" name="no" value="${row.num}">
-                                    <button type="submit" onclick="return confirm('本当に削除しますか？')">削除</button>
-                                </form>
+                            <td><c:out value="${row.point}" /></td>
+                            <td>
+                                <a href="/test/delete?student_no=${row.studentNo}&subject_cd=${row.subjectCd}&school_cd=${row.schoolCd}&no=${row.num}"
+                                 onclick="return confirm('本当に削除しますか？');">削除</a>
+                                <!--ボタンの方がいいと勧められた↓
+                                <button type="submit" class="link-button"
+                                 onclick="return confirm('本当に削除しますか？');">
+                                 削除
+                                </button> 
+                                -->
                             </td>
                         </tr>
                     </c:forEach> 
