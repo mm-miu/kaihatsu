@@ -275,7 +275,7 @@ public class TestDao extends Dao {
             ps.setString(3, schoolCd);
             ps.setInt(4, no);
 
-            return ps.executeUpdate() == 1;//なぜいるかわからない
+            return ps.executeUpdate() == 1;
         }
     }
 }

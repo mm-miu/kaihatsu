@@ -19,7 +19,7 @@
                     <a href="SubjectList.action">科目管理</a>
                 </div>
                 <div class="menu-card class">
-                    <a href="ClassList.action">クラス管理</a>
+                    <a href="ClassNumList.action">クラス管理</a>
                 </div>
             </div>
         </section>
