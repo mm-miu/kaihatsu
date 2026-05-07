@@ -83,7 +83,7 @@
                                 <td>${test.classNum.class_num}</td>
                                 <td>${test.student.no}</td>
                                 <td>${test.student.name}</td>
-                                <td><input type="number" name="point_${test.student.no}" inputmode="numeric" value="${test.point}" required></td>
+                                <td><input type="number" name="point_${test.student.no}" inputmode="numeric" min="1" max="100" maxlength="3" value="${test.point}" required></td>
                                 <!-- <td class="text-center"> -->
                                 <c:if test="${not empty errors[test.student.no]}">
                                     <p style="color:gold">${errors[test.student.no]}</p>
