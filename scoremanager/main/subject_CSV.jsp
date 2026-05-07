@@ -40,8 +40,6 @@
 
         </form>
 
-        <a href="SubjectList.action">戻る</a>
-
     </c:param>
 
 </c:import>

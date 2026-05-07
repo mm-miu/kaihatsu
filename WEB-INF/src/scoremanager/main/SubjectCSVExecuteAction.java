@@ -29,6 +29,6 @@ public class SubjectCSVExecuteAction extends Action {
         boolean result =
             dao.readInsertCSV(csvPart, school);
 
-        response.sendRedirect("subject_CSV.jsp");
+        response.sendRedirect("subject_create_done.jsp");
     }
 }
