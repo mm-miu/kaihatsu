@@ -318,6 +318,15 @@
       margin-left: 10px;
     }
 
+    /* 科目管理の削除用ボタン */
+    .border button {
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: rgb(216, 64, 64);  
+      color: white;
+      padding: 3px 3px;
+    }
+
   </style>
 
 </head>
