@@ -313,7 +313,7 @@
     }
 
 
-    /* 成績参照 */
+    /* 成績参照 h4　科目情報　学生情報*/
     .content-title{
       margin-left: 10px;
     }

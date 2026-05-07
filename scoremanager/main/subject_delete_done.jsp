@@ -11,18 +11,7 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-        <style>
-            p.scses {
-                text-align: center; 
-                background-color: rgb(177, 237, 185); 
-                    }
-            a.scses{ 
-                text-align: center;
-                    }
-        </style>
-        
-        <p class="scses">変更が完了しました</p>
-        <a class="scses" href="SubjectList.action" >科目一覧</a>
-        
+        <p class="message">変更が完了しました</p>
+        <a href="SubjectList.action" >科目一覧</a>
     </c:param>
 </c:import>
