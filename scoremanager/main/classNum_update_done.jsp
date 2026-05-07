@@ -8,8 +8,8 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
-        <h2>クラス情報変更</h2>
-        <label><p>変更が完了しました</p></label>
+        <h2 class="main-title">クラス情報変更</h2>
+        <label><p class="message">変更が完了しました</p></label>
         <a href="ClassNumList.action">クラス一覧</a>
     </c:param>
 </c:import>

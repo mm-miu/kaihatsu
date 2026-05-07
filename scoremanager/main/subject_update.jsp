@@ -15,21 +15,26 @@
         <h2 class="main-title">科目情報変更</h2>
 
         <form action="SubjectUpdateExecute.action">
-            <label for="cd">科目コード</label>
-            <input type="text" id="cd" name="cd" value="${cd}" readonly>
-            <br>
+            <div class="content-input">
+                <label for="cd">科目コード</label>
+                <input type="text" id="cd" name="cd" value="${cd}" readonly>
+                <br>
 
-            <!-- 変更中に別画面から対象の科目が削除された場合 -->
-            <c:if test="${not empty errors.cd}">
-                <p style="color:gold">${errors.cd}</p>
-            </c:if>
+                <!-- 変更中に別画面から対象の科目が削除された場合 -->
+                <c:if test="${not empty errors.cd}">
+                    <p style="color:gold">${errors.cd}</p>
+                </c:if>
+            </div>
 
-            <label for="name">科目名</label>
-            <input type="text" id="name" name="name" value="${name}" maxlength="20" required>
-            <br>
-
-            <button type="submit">変更</button>
-            <br>
+            <div class="content-input">
+                <label for="name">科目名</label>
+                <input type="text" id="name" name="name" value="${name}" maxlength="20" required>
+                <br>
+            </div>
+            <div class="button-2">
+                <button type="submit">変更</button>
+                <br>
+            </div>
         </form>
 
         <a href="SubjectList.action">戻る</a>
