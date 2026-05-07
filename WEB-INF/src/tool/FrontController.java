@@ -5,8 +5,10 @@ import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.MultipartConfig;
 
 @WebServlet(urlPatterns={"*.action"})
+@MultipartConfig
 public class FrontController extends HttpServlet {
 
     @Override

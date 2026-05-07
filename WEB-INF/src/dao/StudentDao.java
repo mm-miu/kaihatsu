@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import jakarta.servlet.http.Part;
 
 public class StudentDao extends Dao {
     
@@ -466,14 +468,17 @@ public class StudentDao extends Dao {
     }
 
 
-    public boolean readInsertCSV(String filePath) throws Exception {
+    public boolean readInsertCSV(Part csv) throws Exception {
 
         String sql = "insert into student(no, name, ent_year, class_num, is_attend, school_cd) values(?, ?, ?, ?, ?, ?)";
         int count = 0;
 
         try (Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
-            BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(csv.getInputStream(), "UTF-8"))) {
+                        
+            con.setAutoCommit(false);
             String line;
 
             while ((line = br.readLine()) != null) {
@@ -486,6 +491,7 @@ public class StudentDao extends Dao {
                 ps.setString(6, data[5].trim());
                 count += ps.executeUpdate();
             }
+            con.commit();
         }
         return count > 0;
     }
