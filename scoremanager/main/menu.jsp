@@ -21,6 +21,9 @@
                 <div class="menu-card class">
                     <a href="ClassNumList.action">クラス管理</a>
                 </div>
+                <div class="menu-card CSV">
+                    <a href="menu_CSV.jsp">CSV読み込み</a>
+                </div>
             </div>
         </section>
     </c:set>

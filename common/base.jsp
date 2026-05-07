@@ -52,6 +52,7 @@
       background-color: #e9ecef;
       padding: 10px;
       border-radius: 5px;
+      margin-bottom: 30px;
     }
     /* 登録や削除の完了画面のメッセージ */
     .message{
@@ -155,14 +156,15 @@
      /* メニュー画面 menu.jsp*/
     /* カード全体 */
     .menu-grid{
-      display: flex;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
       margin-top: 20px;
     }
     /* カード自体 */
     .menu-card{
       flex: 1;
-      height: 120px;
+      height: 140px;
       border-radius: 10px;
       justify-content: center;
       align-items: center;
@@ -194,8 +196,14 @@
       background-color: 	#CCFFFF;
       text-align: center;
     }
+    /* カード　クラス管理 */
     .menu-card.class{
-      background-color: #FFFF99;
+      background-color: #FFCC99;
+      text-align: center;
+    }
+    /* カード　CSV読み込み */
+    .menu-card.CSV{
+      background-color: #FFFFCC	;
       text-align: center;
     }
     /*文字　成績管理*/
@@ -307,6 +315,7 @@
       width: 100%;
       height: 8%;
     }
+
     /* 変更時、新規などの時用ボタン */
     .button-2 button{
       margin-top: 20px;
@@ -317,6 +326,7 @@
     .content-title{
       margin-left: 10px;
     }
+
 
     /* 科目管理の削除用ボタン */
     .border button {
