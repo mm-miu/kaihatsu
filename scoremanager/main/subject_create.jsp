@@ -15,6 +15,7 @@
         <h2 class="main-title">科目情報登録</h2>
 
         <form action="SubjectCreateExecute.action">
+            
             <div class="content-input">
                 <label for="cd">科目コード</label>
                 <input type="text" id="cd" name="cd" 
@@ -27,6 +28,7 @@
                     <p style="color:gold">${errors.cd_count}</p>
                 </c:if>
             </div>
+            
             <div class="content-input">
                 <label for="name">科目名</label>
                 <input type="text" id="name" name="name" value="${empty name ? '科目名を入力してください' : name}" maxlength="20" required>
