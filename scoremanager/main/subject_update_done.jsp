@@ -8,7 +8,7 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
-        <h2>科目情報変更</h2>
+        <h2 class="main-title">科目情報変更</h2>
         <label><p>変更が完了しました</p></label>
         <a href="SubjectList.action">科目一覧</a>
     </c:param>

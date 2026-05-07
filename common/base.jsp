@@ -46,14 +46,18 @@
       padding: 20px;
     }
 
-    /* コンテンツタイトル */
+    /* コンテンツタイトル h2*/
     .main-title {
       font-weight: bold;
       background-color: #e9ecef;
       padding: 10px;
       border-radius: 5px;
     }
-
+    /* 登録や削除の完了画面のメッセージ */
+    .message{
+      background-color: #c2c2e1;
+      padding: 10px;
+    }
     /* サイドバー 文字全体*/
     .sidebar ul {
       list-style: none;
@@ -77,7 +81,7 @@
     }
     
 
-   /* こっからlogin.jspとerror.jsp */
+   /* login.jspとerror.jsp */
     /* ログインボックス内の文字
     　ログイン名、パスワード、表示
     */
@@ -294,15 +298,16 @@
     
 
 
-    /* 新規登録、変更　入力画面 */
+    /* 新規登録、変更　テキスト入力用 */
     .content-input {
       margin-bottom: 10px;
       margin-top: 10px;
     }
     .content-input input{
       width: 100%;
-      height: 7%;
+      height: 8%;
     }
+    /* 変更時、新規などの時用ボタン */
     .button-2 button{
       margin-top: 20px;
     }

@@ -6,7 +6,7 @@
 
 <c:param name="content">
 
-<h2>成績参照（科目別）</h2>
+<h2 class="main-title">成績参照（科目別）</h2>
 
 <!-- 上段：検索欄（test_list.jsp と同じ） -->
 <section>
