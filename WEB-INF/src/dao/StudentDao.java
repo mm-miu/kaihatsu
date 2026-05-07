@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class StudentDao extends Dao {
     
@@ -422,5 +424,69 @@ public class StudentDao extends Dao {
             // 実行件数が0件の場合
             return false;
         }
+    }
+
+    public boolean cNumUpdate(String cNum, String newCNum) throws Exception {
+        // コネクションを確立
+        Connection con=getConnection();
+        // プリペアードステートメント
+        PreparedStatement st=null;
+
+        try {
+            st=con.prepareStatement(
+                "update student set class_num=? where class_num=?"
+            );
+            st.setString(1, newCNum);
+            st.setString(2, cNum);
+
+            st.executeUpdate();
+
+            return true;
+
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            // プリペアードステートメントを閉じる
+            if (st!=null) {
+                try {
+                    st.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+            // コネクションを閉じる
+            if (con!=null) {
+                try {
+                    con.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+        }
+    }
+
+
+    public boolean readInsertCSV(String filePath) throws Exception {
+
+        String sql = "insert into student(no, name, ent_year, class_num, is_attend, school_cd) values(?, ?, ?, ?, ?, ?)";
+        int count = 0;
+
+        try (Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                ps.setString(1, data[0].trim());
+                ps.setString(2, data[1].trim());
+                ps.setString(3, data[2].trim());
+                ps.setString(4, data[3].trim());
+                ps.setString(5, data[4].trim());
+                ps.setString(6, data[5].trim());
+                count += ps.executeUpdate();
+            }
+        }
+        return count > 0;
     }
 }

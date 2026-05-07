@@ -17,7 +17,7 @@
         <form action="ClassCreateExecute.action">
             <label for="num">クラス番号</label>
             <input type="text" id="num" name="num" 
-                value="${empty num ? 'クラス番号を入力してください' : num}" pattern="\d+" required>
+                value="${empty num ? 'クラス番号を入力してください' : num}" pattern="\d+" maxlength="3" required>
             <br>
             <c:if test="${not empty errors.num}">
                 <p style="color:gold">${errors.num}</p>
