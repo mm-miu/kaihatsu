@@ -172,6 +172,10 @@ public class TestListAction extends Action {
             req.setAttribute("tests", filtered);
             req.setAttribute("studentNo", studentNo);
 
+            StudentDao studentDao = new StudentDao();
+            Student student = studentDao.get(studentNo); // StudentDao#get(String) を使用
+            req.setAttribute("student", student);
+
             req.getRequestDispatcher("test_list_student.jsp").forward(req, res);
             return;
         }
