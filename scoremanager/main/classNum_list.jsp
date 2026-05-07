@@ -8,13 +8,19 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
-        <h2>クラス管理</h2>
-        <a href="ClassCreate.action">新規登録</a>
+
+        <h2 class="main-title">クラス管理</h2>
+
+        <div class="new">
+            <a href="ClassCreate.action">新規登録</a>
+        </div>
 
         <p>${school.name}のクラス一覧</p>
 
         <table>
             <th>クラス番号</th>
+            <th></th>
+            <th></th>
             <c:forEach var="c" items="${classes}">
                 <tr>
                     <td>${c}</td>

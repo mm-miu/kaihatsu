@@ -208,7 +208,7 @@
 
 
     /* 学生一覧画面 フォームは共通のcss */
-    /* 新規登録 */
+    /* 新規登録 ＊科目の新規登録も同じ */
     .new{
       text-align: left;  
       margin-bottom: 10px;
