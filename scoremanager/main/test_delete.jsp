@@ -10,6 +10,6 @@
     <p><c:out value="${message}" /></p>
 
     <!-- 元の一覧へ戻るリンク -->
-    <p><a href="/test/list?student_no=${studentNo}">一覧へ戻る</a></p>
+    <p><a href="TestList.action?student_no=${studentNo}">一覧へ戻る</a></p>
   </c:param>
 </c:import>

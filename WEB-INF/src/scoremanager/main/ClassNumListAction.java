@@ -7,7 +7,7 @@ import bean.ClassNum;
 import dao.ClassNumDao;
 import java.util.List;
 
-public class ClassListAction extends Action {
+public class ClassNumListAction extends Action {
 
     @Override
     public void execute(
@@ -27,7 +27,7 @@ public class ClassListAction extends Action {
         request.setAttribute("school", teacher.getSchool());
 
         // JSPへフォワード
-        request.getRequestDispatcher("class_list.jsp").forward(request, response);
+        request.getRequestDispatcher("classNum_list.jsp").forward(request, response);
 
     }
 }
