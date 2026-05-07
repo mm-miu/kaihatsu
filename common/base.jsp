@@ -29,6 +29,7 @@
     span{
       margin: 5px;
     }
+    
     /*サイドバー全体*/
     .layout{
       display: flex;
@@ -40,6 +41,23 @@
       padding: 15px;
       margin-top: 10px;
     }
+    /* サイドバー 文字全体*/
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    /*　サイドバー成績管理　*/
+    .sidebar_title {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    /* サイドバー文字*/
+    .sidebar a {
+      text-decoration: none;
+      margin-bottom: 5px;
+      color: blue;
+    }
+
     /* コンテンツ 枠*/
     .main{
       flex: 1;
@@ -59,22 +77,7 @@
       background-color: #c2c2e1;
       padding: 10px;
     }
-    /* サイドバー 文字全体*/
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    /*　サイドバー成績管理　*/
-    .sidebar_title {
-      font-weight: bold;
-      margin-top: 15px;
-    }
-    /* サイドバー文字*/
-    .sidebar a {
-      text-decoration: none;
-      margin-bottom: 5px;
-      color: blue;
-    }
+
     /* フッター */
     footer{
       text-align: center;
