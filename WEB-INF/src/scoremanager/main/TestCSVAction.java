@@ -10,7 +10,7 @@ public class TestCSVAction extends Action {
 
         HttpSession session=request.getSession();
         request.setAttribute("user", session.getAttribute("user"));
-        request.getRequestDispatcher("test_csv.jsp").forward(request, response);
+        request.getRequestDispatcher("test_CSV.jsp").forward(request, response);
    
     }
 }
