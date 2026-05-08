@@ -3,7 +3,7 @@ package scoremanager.main;
 import tool.Action;
 import jakarta.servlet.http.*;
 
-public class MenuTestAction extends Action {
+public class TestCSVAction extends Action {
     public void execute(
         HttpServletRequest request, HttpServletResponse response
     ) throws Exception {
