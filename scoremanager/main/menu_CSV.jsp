@@ -22,7 +22,7 @@ pageEncoding="UTF-8" %>
             <div class="csv-menu-card subject_CSV">
                 <h2><a href="SubjectCSV.action">科目登録</a></h2>
             </div>
-            
+
         </div>
     </c:param>
 </c:import>
