@@ -10,19 +10,17 @@
                 <div class="menu-card student">
                     <h2><a href="StudentList.action">学生管理</a></h2>
                 </div>
-                    <div class="menu-card test">
-                        <div class="menu-title">成績管理</div>
-                            <a href="TestRegist.action">成績登録</a>
-                            <a href="TestList.action">成績参照</a>
-                    </div>
+                <div class="menu-card test">
+                    <h2><a href="MenuTest.action">成績管理</a></h2>
+                </div>
                 <div class="menu-card subject">
                     <h2><a href="SubjectList.action">科目管理</a></h2>
                 </div>
                 <div class="menu-card class">
-                    <a href="ClassNumList.action">クラス管理</a>
+                    <h2><a href="ClassNumList.action">クラス管理</a></h2>
                 </div>
                 <div class="menu-card CSV">
-                    <a href="MenuCSV.action">CSV読み込み</a>
+                    <h2><a href="MenuCSV.action">CSV読み込み</a></h2>
                 </div>
             </div>
         </section>
