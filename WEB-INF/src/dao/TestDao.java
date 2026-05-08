@@ -205,12 +205,12 @@ public class TestDao extends Dao {
             "VALUES(?, ?, ?, ?, ?)";
 
         try (PreparedStatement ps = con.prepareStatement(sql)) {
-
-        ps.setString(1, t.getStudent().getNo());
-        ps.setString(2, t.getSubject().getCd());
-        ps.setString(3, t.getSchool().getCd());
-        ps.setInt(4, t.getNo());
-        ps.setInt(5, t.getPoint());
+            
+            ps.setString(1, t.getStudent().getNo());
+            ps.setString(2, t.getSubject().getCd());
+            ps.setString(3, t.getSchool().getCd());
+            ps.setInt(4, t.getNo());
+            ps.setInt(5, t.getPoint());
 
             return ps.executeUpdate() == 1;
         }
@@ -286,57 +286,57 @@ public class TestDao extends Dao {
     // 9. CSV（）
     // -------------------------------------------------------
     public boolean readInsertCSV(Part csv, School school) throws Exception {
-
-    String sql = "INSERT INTO TEST (STUDENT_NO, SUBJECT_CD, SCHOOL_CD, NO, POINT) VALUES (?, ?, ?, ?, ?)";
+        
+        String sql = "INSERT INTO TEST (STUDENT_NO, SUBJECT_CD, SCHOOL_CD, NO, POINT) VALUES (?, ?, ?, ?, ?)";
     int count = 0;
 
-    try (Connection con = getConnection();
-         PreparedStatement ps = con.prepareStatement(sql);
-         BufferedReader br = new BufferedReader(new InputStreamReader(csv.getInputStream(), "UTF-8"))) {
+        try (Connection con = getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             BufferedReader br = new BufferedReader(new InputStreamReader(csv.getInputStream(), "UTF-8"))) {
 
-        con.setAutoCommit(false);
+            con.setAutoCommit(false);
 
-        String line;
-        while ((line = br.readLine()) != null) {
-            // 空行スキップ
-            if (line == null || line.trim().isEmpty()) {
-                continue;
+            String line;
+            while ((line = br.readLine()) != null) {
+                // 空行スキップ
+                if (line == null || line.trim().isEmpty()) {
+                   continue;
+                }
+
+                String[] data = line.split(",");
+                // 列不足はスキップ
+               if (data.length < 4) {
+                   continue;
+                }
+
+                String studentNo = data[0].trim();
+                String subjectCd = data[1].trim();
+                String noStr = data[2].trim();
+                String pointStr = data[3].trim();
+
+                // 数値変換チェック
+                int no;
+                int point;
+                try {
+                    no = Integer.parseInt(noStr);
+                    point = Integer.parseInt(pointStr);
+                } catch (NumberFormatException e) {
+                    // フォーマット不正はスキップ（必要ならここで rollback して false を返す設計にもできる）
+                    continue;
+                }
+
+                ps.setString(1, studentNo);
+                ps.setString(2, subjectCd);
+                ps.setString(3, school.getCd());
+                ps.setInt(4, no);
+                ps.setInt(5, point);
+
+                count += ps.executeUpdate();
             }
 
-            String[] data = line.split(",");
-            // 列不足はスキップ
-            if (data.length < 4) {
-                continue;
-            }
-
-            String studentNo = data[0].trim();
-            String subjectCd = data[1].trim();
-            String noStr = data[2].trim();
-            String pointStr = data[3].trim();
-
-            // 数値変換チェック
-            int no;
-            int point;
-            try {
-                no = Integer.parseInt(noStr);
-                point = Integer.parseInt(pointStr);
-            } catch (NumberFormatException e) {
-                // フォーマット不正はスキップ（必要ならここで rollback して false を返す設計にもできる）
-                continue;
-            }
-
-            ps.setString(1, studentNo);
-            ps.setString(2, subjectCd);
-            ps.setString(3, school.getCd());
-            ps.setInt(4, no);
-            ps.setInt(5, point);
-
-            count += ps.executeUpdate();
+            con.commit();
         }
 
-        con.commit();
+        return count > 0;
     }
-
-    return count > 0;
-}
 }
