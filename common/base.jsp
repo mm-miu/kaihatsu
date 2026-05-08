@@ -128,6 +128,10 @@
       border: none;
       border-radius: 5px;
     }
+    /* ログイン失敗時エラー文 */
+    .errors_login_text{
+      color: red;
+    }
 
 
     /* ログアウト画面 logout.jsp*/
@@ -144,9 +148,9 @@
       padding: 20px;
       text-align: left;
     }
-    /* p メッセージ */
+    /* p ログアウト　メッセージ */
     .logout_main p{
-      background-color: #6699CC;
+      background-color: #c2c2e1;
       padding: 10px;
     }
     /* ログインへのリンク */
@@ -307,7 +311,7 @@
       background-color: #dde3e9;
     }
 
-    /* 検索時、入学年度未記入エラー */
+    /* 検索時、入学年度未記入エラー文 */
     .errors_student_list{
       width: 100%;
       color: red;
@@ -375,7 +379,7 @@
             <li><a href="/kaihatsu/scoremanager/main/TestRegist.action">　　成績登録</a></li>
             <li><a href="/kaihatsu/scoremanager/main/TestList.action">　　成績参照</a></li><br>
             <li><a href="/kaihatsu/scoremanager/main/SubjectList.action">科目管理</a></li><br>
-            <li><a href="/kaihatsu/scoremanager/main/ClassNumList.action">クラス管理</a></li>
+            <li><a href="/kaihatsu/scoremanager/main/ClassNumList.action">クラス管理</a></li><br>
             <li><a href="/kaihatsu/scoremanager/main/MenuCSV.action">CSV読み込み</a></li>
           </ul>
         </nav>
