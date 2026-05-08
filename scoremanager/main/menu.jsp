@@ -8,7 +8,7 @@
             <h2 class="main-title">メニュー</h2>
             <div class="menu-grid">
                 <div class="menu-card student">
-                    <a href="StudentList.action">学生管理</a>
+                    <h3><a href="StudentList.action">学生管理</a></h3>
                 </div>
                     <div class="menu-card score">
                         <div class="menu-title">成績管理</div>

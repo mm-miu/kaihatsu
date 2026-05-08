@@ -22,10 +22,10 @@
                     value="${empty cd ? '科目コードを入力してください' : cd}" maxlength="3" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
-                    <p style="color:gold">${errors.cd}</p>
+                    <p style="color:red">${errors.cd}</p>
                 </c:if>
                 <c:if test="${not empty errors.cd_count}">
-                    <p style="color:gold">${errors.cd_count}</p>
+                    <p style="color:red">${errors.cd_count}</p>
                 </c:if>
             </div>
             
@@ -34,7 +34,7 @@
                 <input type="text" id="name" name="name" value="${empty name ? '科目名を入力してください' : name}" maxlength="20" required>
                 <br>
                 <c:if test="${not empty errors.name}">
-                    <p style="color:gold">${errors.name}</p>
+                    <p style="color:red">${errors.name}</p>
                 </c:if>
             </div>
             <div class="button-2">
