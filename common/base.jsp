@@ -324,13 +324,33 @@
       width: 100%;
       height: 8%;
     }
-
     /* 変更時、新規などの時用ボタン */
     .button-2 button{
       margin-top: 20px;
     }
 
 
+    /* 成績メニュー menu_test.jsp*/
+    .test-menu-card{
+      flex: 1;
+      height: 170px;
+      border-radius: 10px;
+      margin-top: 25px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      display: flex;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+    .test-menu-card.test_regist{
+      background-color: ;
+    }
+    .test-menu-card.test_list{
+      background-color: ;
+    }
     /* 成績参照 h4　科目情報　学生情報*/
     .content-title{
       margin-left: 10px;
@@ -365,7 +385,6 @@
     }
     /* カード　学生登録*/
     .csv-menu-card.student_CSV{
-      text-align: center;
       background-color: 	#FFCCCC;
     }
     /* カード成績登録 */
