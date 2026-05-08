@@ -288,7 +288,7 @@ public class TestDao extends Dao {
     public boolean readInsertCSV(Part csv, School school) throws Exception {
         
         String sql = "INSERT INTO TEST (STUDENT_NO, SUBJECT_CD, SCHOOL_CD, NO, POINT) VALUES (?, ?, ?, ?, ?)";
-    int count = 0;
+        int count = 0;
 
         try (Connection con = getConnection();
              PreparedStatement ps = con.prepareStatement(sql);
