@@ -11,5 +11,6 @@ pageEncoding="UTF-8" %>
         <h2 class="main-title">CSV読み込み</h2>
         <a href="student_CSV.jsp">学生登録</a>
         <a href="subject_CSV.jsp">科目登録</a>
+        <a href="test_CSV.jsp">成績登録</a>
     </c:param>
 </c:import>
