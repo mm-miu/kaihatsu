@@ -13,15 +13,15 @@ pageEncoding="UTF-8" %>
         <div class="menu-grid">
 
             <div class="menu-card student_CSV">
-                <a href="StudentCSV.action">学生登録</a>
+                <h2><a href="StudentCSV.action">学生登録</a></h2>
             </div>
             
             <div class="menu-card subject_CSV">
-                <a href="SubjectCSV.action">科目登録</a>
+                <h2><a href="SubjectCSV.action">科目登録</a></h2>
             </div>
 
             <div class="menu-card test_CSV">
-                <a href="TestCSV.action">成績登録</a>
+                <h2><a href="TestCSV.action">成績登録</a></h2>
             </div>
         </div>
     </c:param>
