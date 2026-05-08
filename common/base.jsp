@@ -396,6 +396,17 @@
       background-color: #CCFFFF;
     }
 
+    /*登録CSV
+    　student_CSV.jsp subject_CSV.jsp test_CSV.jsp  */
+    .tr{
+      margin: 20px;
+    }
+    .td{
+      margin-top: 15px;
+
+    }
+    
+
   </style>
 
 </head>

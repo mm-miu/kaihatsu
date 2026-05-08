@@ -10,7 +10,7 @@
 
     <c:param name="content">
 
-        <h2>成績CSV読み込み</h2>
+        <h2 class="main-title">成績CSV読み込み</h2>
 
         <form action="TestCSVExecute.action"
               method="POST"
