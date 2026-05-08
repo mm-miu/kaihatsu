@@ -29,7 +29,6 @@
     span{
       margin: 5px;
     }
-    
     /*サイドバー全体*/
     .layout{
       display: flex;
@@ -57,7 +56,7 @@
       margin-bottom: 5px;
       color: blue;
     }
-
+    
     /* コンテンツ 枠*/
     .main{
       flex: 1;
