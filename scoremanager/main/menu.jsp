@@ -8,15 +8,15 @@
             <h2 class="main-title">メニュー</h2>
             <div class="menu-grid">
                 <div class="menu-card student">
-                    <h3><a href="StudentList.action">学生管理</a></h3>
+                    <h2><a href="StudentList.action">学生管理</a></h2>
                 </div>
-                    <div class="menu-card score">
+                    <div class="menu-card test">
                         <div class="menu-title">成績管理</div>
                             <a href="TestRegist.action">成績登録</a>
                             <a href="TestList.action">成績参照</a>
                     </div>
                 <div class="menu-card subject">
-                    <a href="SubjectList.action">科目管理</a>
+                    <h2><a href="SubjectList.action">科目管理</a></h2>
                 </div>
                 <div class="menu-card class">
                     <a href="ClassNumList.action">クラス管理</a>

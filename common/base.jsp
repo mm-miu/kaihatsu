@@ -192,7 +192,7 @@
       text-align: center;
     }
     /* カード　成績管理 */
-    .menu-card.score{
+    .menu-card.test{
       background-color: #CCFFCC;
       text-align: center;
       flex-direction: column;
@@ -351,6 +351,20 @@
       padding: 3px 3px;
     }
 
+
+    /* CSV読み込みメニュー */
+    .menu-card.student_CSV{
+      text-align: center;
+      background-color: ;
+    }
+    .memu-card.subject_CSV{
+      text-align: center;
+      background-color: ;
+    }
+    .menu-card.test_CSV{
+      text-align: center;
+      background-color: ;
+    }
   </style>
 
 </head>
