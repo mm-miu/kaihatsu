@@ -396,7 +396,7 @@
       background-color: #CCFFFF;
     }
 
-    /*登録CSV
+    /*CSVファイル選択追加画面
     　student_CSV.jsp subject_CSV.jsp test_CSV.jsp  */
     .tr{
       margin: 20px;
