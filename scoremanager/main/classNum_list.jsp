@@ -20,12 +20,12 @@ pageEncoding="UTF-8" %>
         <table>
             <th>クラス番号</th>
             <th></th>
-            <th></th>
+            <!-- <th></th> -->
             <c:forEach var="c" items="${classes}">
                 <tr>
                     <td>${c}</td>
                     <td><a href="ClassNumUpdate.action?school_cd=${school.cd}&cd=${c}">変更</a></td>
-                    <td><a href="ClassNumDelete.action?school_cd=${school.cd}&cd=${c}">削除</a></td>
+                    <!-- <td><a href="ClassNumDelete.action?school_cd=${school.cd}&cd=${c}">削除</a></td> -->
                 </tr>
             </c:forEach>
         </table>
