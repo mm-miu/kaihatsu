@@ -10,7 +10,7 @@ public class MenuTestAction extends Action {
 
         HttpSession session=request.getSession();
         request.setAttribute("user", session.getAttribute("user"));
-        request.getRequestDispatcher("menu_test.jsp").forward(request, response);
+        request.getRequestDispatcher("test_csv.jsp").forward(request, response);
    
     }
 }
