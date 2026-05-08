@@ -9,12 +9,13 @@ pageEncoding="UTF-8" %>
 
     <c:param name="content">
         <h2 class="main-title">CSV読み込み</h2>
+
         <div class="menu-grid">
-            
+
             <div class="menu-card student_CSV">
                 <a href="StudentCSV.action">学生登録</a>
             </div>
-
+            
             <div class="menu-card subject_CSV">
                 <a href="SubjectCSV.action">科目登録</a>
             </div>

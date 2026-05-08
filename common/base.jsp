@@ -355,9 +355,9 @@
     /* CSV読み込みメニュー */
     .menu-card.student_CSV{
       text-align: center;
-      background-color: ;
+      background-color: 	;
     }
-    .memu-card.subject_CSV{
+    .menu-card.subject_CSV{
       text-align: center;
       background-color: ;
     }

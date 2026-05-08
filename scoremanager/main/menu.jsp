@@ -19,10 +19,10 @@
                     <h2><a href="SubjectList.action">科目管理</a></h2>
                 </div>
                 <div class="menu-card class">
-                    <a href="ClassNumList.action">クラス管理</a>
+                    <h2><a href="ClassNumList.action">クラス管理</a></h2>
                 </div>
                 <div class="menu-card CSV">
-                    <a href="MenuCSV.action">CSV読み込み</a>
+                    <h2><a href="MenuCSV.action">CSV読み込み</a></h2>
                 </div>
             </div>
         </section>
