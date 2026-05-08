@@ -60,6 +60,10 @@
                 </label>
             </div>
 
+            <c:if test="${not empty error}">
+                <p style="color:red">${error}</p>
+            </c:if>
+
             <div class="col-2 text-center">
                 <button class="btn btn-secondary" id="filter-botton">検索</button>
             </div>
@@ -86,7 +90,7 @@
                                 <td><input type="number" name="point_${test.student.no}" inputmode="numeric" min="1" max="100" maxlength="3" value="${test.point}" required></td>
                                 <!-- <td class="text-center"> -->
                                 <c:if test="${not empty errors[test.student.no]}">
-                                    <p style="color:gold">${errors[test.student.no]}</p>
+                                    <p style="color:red">${errors[test.student.no]}</p>
                                 </c:if>
                                 <input type="hidden" name="regist" value="${test.student.no}">
                             </tr>

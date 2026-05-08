@@ -21,10 +21,10 @@
                     value="${empty num ? 'クラス番号を入力してください' : num}" pattern="\d+" maxlength="3" required>
                 <br>
                 <c:if test="${not empty errors.num}">
-                    <p style="color:gold">${errors.num}</p>
+                    <p style="color:red">${errors.num}</p>
                 </c:if>
                 <c:if test="${not empty errors.num_count}">
-                    <p style="color:gold">${errors.num_count}</p>
+                    <p style="color:red">${errors.num_count}</p>
                 </c:if>
             </div>
             <div class="button-2">

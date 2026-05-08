@@ -28,7 +28,7 @@
 
             <div class="content-input">
                 <c:if test="${not empty errors.ent_year}">
-                    <p style="color:gold">${errors.ent_year}</p>
+                    <p style="color:red">${errors.ent_year}</p>
                 </c:if>
 
                 <label for="no">学生番号</label><br>
@@ -38,7 +38,7 @@
 
             <div class="content-input">
                 <c:if test="${not empty errors.no}">
-                    <p style="color:gold">${errors.no}</p>
+                    <p style="color:red">${errors.no}</p>
                 </c:if>
 
                 <label for="name">氏名</label><br>
