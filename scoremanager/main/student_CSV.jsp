@@ -9,7 +9,7 @@
 
     <c:param name="content">
 
-        <h2>学生CSV読み込み</h2>
+        <h2 class="main-title">学生CSV読み込み</h2>
 
         <form action="StudentCSVExecute.action"
               method="POST"
@@ -23,9 +23,7 @@
             </div>
 
             <div class="tr">
-                <div class="td">
-                    <button type="submit">追加</button>
-                </div>
+                <button type="submit">追加</button>
             </div>
 
         </form>

@@ -189,29 +189,24 @@
     /* カード　学生管理 */
     .menu-card.student{
       background-color: #FFCCCC;
-      text-align: center;
     }
     /* カード　成績管理 */
     .menu-card.test{
       background-color: #CCFFCC;
-      text-align: center;
-      flex-direction: column;
     }
     /* カード　科目管理 */
     .menu-card.subject{
       background-color: 	#CCFFFF;
-      text-align: center;
     }
     /* カード　クラス管理 */
     .menu-card.class{
       background-color: #FFCC99;
-      text-align: center;
     }
     /* カード　CSV読み込み */
     .menu-card.CSV{
       background-color: #FFFFCC	;
-      text-align: center;
     }
+
     /*文字　成績管理*/
     .menu-title{
       margin-bottom: 5px;
@@ -329,13 +324,33 @@
       width: 100%;
       height: 8%;
     }
-
     /* 変更時、新規などの時用ボタン */
     .button-2 button{
       margin-top: 20px;
     }
 
 
+    /* 成績メニュー menu_test.jsp*/
+    .test-menu-card{
+      flex: 1;
+      height: 170px;
+      border-radius: 10px;
+      margin-top: 25px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      display: flex;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+    .test-menu-card.test_regist{
+      background-color: ;
+    }
+    .test-menu-card.test_list{
+      background-color: ;
+    }
     /* 成績参照 h4　科目情報　学生情報*/
     .content-title{
       margin-left: 10px;
@@ -353,18 +368,45 @@
 
 
     /* CSV読み込みメニュー */
-    .menu-card.student_CSV{
-      text-align: center;
-      background-color: 	;
+    /* カード自体 */
+    .csv-menu-card{
+      flex: 1;
+      height: 170px;
+      border-radius: 10px;
+      margin-top: 25px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      display: flex;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
     }
-    .menu-card.subject_CSV{
-      text-align: center;
-      background-color: ;
+    /* カード　学生登録*/
+    .csv-menu-card.student_CSV{
+      background-color: 	#FFCCCC;
     }
-    .menu-card.test_CSV{
-      text-align: center;
-      background-color: ;
+    /* カード成績登録 */
+    .csv-menu-card.test_CSV{
+      background-color: #CCFFCC;
     }
+    /* カード　科目登録 */
+    .csv-menu-card.subject_CSV{
+      background-color: #CCFFFF;
+    }
+
+    /*登録CSV
+    　student_CSV.jsp subject_CSV.jsp test_CSV.jsp  */
+    .tr{
+      margin: 20px;
+    }
+    .td{
+      margin-top: 15px;
+
+    }
+    
+
   </style>
 
 </head>

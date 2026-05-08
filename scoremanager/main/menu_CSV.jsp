@@ -10,18 +10,19 @@ pageEncoding="UTF-8" %>
     <c:param name="content">
         <h2 class="main-title">CSV読み込み</h2>
         <div class="menu-grid">
-            
-            <div class="menu-card student_CSV">
+
+            <div class="csv-menu-card student_CSV">
                 <h2><a href="StudentCSV.action">学生登録</a></h2>
             </div>
 
-            <div class="menu-card subject_CSV">
+            <div class="csv-menu-card test_CSV">
+                <h2><a href="TestCSV.action">成績登録</a></h2>
+            </div>
+
+            <div class="csv-menu-card subject_CSV">
                 <h2><a href="SubjectCSV.action">科目登録</a></h2>
             </div>
 
-            <div class="menu-card test_CSV">
-                <h2><a href="TestCSV.action">成績登録</a></h2>
-            </div>
         </div>
     </c:param>
 </c:import>
