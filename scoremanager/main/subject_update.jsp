@@ -22,7 +22,7 @@
 
                 <!-- 変更中に別画面から対象の科目が削除された場合 -->
                 <c:if test="${not empty errors.cd}">
-                    <p style="color:gold">${errors.cd}</p>
+                    <p style="color:red">${errors.cd}</p>
                 </c:if>
             </div>
 

@@ -231,6 +231,7 @@
     /* 検索　フォーム */
     .form{
       display: flex;
+      flex-direction: column;
       gap: 15px;
       align-items: flex-end;
       background: #f8f9fa;
@@ -304,6 +305,13 @@
     }
     tr:hover{
       background-color: #dde3e9;
+    }
+
+    /* 検索時、入学年度未記入エラー */
+    .errors_student_list{
+      width: 100%;
+      color: red;
+      margin-top: 8px;
     }
     
 
