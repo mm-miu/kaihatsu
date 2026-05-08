@@ -60,6 +60,10 @@
                 </label>
             </div>
 
+            <c:if test="${not empty error}">
+                <p style="color:red">${error}</p>
+            </c:if>
+
             <div class="col-2 text-center">
                 <button class="btn btn-secondary" id="filter-botton">検索</button>
             </div>
