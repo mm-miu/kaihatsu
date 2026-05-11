@@ -7,21 +7,21 @@
         <section>
             <h2 class="main-title">メニュー</h2>
             <div class="menu-grid">
-                <div class="menu-card student">
-                    <h2><a href="StudentList.action">学生管理</a></h2>
-                </div>
-                <div class="menu-card test">
-                    <h2><a href="MenuTest.action">成績管理</a></h2>
-                </div>
-                <div class="menu-card subject">
-                    <h2><a href="SubjectList.action">科目管理</a></h2>
-                </div>
-                <div class="menu-card class">
-                    <h2><a href="ClassNumList.action">クラス管理</a></h2>
-                </div>
-                <div class="menu-card CSV">
-                    <h2><a href="MenuCSV.action">CSV読み込み</a></h2>
-                </div>
+                <a href="StudentList.action" class="menu-card student">
+                    <h2>学生管理</h2>
+                </a>
+                <a href="MenuTest.action" class="menu-card test">
+                    <h2>成績管理</h2>
+                </a>
+                <a href="SubjectList.action" class="menu-card subject">
+                    <h2>科目管理</h2>
+                </a>
+                <a href="ClassNumList.action" class="menu-card class">
+                    <h2>クラス管理</h2>
+                </a>
+                <a href="MenuCSV.action" class="menu-card CSV">
+                    <h2>CSV読み込み</h2>
+                </a>
             </div>
         </section>
     </c:set>

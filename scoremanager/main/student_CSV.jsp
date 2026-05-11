@@ -21,7 +21,11 @@
                     <input type="file" id="csv" name="csv" accept=".csv" required>
                 </div>
             </div>
-
+            <div class="dropArea">
+                <div id="dropArea">
+                    ここにCSVをドラッグ＆ドロップ
+                </div>
+            </div>
             <div class="tr">
                 <button type="submit">追加</button>
             </div>

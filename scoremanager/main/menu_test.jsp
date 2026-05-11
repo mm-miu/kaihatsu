@@ -11,13 +11,13 @@ pageEncoding="UTF-8" %>
         <h2 class="main-title">成績管理</h2>
         <div class="menu-grid">
             
-            <div class="test-menu-card test_regist">
-                <h2><a href="TestRegist.action">成績登録</a></h2>
-            </div>
+            <a href="TestRegist.action" class="test-menu-card test_regist">
+                <h2>成績登録</h2>
+            </a>
 
-            <div class="test-menu-card test_list">
-                <h2><a href="TestList.action">成績参照</a></h2>
-            </div>
+            <a href="TestList.action" class="test-menu-card test_list">
+                <h2>成績参照</h2>
+            </a>
 
         </div>
     </c:param>

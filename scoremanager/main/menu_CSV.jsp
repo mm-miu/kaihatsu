@@ -11,17 +11,17 @@ pageEncoding="UTF-8" %>
         <h2 class="main-title">CSV読み込み</h2>
         <div class="menu-grid">
 
-            <div class="csv-menu-card student_CSV">
-                <h2><a href="StudentCSV.action">学生登録</a></h2>
-            </div>
+            <a href="StudentCSV.action" class="csv-menu-card student_CSV">
+                <h2>学生登録</h2>
+            </a>
 
-            <div class="csv-menu-card test_CSV">
-                <h2><a href="TestCSV.action">成績登録</a></h2>
-            </div>
+            <a href="TestCSV.action" class="csv-menu-card test_CSV">
+                <h2>成績登録</h2>
+            </a>
 
-            <div class="csv-menu-card subject_CSV">
-                <h2><a href="SubjectCSV.action">科目登録</a></h2>
-            </div>
+            <a href="SubjectCSV.action" class="csv-menu-card subject_CSV">
+                <h2>科目登録</h2>
+            </a>
 
         </div>
 
