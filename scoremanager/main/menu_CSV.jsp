@@ -24,5 +24,14 @@ pageEncoding="UTF-8" %>
             </div>
 
         </div>
+
+            <h2 class="main-title">CSV書き込み</h2>
+
+        <div class="menu-grid">
+            <div class="csv-menu-card student_CSV">
+                <h2><a href="StudentCreateCSVExecute.action">学生</a></h2>
+            </div>
+        </div>
+        
     </c:param>
 </c:import>
