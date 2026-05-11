@@ -23,7 +23,7 @@ public class SubjectCreateCSVAction extends Action {
 
         request.setAttribute("csvData", csvData);
 
-        request.getRequestDispatcher("create_student_CSV_done.jsp")
+        request.getRequestDispatcher("create_subject_CSV_done.jsp")
             .forward(request, response);
 
     }
