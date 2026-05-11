@@ -175,9 +175,10 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: black;
+      color: #0066FF;
       font-weight: bold;
       display: flex;
+      cursor: pointer;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: 0.2s;
     }
@@ -339,7 +340,7 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: black;
+      color: #0066FF;
       font-weight: bold;
       display: flex;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -377,9 +378,10 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: black;
+      color: #0066FF;
       font-weight: bold;
       display: flex;
+      cursor: pointer;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: 0.2s;
     }
@@ -403,7 +405,20 @@
     }
     .td{
       margin-top: 15px;
+    }
 
+    .dropArea{
+      width: auto;
+      height:180px;
+      margin-right: 0;
+      border:10px dashed #e3c3f9;
+      border-radius:10px;
+      text-align:center;
+      line-height: 175px;
+      color:#ba96d2;
+      margin-top:10px;
+      margin-left:auto;
+      cursor:pointer;
     }
     
 
@@ -451,6 +466,43 @@
     <p>大原学園</p>
   </footer>
   
+
+  <script>
+    const dropArea = document.getElementById("dropArea");
+    const fileInput = document.getElementById("csv");
+
+    // ドラッグ中
+    dropArea.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropArea.style.backgroundColor = "#eef";
+    });
+
+    // 離れた
+    dropArea.addEventListener("dragleave", () => {
+        dropArea.style.backgroundColor = "";
+    });
+
+    // ドロップ
+    dropArea.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropArea.style.backgroundColor = "";
+
+        const files = e.dataTransfer.files;
+
+        if (files.length > 0) {
+
+            // CSVチェック（軽く）
+            if (!files[0].name.endsWith(".csv")) {
+                alert("CSVファイルを選択してください");
+                return;
+            }
+
+            fileInput.files = files; // ←これが超重要
+        }
+    });
+  </script>
 </body>
 
 </html>
+
+
