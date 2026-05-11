@@ -10,7 +10,7 @@ pageEncoding="UTF-8" %>
 
     <c:param name="content">
 
-        <h2 class="main-title">CSV書き込み</h2>
+        <h2 class="main-title">${title}CSV書き込み</h2>
         <textarea id="copytxt" rows="10" cols="50" readonly>${csvData}</textarea><br>
         <button type="button" onclick="copyText('copytxt')">コピー</button>
 

@@ -22,6 +22,7 @@ public class StudentCreateCSVExecuteAction extends Action {
         String csvData = dao.createCSV(school, false);
 
         request.setAttribute("csvData", csvData);
+        request.setAttribute("title", "学生");
 
         request.getRequestDispatcher("create_CSV_done.jsp")
             .forward(request, response);
