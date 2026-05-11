@@ -285,12 +285,12 @@ public String createCSV(School school, boolean unusedFlag) throws Exception {
 
         sb.append(s.getCd()).append(",");
         sb.append(s.getName()).append(",");
-        sb.append(s.getSchool().getCd());
+        // Subject に school がセットされていない可能性があるため、引数の school を使う
+        sb.append(school.getCd());
 
         sb.append("\n");
     }
 
     return sb.toString();
 }
-
 }
