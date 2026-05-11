@@ -283,7 +283,7 @@ public class TestDao extends Dao {
     }
 
     // -------------------------------------------------------
-    // 9. CSV（）
+    // 9. CSV（登録）
     // -------------------------------------------------------
     public boolean readInsertCSV(Part csv, School school) throws Exception {
         
@@ -338,5 +338,43 @@ public class TestDao extends Dao {
         }
 
         return count > 0;
+    }
+
+    // -------------------------------------------------------
+    // 10. CSV（書き込み）
+    // -------------------------------------------------------
+    public String createCSV(School school, boolean unusedFlag) throws Exception {
+
+        List<Test> tests = filter(0, null, null, 0, school);
+
+        StringBuilder sb = new StringBuilder();
+
+        // データ
+        for (Test t : tests) {
+
+            // Test bean の既存ゲッターを使用
+            String studentNo = "";
+            if (t.getStudent() != null && t.getStudent().getNo() != null) {
+                studentNo = t.getStudent().getNo();
+            }
+
+            String subjectCd = "";
+            if (t.getSubject() != null && t.getSubject().getCd() != null) {
+                subjectCd = t.getSubject().getCd();
+            }
+
+            String noStr = String.valueOf(t.getNo());
+            String pointStr = String.valueOf(t.getPoint());
+
+            sb.append(studentNo).append(",");
+            sb.append(subjectCd).append(",");
+            sb.append(noStr).append(",");
+            sb.append(pointStr).append(",");
+            // Test に school がセットされていない可能性があるため、引数の school を使う
+            sb.append(school.getCd());
+
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

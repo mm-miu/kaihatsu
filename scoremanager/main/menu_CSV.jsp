@@ -34,6 +34,9 @@ pageEncoding="UTF-8" %>
             <a href="SubjectCreateCSV.action" class="csv-menu-card subject_CSV">
                 <h2>科目</h2>
             </a>
+            <a href="TestCreateCSV.action" class="csv-menu-card test_CSV">
+                <h2>成績</h2>
+            </a>
         </div>
         
     </c:param>
