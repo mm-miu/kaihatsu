@@ -276,10 +276,6 @@ public String createCSV(School school, boolean unusedFlag) throws Exception {
 
     StringBuilder sb = new StringBuilder();
 
-    // ヘッダ
-    sb.append("cd,name,school_cd");
-    sb.append("\n");
-
     // データ
     for (Subject s : subjects) {
 
