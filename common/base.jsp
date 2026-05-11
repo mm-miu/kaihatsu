@@ -272,7 +272,8 @@
     .form-check{
       align-items: center;
     }
-    /* ボタン */
+    
+    /* ボタン　共通 */
     button{
       padding: 6px 12px;
       border: none;
@@ -285,6 +286,7 @@
     button:hover {
       background-color: #5a6268;
     }
+
     /* テーブル */
     table{
       width: 100%;
@@ -292,17 +294,20 @@
       background: white;
       margin-bottom: 10px;
     }
+    /* 列名行 */
     th{
       border: 1px solid #ccc;
       padding: 8px;
       text-align: left;
       background-color: #e9ecef;
     }
+    /* データ行 */
     td{
       border: 1px solid #ccc;
       padding: 8px;
       text-align: left;
     }
+    /* ホバー */
     tr:hover{
       background-color: #dde3e9;
     }
@@ -321,6 +326,7 @@
       margin-bottom: 10px;
       margin-top: 10px;
     }
+    /* テキストエリアの細かい調節 */
     .content-input input{
       width: 100%;
       line-height: 2;
@@ -402,13 +408,15 @@
 
     /*CSVファイル選択追加画面
     　student_CSV.jsp subject_CSV.jsp test_CSV.jsp  */
+    /* ファイル選択と追加ボタンの全体的な調節 */
     .tr{
       margin: 20px;
     }
+    /* csvファイル：　の文字とファイル選択ボタンの調節 */
     .td{
       margin-top: 15px;
     }
-
+    /* ドラックドロップエリア枠 */
     .dropArea{
       width: auto;
       height:180px;
@@ -425,6 +433,7 @@
 
 
     /* csv書き込み */
+    /* テキストエリア　エリア上限 */
     textarea{
       resize: both;
       max-width: 800px;
@@ -433,7 +442,6 @@
       min-height: 100px;
       margin-bottom: 20px;
     }
-    
     
 
   </style>
