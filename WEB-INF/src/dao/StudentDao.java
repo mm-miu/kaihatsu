@@ -483,7 +483,18 @@ public class StudentDao extends Dao {
             String line;
 
             while ((line = br.readLine()) != null) {
+
+                // 空行スキップ
+                if (line.isBlank()) {
+                    continue;
+                }
+
                 String[] data = line.split(",");
+
+                // 列不足対策
+                if (data.length < 2) {
+                    continue;
+                }
                 ps.setString(1, data[0].trim());
                 ps.setString(2, data[1].trim());
                 ps.setString(3, data[2].trim());
