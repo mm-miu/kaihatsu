@@ -182,8 +182,10 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: 0.2s;
     }
-    /* ホバー */
-    .menu-card:hover {
+    /* ホバー メニュー,　csvメニュー, 成績メニュー*/
+    .menu-card:hover,
+    .csv-menu-card:hover,
+    .test-menu-card:hover {
       transform: translateY(-5px);
       opacity: 0.9;
     }
