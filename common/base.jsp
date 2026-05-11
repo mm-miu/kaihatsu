@@ -422,6 +422,18 @@
       margin-left:auto;
       cursor:pointer;
     }
+
+
+    /* csv書き込み */
+    textarea{
+      resize: both;
+      max-width: 800px;
+      max-height: 200px;
+      min-width: 200px;
+      min-height: 100px;
+      margin-bottom: 20px;
+    }
+    
     
 
   </style>
