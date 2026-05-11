@@ -11,7 +11,7 @@ pageEncoding="UTF-8" %>
     <c:param name="content">
 
         <h2 class="main-title">学生CSV書き込み</h2>
-        <textarea id="copytxt" rows="10" cols="50">${csvData}</textarea>
+        <textarea id="copytxt" rows="10" cols="50" readonly>${csvData}</textarea>
         <button type="button" onclick="copyText('copytxt')">コピー</button>
 
     </c:param>

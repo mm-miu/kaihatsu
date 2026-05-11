@@ -20,7 +20,7 @@
                     <h2>クラス管理</h2>
                 </a>
                 <a href="MenuCSV.action" class="menu-card CSV">
-                    <h2>CSV読み込み</h2>
+                    <h2>CSV</h2>
                 </a>
             </div>
         </section>
