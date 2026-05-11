@@ -46,8 +46,8 @@
                         </label>
                     </div>
 
-                    <div class="col-2 text-center">
-                        <button class="btn btn-secondary" type="submit">検索</button>
+                    <div class="col-2">
+                        <button type="submit">検索</button>
                     </div>
                 </div>
             </form>
@@ -73,8 +73,8 @@
                             </label>
                         </div>
                     </div>
-                    <div class="col-2 text-center">
-                        <button class="btn btn-secondary" type="submit">検索</button>
+                    <div class="col-2 test">
+                        <button type="submit">検索</button>
                     </div>
                 </div>
             </form>
