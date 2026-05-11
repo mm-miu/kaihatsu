@@ -269,4 +269,28 @@ public class SubjectDao extends Dao {
 
     return count > 0;
 }
+
+public String createCSV(School school, boolean unusedFlag) throws Exception {
+
+    List<Subject> subjects = filter(school);
+
+    StringBuilder sb = new StringBuilder();
+
+    // ヘッダ
+    sb.append("cd,name,school_cd");
+    sb.append("\n");
+
+    // データ
+    for (Subject s : subjects) {
+
+        sb.append(s.getCd()).append(",");
+        sb.append(s.getName()).append(",");
+        sb.append(s.getSchool().getCd());
+
+        sb.append("\n");
+    }
+
+    return sb.toString();
+}
+
 }
