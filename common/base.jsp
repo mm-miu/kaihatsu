@@ -208,7 +208,7 @@
       background-color: #FFFFCC	;
     }
 
-    /*文字　成績管理*/
+    /*文字　成績管理　*/
     .menu-title{
       margin-bottom: 5px;
     }
@@ -323,7 +323,7 @@
     }
     .content-input input{
       width: 100%;
-      height: 8%;
+      line-height: 2;
     }
     /* 変更時、新規などの時用ボタン */
     .button-2 button{
@@ -346,11 +346,13 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: 0.2s;
     }
+    /* 成績登録　カード */
     .test-menu-card.test_regist{
-      background-color: ;
+      background-color: #CCFFCC	;
     }
+    /* 成績参照　カード */
     .test-menu-card.test_list{
-      background-color: ;
+      background-color: #CCFFCC	;
     }
     /* 成績参照 h4　科目情報　学生情報*/
     .content-title{

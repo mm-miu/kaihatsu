@@ -66,10 +66,12 @@
             <form method="get" action="TestList.action">
                 <div class="row">
                     <div class="col-4">
-                        <label for="studentNo">学生番号
-                            <input type="text" id="studentNo" name="studentNo" class="content-input"
-                                   value="${studentNo}" placeholder="学生番号を入力してください" />
-                        </label>
+                        <div class="content-input">
+                            <label for="studentNo">学生番号
+                                <input type="text" id="studentNo" name="studentNo" class="input"
+                                    value="${studentNo}" placeholder="学生番号を入力してください" />
+                            </label>
+                        </div>
                     </div>
                     <div class="col-2 text-center">
                         <button class="btn btn-secondary" type="submit">検索</button>
