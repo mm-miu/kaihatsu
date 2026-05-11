@@ -514,10 +514,6 @@ public class StudentDao extends Dao {
 
         StringBuilder sb = new StringBuilder();
 
-        // ヘッダ
-        sb.append("no,name,ent_year,class_num,is_attend,school_cd");
-        sb.append("\n");
-
         // データ
         for (Student s : students) {
 
