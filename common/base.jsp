@@ -412,11 +412,11 @@
     }
     /* カード　学生登録*/
     .csv-menu-card.student_CSV{
-      background-color: 	#FFCCCC;
+      background-color: 	#ffeaa0;
     }
     /* カード成績登録 */
     .csv-menu-card.test_CSV{
-      background-color: #CCFFCC;
+      background-color: #ffc6c6;
     }
     /* カード　科目登録 */
     .csv-menu-card.subject_CSV{
