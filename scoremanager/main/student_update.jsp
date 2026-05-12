@@ -25,7 +25,7 @@
                 <br>
 
                 <label for="name">氏名</label>
-                <input type="text" id="name" name="name" value="${name}" required>
+                <input type="text" id="name" name="name" value="${name}" maxlength="30" required>
                 <br>
             </div>
 
