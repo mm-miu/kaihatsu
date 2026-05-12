@@ -32,7 +32,7 @@
                 </c:if>
 
                 <label for="no">学生番号</label><br>
-                <input type="text" id="no" name="no" value="${empty no ? '学生番号を入力してください' : no}" required>
+                <input type="text" id="no" name="no" value="${empty no ? '学生番号を入力してください' : no}" maxlength="10" required>
                 <br>
             </div>
 
@@ -42,7 +42,7 @@
                 </c:if>
 
                 <label for="name">氏名</label><br>
-                <input type="text" id="name" name="name" value="${empty name ? '氏名を入力してください' : name}" required>
+                <input type="text" id="name" name="name" value="${empty name ? '氏名を入力してください' : name}" maxlength="30" required>
                 <br>
             </div>
 
