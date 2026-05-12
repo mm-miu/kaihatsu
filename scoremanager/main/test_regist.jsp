@@ -68,7 +68,10 @@
                 <button class="btn btn-secondary" id="filter-botton">検索</button>
             </div>
         </form>
-
+        
+        <c:if test="${empty list}">
+            <p>成績情報が存在しませんでした。</p>
+        </c:if>
         <c:choose>
             <c:when test="${not empty list}">
                 <div>科目：${subject.name} (${f4}回)</div>

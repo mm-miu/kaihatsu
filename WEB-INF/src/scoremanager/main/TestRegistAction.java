@@ -88,6 +88,7 @@ public class TestRegistAction extends Action {
 
         // 初回アクセス
         if (isFirstAccess) {
+            req.setAttribute("firstaccess","firstaccess");
             req.getRequestDispatcher("test_regist.jsp").forward(req, res);
             return;
         }
