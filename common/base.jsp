@@ -367,11 +367,11 @@
     }
     /* 成績登録　カード */
     .test-menu-card.test_regist{
-      background-color: #CCFF99;
+      background-color: #ffc3c3;
     }
     /* 成績参照　カード */
     .test-menu-card.test_list{
-      background-color: #99FF99;
+      background-color: #ffc3c3;
     }
     /* 成績参照 h4　科目情報　学生情報*/
     .content-title{
