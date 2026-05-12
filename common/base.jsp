@@ -241,9 +241,10 @@
       flex-direction: column;
       gap: 15px;
       align-items: flex-end;
-      background: #f8f9fa;
+      background: white;
       padding: 15px;
-      border-radius: 5px;
+      border-radius: 10px;
+      border: solid 1px #AAAAAA;
       margin-bottom: 15px;
     }
     /*入力ボックス　横並び */
@@ -274,6 +275,7 @@
       width: 100%;
       padding: 5px;
       border-radius: 4px;
+      border: 1px solid #AAAAAA;
     }
     /* フォームのチェックボックス */
     .form-check{
