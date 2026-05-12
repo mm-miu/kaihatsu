@@ -34,7 +34,7 @@
             </div>
         </form>
 
-        <a href="SubjectList.action">戻る</a>
+        <a href="ClassNumList.action">戻る</a>
     </c:param>
 
 </c:import>

@@ -14,7 +14,7 @@
 
         <h2 class="main-title">クラス情報登録</h2>
 
-        <form action="ClassCreateExecute.action">
+        <form action="ClassNumCreateExecute.action">
             <div class="content-input">
                 <label for="num">クラス番号</label>
                 <input type="text" id="num" name="num" 
@@ -33,7 +33,7 @@
             </div>
         </form>
 
-        <a href="ClassList.action">戻る</a>
+        <a href="ClassNumList.action">戻る</a>
     </c:param>
 
 </c:import>
