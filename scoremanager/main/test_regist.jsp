@@ -72,12 +72,14 @@
         <c:if test="${empty list}">
             <c:if test="${empty firstaccess}">
                 <c:if test="${empty error}">
+                    <hr>
                     <p>成績情報が存在しませんでした。</p>
                 </c:if>
             </c:if>
         </c:if>
         <c:choose>
             <c:when test="${not empty list}">
+                <hr>
                 <div>科目：${subject.name} (${f4}回)</div>
                 <form action="TestRegistExecute.action">
                     <table class="table table-hover">
