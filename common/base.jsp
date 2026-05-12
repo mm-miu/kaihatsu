@@ -490,7 +490,8 @@
             <li><a href="/kaihatsu/scoremanager/main/TestList.action">　　成績参照</a></li><br>
             <li><a href="/kaihatsu/scoremanager/main/SubjectList.action">科目管理</a></li><br>
             <li><a href="/kaihatsu/scoremanager/main/ClassNumList.action">クラス管理</a></li><br>
-            <li><a href="/kaihatsu/scoremanager/main/MenuCSV.action">CSV</a></li>
+            <li><a href="/kaihatsu/scoremanager/main/MenuCSV.action">CSV</a></li><br>
+            <li><a href="">ユーザー管理</a></li>
           </ul>
         </nav>
       </div>
