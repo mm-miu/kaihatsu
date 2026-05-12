@@ -42,15 +42,16 @@
                 </c:forEach>
             </select>
             <br>
-            <label>
-                在学中
-                <input type="checkbox" name="is_attend"
-                    <c:if test="${is_attend==true}">checked</c:if>
-                >
-            </label>
+            <div class="is_attend">
+                <label>
+                    在学中
+                    <input type="checkbox" name="is_attend"
+                        <c:if test="${is_attend==true}">checked</c:if>
+                    >
+                </label>
+            </div>
             <br>
-            
-            <div class="button-2">
+            <div class="button-2 change">
                 <button name="login" type="submit">変更</button>
                 <br>
             </div>
