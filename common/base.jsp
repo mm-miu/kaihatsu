@@ -296,6 +296,8 @@
       background-color: #5a6268;
     }
 
+
+    /*  */
     /* テーブル */
     table{
       width: 100%;
@@ -309,6 +311,10 @@
       padding: 8px;
       text-align: left;
       background-color: #e9ecef;
+
+      position: sticky;
+      top: 0;
+      z-index: 0;
     }
     /* データ行 */
     td{
