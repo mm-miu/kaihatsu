@@ -12,7 +12,7 @@
 
     <c:param name="content">
 
-        <h2>クラス情報変更</h2>
+        <h2 class="main-title">クラス情報変更</h2>
 
         <form action="ClassNumUpdateExecute.action">
             <div class="content-input">
