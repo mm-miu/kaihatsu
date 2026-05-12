@@ -199,7 +199,7 @@
     }
     /* カード　科目管理 */
     .menu-card.subject{
-      background-color: 	#CCFFFF;
+      background-color: #CCFFFF;
     }
     /* カード　クラス管理 */
     .menu-card.class{
@@ -208,6 +208,11 @@
     /* カード　CSV読み込み */
     .menu-card.CSV{
       background-color: #98fcb2	;
+    }
+
+    /* カード　ユーザー管理 */
+    .menu-card.user{
+      background-color: #e7d5ff;
     }
 
     /*文字　成績管理　*/
