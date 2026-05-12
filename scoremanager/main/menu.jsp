@@ -22,6 +22,9 @@
                 <a href="MenuCSV.action" class="menu-card CSV">
                     <h2>CSV</h2>
                 </a>
+                <a href="" class="menu-card user">
+                    <h2>ユーザー管理</h2>
+                </a>
             </div>
         </section>
     </c:set>
