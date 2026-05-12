@@ -36,7 +36,7 @@ public class ClassNumUpdateExecuteAction extends Action {
             errors.put("num_count", "クラス番号は3文字以下で入力してください");
             request.setAttribute("errors", errors);
             request.setAttribute("num", newNum);
-            request.getRequestDispatcher("classNum_create.jsp")
+            request.getRequestDispatcher("classNum_update.jsp")
                 .forward(request, response);
             return;
         }
@@ -44,7 +44,7 @@ public class ClassNumUpdateExecuteAction extends Action {
             errors.put("num", "クラス番号が重複しています");
             request.setAttribute("errors", errors);
             request.setAttribute("num", newNum);
-            request.getRequestDispatcher("classNum_create.jsp")
+            request.getRequestDispatcher("classNum_update.jsp")
                 .forward(request, response);
             return;
         }
