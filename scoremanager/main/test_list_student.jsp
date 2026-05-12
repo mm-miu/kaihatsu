@@ -24,9 +24,7 @@
 
         <!-- 成績一覧（点数が未入力の行は DAO 側で除外される前提） -->
         <c:if test="${empty tests}">
-            <c:if test="${empty firstaccess}">
-                <p>成績情報が存在しませんでした。</p>
-            </c:if>
+            <p>成績情報が存在しませんでした。</p>
         </c:if>
 
         <c:if test="${not empty tests}">
