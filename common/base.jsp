@@ -337,6 +337,12 @@
     .button-2 button{
       margin-top: 20px;
     }
+    .is_attend{
+      margin-top: 10px;
+    }
+    .button-2.change{
+      margin-top: -20px;
+    }
 
 
     /* 成績メニュー menu_test.jsp*/
