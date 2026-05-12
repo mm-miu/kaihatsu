@@ -35,6 +35,8 @@
 
         </form>
 
+        <a href="MenuCSV.action">戻る</a>
+
     </c:param>
 
 </c:import>

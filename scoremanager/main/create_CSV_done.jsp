@@ -12,7 +12,9 @@ pageEncoding="UTF-8" %>
 
         <h2 class="main-title">${title}CSV書き込み</h2>
         <textarea id="copytxt" rows="10" cols="50" readonly>${csvData}</textarea><br>
-        <button type="button" onclick="copyText('copytxt')">コピー</button>
+        <button type="button" onclick="copyText('copytxt')">コピー</button><br><br>
+
+        <a href="MenuCSV.action">戻る</a>
 
     </c:param>
 
