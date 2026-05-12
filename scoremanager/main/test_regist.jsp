@@ -71,7 +71,9 @@
         
         <c:if test="${empty list}">
             <c:if test="${empty firstaccess}">
-                <p>成績情報が存在しませんでした。</p>
+                <c:if test="${empty error}">
+                    <p>成績情報が存在しませんでした。</p>
+                </c:if>
             </c:if>
         </c:if>
         <c:choose>
