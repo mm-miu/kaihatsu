@@ -191,11 +191,11 @@
     }
     /* カード　学生管理 */
     .menu-card.student{
-      background-color: #FFCCCC;
+      background-color: #ffeaa0;
     }
     /* カード　成績管理 */
     .menu-card.test{
-      background-color: #CCFFCC;
+      background-color: #ffc6c6;
     }
     /* カード　科目管理 */
     .menu-card.subject{
@@ -203,11 +203,11 @@
     }
     /* カード　クラス管理 */
     .menu-card.class{
-      background-color: #FFCC99;
+      background-color: #ffd8b2;
     }
     /* カード　CSV読み込み */
     .menu-card.CSV{
-      background-color: #FFFFCC	;
+      background-color: #98fcb2	;
     }
 
     /*文字　成績管理　*/
