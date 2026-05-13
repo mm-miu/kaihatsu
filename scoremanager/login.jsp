@@ -8,11 +8,13 @@
             <h2>ログイン</h2>
             <form action="Login.action" method="post">
                 <p>ログイン名<input type="text" name="id" 
-                    value="${empty id ? "半角でご入力ください" : id}" 
+                    value="${id}"
+                    placeholder="半角でご入力ください"
                     required>
                 </p>
                 <p>パスワード<input type="password" name="password" id="password"
-                    placeholder="${empty password ? "30字以内の半角英数字でご入力ください" : ""}" 
+                    value="${password}"
+                    placeholder="30字以内の半角英数字でご入力ください"
                     required></p>
                 <p><label>
                     <input type="checkbox" name="chk_d_ps" id="showPassword">
