@@ -284,6 +284,9 @@
       border-radius: 4px;
       border: 1px solid #AAAAAA;
     }
+    option[disabled][selected] {
+      display: none;
+    }
     /* フォームのチェックボックス */
     .form-check{
       align-items: center;

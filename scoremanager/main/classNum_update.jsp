@@ -1,4 +1,4 @@
-<%-- 科目情報変更JSP --%>
+<%-- クラス情報変更JSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -18,7 +18,9 @@
             <div class="content-input">
                 <label for="num">クラス番号</label>
                 <input type="text" id="num" name="newNum" 
-                    value="${num}" pattern="\d+" maxlength="3" required>
+                    value="${num}"
+                    placeholder="新しいクラス番号を入力してください。変更前：${num}"
+                    pattern="\d+" maxlength="3" required>
                 <input type="hidden" name="num" value="${num}">
                 <br>
                 <c:if test="${not empty errors.num}">

@@ -1,4 +1,4 @@
-<%-- 学生一覧JSP --%>
+<%-- 成績一覧JSP --%>
 <%@ page language="java" contentType="text/html;
     charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -15,7 +15,7 @@
             <div class="col-4">
                 <label class="form-label" for="f1">入学年度
                     <select class="form-select" id="f1" name="f1">
-                        <option value="0">--------</option>
+                        <option value="0" selected disabled>--------</option>
                         <c:forEach var="year" items="${ent_year_set}">
                             <!-- 現在のyearと選択されていたf1が一致していた場合selectedを追記 -->
                             <option value="${year}" <c:if test="${year==f1}">selected></c:if>>${year}</option>
@@ -27,7 +27,7 @@
             <div class="col-4">
                 <label class="form-label" for="f2">クラス
                     <select class="form-select" id="f2" name="f2">
-                        <option value="0">--------</option>
+                        <option value="0" selected disabled>--------</option>
                         <c:forEach var="num" items="${class_num_set}">
                             <!-- 現在のnumと選択されていたf2が一致していた場合selectedを追記 -->
                             <option value="${num}" <c:if test="${num==f2}">selected></c:if>>${num}</option>
@@ -39,7 +39,7 @@
             <div class="col-4">
                 <label class="form-label" for="f3">科目
                     <select class="form-select" id="f3" name="f3">
-                        <option value="0">--------</option>
+                        <option value="0" selected disabled>--------</option>
                         <c:forEach var="subject" items="${subject_set}">
                             <!-- 現在のsubjectと選択されていたf3が一致していた場合selectedを追記 -->
                             <option value="${subject.cd}" <c:if test="${subject.cd==f3}">selected></c:if>>${subject.name}</option>
@@ -51,7 +51,7 @@
             <div class="col-4">
                 <label class="form-label" for="f4">回数
                     <select class="form-select" id="f4" name="f4">
-                        <option value="0">--------</option>
+                        <option value="0" selected disabled>--------</option>
                         <c:forEach var="count" items="${count_set}">
                             <!-- 現在のcountと選択されていたf4が一致していた場合selectedを追記 -->
                             <option value="${count}" <c:if test="${count==f4}">selected></c:if>>${count}</option>

@@ -20,7 +20,7 @@
                     <div class="col-3">
                         <label for="f1">入学年度
                             <select id="f1" name="f1" class="form-select">
-                                <option value="0">--------</option>
+                                <option value="0" selected disabled>--------</option>
                                 <c:forEach var="year" items="${ent_year_set}">
                                     <option value="${year}" <c:if test="${year==f1}">selected</c:if>>${year}</option>
                                 </c:forEach>
@@ -31,7 +31,7 @@
                     <div class="col-3">
                         <label for="f2">クラス
                             <select id="f2" name="f2" class="form-select">
-                                <option value="0">--------</option>
+                                <option value="0" selected disabled>--------</option>
                                 <c:forEach var="num" items="${class_num_set}">
                                     <option value="${num}" <c:if test="${num==f2}">selected</c:if>>${num}</option>
                                 </c:forEach>
@@ -42,7 +42,7 @@
                     <div class="col-4">
                         <label for="f3">科目
                             <select id="f3" name="f3" class="form-select">
-                                <option value="0">--------</option>
+                                <option value="0" selected disabled>--------</option>
                                 <c:forEach var="subject" items="${subject_set}">
                                     <option value="${subject.cd}" <c:if test="${subject.cd==f3}">selected</c:if>>${subject.name}</option>
                                 </c:forEach>
@@ -73,7 +73,7 @@
                         <div class="content-input">
                         <label for="studentNo">学生
                             <select id="f4" name="f4" class="form-select">
-                                <option value="0">--------</option>
+                                <option value="0" selected disabled>--------</option>
                                 <c:forEach var="stu" items="${student_set}">
                                     <option value="${stu.no}" <c:if test="${stu.no==f4}">selected</c:if>>${stu.name}（${stu.no}）</option>
                                 </c:forEach>
