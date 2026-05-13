@@ -50,15 +50,16 @@
                         <th>id</th>
                         
                     </tr>
+                <c:forEach var="T_My" items="${MyList}">
                     <tr>
-                        <c:forEach var="T_My" items="${MyList}">
+                        
                     
                         <td>${T_My.school.getName()}</td>  
                         <td>${T_My.name}</td>
                         <td>${T_My.id}</td>
                         
                             
-                        <td><a href="StudentUpdate.action?no=${T_My.id}">変更</a></td>
+                        <td><a href="TeacherUpdate.action?id=${T_My.id}">変更</a></td>
                         
                     </tr>
                     </c:forEach>
