@@ -6,6 +6,7 @@ public class Teacher extends User implements java.io.Serializable{
     private String password;
     private String name;
     private School school;
+    private String authority;
 
     public String getId() {
         return id;
@@ -19,6 +20,9 @@ public class Teacher extends User implements java.io.Serializable{
     public School getSchool() {
         return school;
     }
+    public String getAuthority(){
+        return authority;
+    }
 
     public void setId(String id) {
         this.id=id;
@@ -31,5 +35,9 @@ public class Teacher extends User implements java.io.Serializable{
     }
     public void setSchool(School school) {
         this.school=school;
+    }
+
+    public void setAuthority(String authority){
+        this.authority=authority;
     }
 }
