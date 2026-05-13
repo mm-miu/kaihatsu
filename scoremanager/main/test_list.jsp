@@ -71,11 +71,11 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="content-input">
-                        <label for="studentNo">学生名
+                        <label for="studentNo">学生
                             <select id="f4" name="f4" class="form-select">
                                 <option value="0">--------</option>
                                 <c:forEach var="stu" items="${student_set}">
-                                    <option value="${stu.no}" <c:if test="${stu.no==f4}">selected</c:if>>${stu.name}, ${stu.no}</option>
+                                    <option value="${stu.no}" <c:if test="${stu.no==f4}">selected</c:if>>${stu.name}（${stu.no}）</option>
                                 </c:forEach>
                             </select>
                         </label>
