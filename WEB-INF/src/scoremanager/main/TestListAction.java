@@ -32,7 +32,7 @@ public class TestListAction extends Action {
         String entYearStr = req.getParameter("f1");     // 入学年度
         String classNum   = req.getParameter("f2");     // クラス
         String subjectCd  = req.getParameter("f3");     // 科目
-        String studentNo  = req.getParameter("studentNo"); // 学生番号（下段検索）
+        String studentNo  = req.getParameter("f4"); // 学生番号（下段検索）
 
         // セッションからログインユーザーを取得
         HttpSession session = req.getSession(false);
@@ -62,9 +62,13 @@ public class TestListAction extends Action {
         SubjectDao subDao = new SubjectDao();
         List<Subject> subjectList = subDao.filter(school);
 
+        StudentDao slistDao = new StudentDao();
+        List<Student> studentList = slistDao.filter(school, false);
+
         req.setAttribute("ent_year_set", entYearSet);
         req.setAttribute("class_num_set", classList);
         req.setAttribute("subject_set", subjectList);
+        req.setAttribute("student_set", studentList);
 
         // -----------------------------
         // 検索判定
@@ -91,7 +95,7 @@ public class TestListAction extends Action {
             req.setAttribute("f1", entYearStr);
             req.setAttribute("f2", classNum);
             req.setAttribute("f3", subjectCd);
-            req.setAttribute("studentNo", studentNo);
+            req.setAttribute("f4", studentNo);
             req.getRequestDispatcher("test_list.jsp").forward(req, res);
             return;
         }
@@ -107,7 +111,7 @@ public class TestListAction extends Action {
             req.setAttribute("f1", entYearStr);
             req.setAttribute("f2", classNum);
             req.setAttribute("f3", subjectCd);
-            req.setAttribute("studentNo", studentNo);
+            req.setAttribute("f4", studentNo);
             req.getRequestDispatcher("test_list.jsp").forward(req, res);
             return;
         }
@@ -119,7 +123,7 @@ public class TestListAction extends Action {
             req.setAttribute("f1", entYearStr);
             req.setAttribute("f2", classNum);
             req.setAttribute("f3", subjectCd);
-            req.setAttribute("studentNo", studentNo);
+            req.setAttribute("f4", studentNo);
             req.getRequestDispatcher("test_list.jsp").forward(req, res);
             return;
         }

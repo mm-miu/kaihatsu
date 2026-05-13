@@ -71,10 +71,14 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="content-input">
-                            <label for="studentNo">学生番号
-                                <input type="text" id="studentNo" name="studentNo" class="input"
-                                    value="${studentNo}" maxlength="10" placeholder="学生番号を入力してください" required>
-                            </label>
+                        <label for="studentNo">学生名
+                            <select id="f4" name="f4" class="form-select">
+                                <option value="0">--------</option>
+                                <c:forEach var="stu" items="${student_set}">
+                                    <option value="${stu.no}" <c:if test="${stu.no==f4}">selected</c:if>>${stu.name}, ${stu.no}</option>
+                                </c:forEach>
+                            </select>
+                        </label>
                         </div>
                     </div>
                     <div class="col-2 test">
