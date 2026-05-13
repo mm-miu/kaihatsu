@@ -133,7 +133,6 @@
       color: red;
     }
 
-
     /* ログアウト画面 logout.jsp*/
     /* 画面全体*/
     .logout_main{
@@ -296,8 +295,7 @@
       background-color: #5a6268;
     }
 
-
-    /*  */
+    /* 表*/
     /* テーブル */
     table{
       width: 100%;
