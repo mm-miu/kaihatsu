@@ -282,7 +282,19 @@
       width: 100%;
       padding: 5px;
       border-radius: 4px;
-      border: 1px solid #AAAAAA;
+      border: 1.5px solid #AAAAAA;
+    }
+    option {
+      background-color: #ffffff; /* 中身を白に戻す */
+      color: #000;
+    }
+    select:hover {
+      background-color: #e9ecef;
+    }
+    select:focus {
+      border-color: #93b5ff;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(74,144,226,0.2);
     }
     option[disabled][selected] {
       display: none;
