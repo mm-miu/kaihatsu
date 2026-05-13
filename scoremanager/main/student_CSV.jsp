@@ -9,7 +9,7 @@
 
     <c:param name="content">
 
-        <h2>学生CSV読み込み</h2>
+        <h2 class="main-title">学生CSV読み込み</h2>
 
         <form action="StudentCSVExecute.action"
               method="POST"
@@ -21,14 +21,18 @@
                     <input type="file" id="csv" name="csv" accept=".csv" required>
                 </div>
             </div>
-
-            <div class="tr">
-                <div class="td">
-                    <button type="submit">追加</button>
+            <div class="dropArea">
+                <div id="dropArea">
+                    ここにCSVをドラッグ＆ドロップ
                 </div>
+            </div>
+            <div class="tr">
+                <button type="submit">追加</button>
             </div>
 
         </form>
+
+        <a href="MenuCSV.action">戻る</a>
 
     </c:param>
 </c:import>

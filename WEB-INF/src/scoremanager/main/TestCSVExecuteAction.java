@@ -7,20 +7,18 @@ import jakarta.servlet.annotation.MultipartConfig;
 
 import bean.Teacher;
 import bean.School;
-import dao.SubjectDao;
+import dao.TestDao;
 
-public class SubjectCSVExecuteAction extends Action {
+public class TestCSVExecuteAction extends Action {
 
     @Override
-    public void execute(
-            HttpServletRequest request,
-            HttpServletResponse response)
+    public void execute(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
         // CSV取得
         Part csvPart = request.getPart("csv");
 
-        // ログイン学校取得
+        // セッション取得
         HttpSession session = request.getSession();
 
         // ログインユーザ（Teacher）取得
@@ -28,12 +26,12 @@ public class SubjectCSVExecuteAction extends Action {
 
         // Teacher から School を取得
         School school = teacher.getSchool();
-        
+
         // DAO 呼び出し
-        SubjectDao dao = new SubjectDao();
+        TestDao dao = new TestDao();
 
         boolean result = dao.readInsertCSV(csvPart, school);
 
-        response.sendRedirect("subject_create_done.jsp");
+        response.sendRedirect("test_regist_done.jsp");
     }
 }

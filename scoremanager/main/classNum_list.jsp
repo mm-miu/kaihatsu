@@ -12,7 +12,7 @@ pageEncoding="UTF-8" %>
         <h2 class="main-title">クラス管理</h2>
 
         <div class="new">
-            <a href="ClassCreate.action">新規登録</a>
+            <a href="ClassNumCreate.action">新規登録</a>
         </div>
 
         <p>${school.name}のクラス一覧</p>
@@ -20,12 +20,12 @@ pageEncoding="UTF-8" %>
         <table>
             <th>クラス番号</th>
             <th></th>
-            <th></th>
+            <!-- <th></th> -->
             <c:forEach var="c" items="${classes}">
                 <tr>
                     <td>${c}</td>
                     <td><a href="ClassNumUpdate.action?school_cd=${school.cd}&cd=${c}">変更</a></td>
-                    <td><a href="ClassNumDelete.action?school_cd=${school.cd}&cd=${c}">削除</a></td>
+                    <!-- <td><a href="ClassNumDelete.action?school_cd=${school.cd}&cd=${c}">削除</a></td> -->
                 </tr>
             </c:forEach>
         </table>

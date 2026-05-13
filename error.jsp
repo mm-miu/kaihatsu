@@ -9,7 +9,7 @@
                 <c:when test="${empty user}">
                     <h2>ログイン</h2>
                     <ul>
-                        <li>ログインに失敗しました。IDまたはパスワードが正しくありません。</li>
+                        <div class="errors_login_text"><li>ログインに失敗しました。IDまたはパスワードが正しくありません。</li></div>
                     </ul>
                     <form action="Login.action" method="post">
                         <p>ログイン名<input type="text" name="id" value="${empty id ? '半角でご入力ください' : id}" required>

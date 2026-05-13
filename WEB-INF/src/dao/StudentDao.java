@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import jakarta.servlet.http.Part;
 
@@ -482,7 +483,18 @@ public class StudentDao extends Dao {
             String line;
 
             while ((line = br.readLine()) != null) {
+
+                // 空行スキップ
+                if (line.isBlank()) {
+                    continue;
+                }
+
                 String[] data = line.split(",");
+
+                // 列不足対策
+                if (data.length < 2) {
+                    continue;
+                }
                 ps.setString(1, data[0].trim());
                 ps.setString(2, data[1].trim());
                 ps.setString(3, data[2].trim());
@@ -494,5 +506,27 @@ public class StudentDao extends Dao {
             con.commit();
         }
         return count > 0;
+    }
+
+    public String createCSV(School school, boolean isAttend) throws Exception {
+
+        List<Student> students = filter(school, isAttend);
+
+        StringBuilder sb = new StringBuilder();
+
+        // データ
+        for (Student s : students) {
+
+            sb.append(s.getNo()).append(",");
+            sb.append(s.getName()).append(",");
+            sb.append(s.getEntYear()).append(",");
+            sb.append(s.getClassNum()).append(",");
+            sb.append(s.isAttend()).append(",");
+            sb.append(s.getSchool().getCd());
+
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
 }

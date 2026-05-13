@@ -10,7 +10,7 @@ pageEncoding="UTF-8" %>
     <c:param name="content">
         <h2 class="main-title">クラス情報登録</h2>
         <label><p class="message">登録が完了しました</p></label>
-        <a href="ClassCreate.action">戻る</a>
-        <a href="ClassList.action">クラス一覧</a>
+        <a href="ClassNumCreate.action">戻る</a>
+        <a href="ClassNumList.action">クラス一覧</a>
     </c:param>
 </c:import>

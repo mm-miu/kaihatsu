@@ -45,8 +45,8 @@
                 <div class="col-2">
                     <button>絞込み</button>
                 </div>
-                <div class="mt-2 text-warning">${errors.get("f1")}</div>
             </div>
+            <div class="errors_student_list">${errors.get("f1")}</div>
         </form>
 
         <c:choose>

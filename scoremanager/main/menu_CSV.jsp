@@ -9,6 +9,35 @@ pageEncoding="UTF-8" %>
 
     <c:param name="content">
         <h2 class="main-title">CSV読み込み</h2>
-        <a href="student_CSV.jsp">学生登録</a>
+        <div class="menu-grid">
+
+            <a href="StudentCSV.action" class="csv-menu-card student_CSV">
+                <h2>学生登録</h2>
+            </a>
+
+            <a href="TestCSV.action" class="csv-menu-card test_CSV">
+                <h2>成績登録</h2>
+            </a>
+
+            <a href="SubjectCSV.action" class="csv-menu-card subject_CSV">
+                <h2>科目登録</h2>
+            </a>
+
+        </div>
+
+            <h2 class="main-title">CSV書き込み</h2>
+
+        <div class="menu-grid">
+            <a href="StudentCreateCSVExecute.action" class="csv-menu-card student_CSV">
+                <h2>学生</h2>
+            </a>
+            <a href="TestCreateCSV.action" class="csv-menu-card test_CSV">
+                <h2>成績</h2>
+            </a>
+            <a href="SubjectCreateCSV.action" class="csv-menu-card subject_CSV">
+                <h2>科目</h2>
+            </a>
+        </div>
+        
     </c:param>
 </c:import>

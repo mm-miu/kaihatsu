@@ -11,25 +11,12 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-        <style>
-            button {
-                
-                border: 1px solid #333;
-                border-radius: 5px;
-                background-color: rgb(216, 64, 64);  
-                color: white;
-                padding: 3px 3px;
-            }
-            
-        </style>
-        
         <div class="border">
             <h2 class="main-title">科目情報削除</h2>
             <main class="contend">
             <p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
             <form action="SubjectDeleteExecute.action">
                 <button name="delete" type="submit">削除</button>
-
             </form>
         </div>
 

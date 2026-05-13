@@ -8,6 +8,10 @@
 
         <h2 class="main-title">成績参照</h2>
 
+        <label>
+            <p style="color: deepskyblue;">科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</p>
+        </label>
+
         <!-- 上段：科目情報で検索 -->
         <section>
             <h4 class="content-title">科目情報</h4>
@@ -46,8 +50,8 @@
                         </label>
                     </div>
 
-                    <div class="col-2 text-center">
-                        <button class="btn btn-secondary" type="submit">検索</button>
+                    <div class="col-2">
+                        <button type="submit">検索</button>
                     </div>
                 </div>
             </form>
@@ -66,13 +70,19 @@
             <form method="get" action="TestList.action">
                 <div class="row">
                     <div class="col-4">
-                        <label for="studentNo">学生番号
-                            <input type="text" id="studentNo" name="studentNo" class="content-input"
-                                   value="${studentNo}" placeholder="学生番号を入力してください" />
+                        <div class="content-input">
+                        <label for="studentNo">学生
+                            <select id="f4" name="f4" class="form-select">
+                                <option value="0">--------</option>
+                                <c:forEach var="stu" items="${student_set}">
+                                    <option value="${stu.no}" <c:if test="${stu.no==f4}">selected</c:if>>${stu.name}（${stu.no}）</option>
+                                </c:forEach>
+                            </select>
                         </label>
+                        </div>
                     </div>
-                    <div class="col-2 text-center">
-                        <button class="btn btn-secondary" type="submit">検索</button>
+                    <div class="col-2 test">
+                        <button type="submit">検索</button>
                     </div>
                 </div>
             </form>

@@ -28,21 +28,21 @@
 
             <div class="content-input">
                 <c:if test="${not empty errors.ent_year}">
-                    <p style="color:gold">${errors.ent_year}</p>
+                    <p style="color:red">${errors.ent_year}</p>
                 </c:if>
 
                 <label for="no">学生番号</label><br>
-                <input type="text" id="no" name="no" value="${empty no ? '学生番号を入力してください' : no}" required>
+                <input type="text" id="no" name="no" value="${empty no ? '学生番号を入力してください' : no}" maxlength="10" required>
                 <br>
             </div>
 
             <div class="content-input">
                 <c:if test="${not empty errors.no}">
-                    <p style="color:gold">${errors.no}</p>
+                    <p style="color:red">${errors.no}</p>
                 </c:if>
 
                 <label for="name">氏名</label><br>
-                <input type="text" id="name" name="name" value="${empty name ? '氏名を入力してください' : name}" required>
+                <input type="text" id="name" name="name" value="${empty name ? '氏名を入力してください' : name}" maxlength="30" required>
                 <br>
             </div>
 

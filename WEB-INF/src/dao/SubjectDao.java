@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.io.FileReader;
+import jakarta.servlet.http.Part;
 
 public class SubjectDao extends Dao {
 
@@ -212,36 +214,79 @@ public class SubjectDao extends Dao {
     public boolean readInsertCSV(
         Part csv,
         School school) throws Exception {
-            int count = 0;
-            try (
-                BufferedReader br =
-                new BufferedReader(
-                    new InputStreamReader(
+
+    int count = 0;
+
+    try (
+        BufferedReader br =
+            new BufferedReader(
+                new InputStreamReader(
                     csv.getInputStream(),
                     "UTF-8"))
-                ) {
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        // 空行スキップ
-                        if (line.isBlank()) {
-                            continue;
-                        }
-                        String[] data = line.split(",");
-                        // 列不足対策
-                        if (data.length < 2) {
-                            continue;
-                        }
-                        Subject subject = new Subject();
-                        subject.setCd(data[0].trim());
-                        subject.setName(data[1].trim());
-                        // 学校セット
-                        subject.setSchool(school);
-                        // save()呼び出し
-                        if (save(subject)) {
-                            count++;
-                        }
-                    }
-                }
-                return count > 0;
+    ) {
+
+        String line;
+
+        while ((line = br.readLine()) != null) {
+
+            // 空行スキップ
+            if (line.isBlank()) {
+                continue;
+            }
+
+            // カンマ区切り
+            String[] data = line.split(",");
+
+            // 列不足対策
+            if (data.length < 2) {
+                continue;
+            }
+
+            // 値取得
+            String cd = data[0].trim();
+            String name = data[1].trim();
+
+            // 科目コード3文字チェック
+            if (cd.length() != 3) {
+                continue;
+            }
+
+            // Subject生成
+            Subject subject = new Subject();
+
+            subject.setCd(cd);
+            subject.setName(name);
+
+            // 学校セット
+            subject.setSchool(school);
+
+            // DB登録
+            if (save(subject)) {
+                count++;
+            }
         }
+    }
+
+    return count > 0;
+}
+
+public String createCSV(School school, boolean unusedFlag) throws Exception {
+
+    List<Subject> subjects = filter(school);
+
+    StringBuilder sb = new StringBuilder();
+
+    // データ
+    for (Subject s : subjects) {
+
+        sb.append(s.getCd()).append(",");
+        sb.append(s.getName()).append(",");
+        // Subject に school がセットされていない可能性があるため、引数の school を使う
+        sb.append(school.getCd());
+
+        sb.append("\n");
+    }
+
+    return sb.toString();
+}
 }

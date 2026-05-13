@@ -10,23 +10,16 @@
 
     <c:param name="content">
 
-        <h2 class="main-title">科目情報CSV読み込み</h2>
+        <h2 class="main-title">成績CSV読み込み</h2>
 
-        <form action="SubjectCSVExecute.action"
+        <form action="TestCSVExecute.action"
               method="POST"
               enctype="multipart/form-data">
 
             <div class="tr">
-                <label for="csv" class="th">
-                    CSVファイル:
-                </label>
-
+                <label for="csv" class="th">CSVファイル:</label>
                 <div class="td">
-                    <input type="file"
-                           id="csv"
-                           name="csv"
-                           accept=".csv"
-                           required>
+                    <input type="file" id="csv" name="csv" accept=".csv" required>
                 </div>
             </div>
             <div class="dropArea">
@@ -36,9 +29,7 @@
             </div>
             <div class="tr">
                 <div class="td">
-                    <button type="submit">
-                        追加
-                    </button>
+                    <button type="submit">追加</button>
                 </div>
             </div>
 

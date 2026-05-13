@@ -14,17 +14,17 @@
 
         <h2 class="main-title">クラス情報登録</h2>
 
-        <form action="ClassCreateExecute.action">
+        <form action="ClassNumCreateExecute.action">
             <div class="content-input">
                 <label for="num">クラス番号</label>
                 <input type="text" id="num" name="num" 
                     value="${empty num ? 'クラス番号を入力してください' : num}" pattern="\d+" maxlength="3" required>
                 <br>
                 <c:if test="${not empty errors.num}">
-                    <p style="color:gold">${errors.num}</p>
+                    <p style="color:red">${errors.num}</p>
                 </c:if>
                 <c:if test="${not empty errors.num_count}">
-                    <p style="color:gold">${errors.num_count}</p>
+                    <p style="color:red">${errors.num_count}</p>
                 </c:if>
             </div>
             <div class="button-2">
@@ -33,7 +33,7 @@
             </div>
         </form>
 
-        <a href="ClassList.action">戻る</a>
+        <a href="ClassNumList.action">戻る</a>
     </c:param>
 
 </c:import>

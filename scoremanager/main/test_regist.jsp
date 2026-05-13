@@ -60,13 +60,26 @@
                 </label>
             </div>
 
+            <c:if test="${not empty error}">
+                <p style="color:red">${error}</p>
+            </c:if>
+
             <div class="col-2 text-center">
                 <button class="btn btn-secondary" id="filter-botton">検索</button>
             </div>
         </form>
-
+        
+        <c:if test="${empty list}">
+            <c:if test="${empty firstaccess}">
+                <c:if test="${empty error}">
+                    <hr>
+                    <p>成績情報が存在しませんでした。</p>
+                </c:if>
+            </c:if>
+        </c:if>
         <c:choose>
             <c:when test="${not empty list}">
+                <hr>
                 <div>科目：${subject.name} (${f4}回)</div>
                 <form action="TestRegistExecute.action">
                     <table class="table table-hover">
@@ -83,10 +96,10 @@
                                 <td>${test.classNum.class_num}</td>
                                 <td>${test.student.no}</td>
                                 <td>${test.student.name}</td>
-                                <td><input type="number" name="point_${test.student.no}" inputmode="numeric" min="1" max="100" maxlength="3" value="${test.point}" required></td>
+                                <td><input type="number" name="point_${test.student.no}" inputmode="numeric" min="0" max="100" maxlength="3" value="${test.point}" required></td>
                                 <!-- <td class="text-center"> -->
                                 <c:if test="${not empty errors[test.student.no]}">
-                                    <p style="color:gold">${errors[test.student.no]}</p>
+                                    <p style="color:red">${errors[test.student.no]}</p>
                                 </c:if>
                                 <input type="hidden" name="regist" value="${test.student.no}">
                             </tr>

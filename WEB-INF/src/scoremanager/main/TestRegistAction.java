@@ -74,22 +74,35 @@ public class TestRegistAction extends Action {
         req.setAttribute("count_set", countSet);
 
 
-        //検索は4つすべて指定されている場合のみ実行
-        boolean allSpecified = (entYearStr != null && !entYearStr.isEmpty())
-                            && (classNum != null && !classNum.isEmpty())
-                            && (subjectCd != null && !subjectCd.isEmpty())
-                            && (noStr != null && !noStr.isEmpty());
+        boolean isFirstAccess =
+                entYearStr == null &&
+                classNum == null &&
+                subjectCd == null &&
+                noStr == null;
 
-        //初期表示または一部入力の場合は JSP に戻す
+        boolean allSpecified =
+                entYearStr != null && !"0".equals(entYearStr) &&
+                classNum != null && !"0".equals(classNum) &&
+                subjectCd != null && !"0".equals(subjectCd) &&
+                noStr != null && !"0".equals(noStr);
+
+        // 初回アクセス
+        if (isFirstAccess) {
+            req.setAttribute("firstaccess","firstaccess");
+            req.getRequestDispatcher("test_regist.jsp").forward(req, res);
+            return;
+        }
+
+        // 未入力あり
         if (!allSpecified) {
-            if ((entYearStr != null || classNum != null || subjectCd != null || noStr != null) &&
-                !(entYearStr == null && classNum == null && subjectCd == null && noStr == null)) {
-                req.setAttribute("error", "入学年度とクラスと科目と回数を選択してください");
-            }
+
+            req.setAttribute("error", "入学年度とクラスと科目と回数を選択してください");
+
             req.setAttribute("f1", entYearStr);
             req.setAttribute("f2", classNum);
             req.setAttribute("f3", subjectCd);
             req.setAttribute("f4", noStr);
+
             req.getRequestDispatcher("test_regist.jsp").forward(req, res);
             return;
         }

@@ -7,20 +7,24 @@
         <section>
             <h2 class="main-title">メニュー</h2>
             <div class="menu-grid">
-                <div class="menu-card student">
-                    <a href="StudentList.action">学生管理</a>
-                </div>
-                    <div class="menu-card score">
-                        <div class="menu-title">成績管理</div>
-                            <a href="TestRegist.action">成績登録</a>
-                            <a href="TestList.action">成績参照</a>
-                    </div>
-                <div class="menu-card subject">
-                    <a href="SubjectList.action">科目管理</a>
-                </div>
-                <div class="menu-card class">
-                    <a href="ClassNumList.action">クラス管理</a>
-                </div>
+                <a href="StudentList.action" class="menu-card student">
+                    <h2>学生管理</h2>
+                </a>
+                <a href="MenuTest.action" class="menu-card test">
+                    <h2>成績管理</h2>
+                </a>
+                <a href="SubjectList.action" class="menu-card subject">
+                    <h2>科目管理</h2>
+                </a>
+                <a href="ClassNumList.action" class="menu-card class">
+                    <h2>クラス管理</h2>
+                </a>
+                <a href="MenuCSV.action" class="menu-card CSV">
+                    <h2>CSV</h2>
+                </a>
+                <a href="" class="menu-card user">
+                    <h2>ユーザー管理</h2>
+                </a>
             </div>
         </section>
     </c:set>
