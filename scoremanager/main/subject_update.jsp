@@ -28,7 +28,9 @@
 
             <div class="content-input">
                 <label for="name">科目名</label>
-                <input type="text" id="name" name="name" value="${name}" maxlength="20" required>
+                <input type="text" id="name" name="name" 
+                    value="${name}"
+                    placeholder="科目名を入力してください。変更前：${name}" maxlength="20" required>
                 <br>
             </div>
             <div class="button-2">

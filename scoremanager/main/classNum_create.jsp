@@ -1,4 +1,4 @@
-<%-- 科目登録JSP --%>
+<%-- クラス登録JSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -18,7 +18,9 @@
             <div class="content-input">
                 <label for="num">クラス番号</label>
                 <input type="text" id="num" name="num" 
-                    value="${empty num ? 'クラス番号を入力してください' : num}" pattern="\d+" maxlength="3" required>
+                    value="${num}"
+                    placeholder="クラス番号を入力してください"
+                    pattern="\d+" maxlength="3" required>
                 <br>
                 <c:if test="${not empty errors.num}">
                     <p style="color:red">${errors.num}</p>

@@ -17,7 +17,7 @@
         <form action="StudentCreateExecute.action">
             <label for="ent_year">入学年度</label>
             <select id="ent_year" name="ent_year">
-                <option value="0">--------</option>
+                <option value="0" selected disabled>--------</option>
                 <c:forEach var="year" items="${ent_year_set}">
                     <option value="${year}" <c:if test="${ent_year == year}">
                         selected</c:if>>${year}
@@ -32,7 +32,7 @@
                 </c:if>
 
                 <label for="no">学生番号</label><br>
-                <input type="text" id="no" name="no" value="${empty no ? '学生番号を入力してください' : no}" maxlength="10" required>
+                <input type="text" id="no" name="no" value="${no}" placeholder="学生番号を入力してください"  maxlength="10" required>
                 <br>
             </div>
 
@@ -42,13 +42,13 @@
                 </c:if>
 
                 <label for="name">氏名</label><br>
-                <input type="text" id="name" name="name" value="${empty name ? '氏名を入力してください' : name}" maxlength="30" required>
+                <input type="text" id="name" name="name" value="${name}" placeholder="氏名を入力してください" maxlength="30" required>
                 <br>
             </div>
 
             <label for="class_num">クラス</label>
             <select id="class_num" name="class_num">
-                <option value="0">--------</option>
+                <option value="0" selected disabled>--------</option>
                 <c:forEach var="num" items="${class_num_set}">
                     <option value="${num}">${num}</option>
                 </c:forEach>

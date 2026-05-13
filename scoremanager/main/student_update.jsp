@@ -1,4 +1,4 @@
-<%-- 学生一覧JSP --%>
+<%-- 学生更新JSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -25,13 +25,15 @@
                 <br>
 
                 <label for="name">氏名</label>
-                <input type="text" id="name" name="name" value="${name}" maxlength="30" required>
+                <input type="text" id="name" name="name" value="${name}"
+                    placeholder="氏名を入力してください。変更前：${name}"
+                    maxlength="30" required>
                 <br>
             </div>
 
             <label for="class_num">クラス</label>
             <select id="class_num" name="class_num">
-                <option value="0">--------</option>
+                <option value="0" selected disabled>--------</option>
                 <c:forEach var="num" items="${class_num_set}">
                     <option value="${num}"
                         <c:if test="${num==class_num}">
