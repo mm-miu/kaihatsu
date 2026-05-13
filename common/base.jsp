@@ -128,6 +128,14 @@
       border: none;
       border-radius: 5px;
     }
+    /* hover時 */
+    .login-box input[type="submit"]:hover {
+      background-color: #1565c0;
+    }
+    .login-box input[type="checkbox"] {
+      accent-color: mediumpurple;
+    }
+
     /* ログイン失敗時エラー文 */
     .errors_login_text{
       color: red;
