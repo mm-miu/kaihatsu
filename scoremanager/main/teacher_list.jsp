@@ -48,6 +48,7 @@
                        
                         <th>氏名</th>
                         <th>id</th>
+                        <th></th>
                         
                     </tr>
                 <c:forEach var="T_My" items="${MyList}">
@@ -73,6 +74,7 @@
                         
                         <th>氏名</th>
                         <th>id</th>
+                        <th></th>
                         
                     </tr>
                         <c:forEach var="T_all" items="${AllList}">
