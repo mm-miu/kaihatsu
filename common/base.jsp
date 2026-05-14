@@ -249,7 +249,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      align-items: flex-end;
+
       background: white;
       padding: 15px;
       border-radius: 10px;
@@ -266,6 +266,7 @@
     .col-4, .col-2 {
       display: flex;
       flex-direction: column;
+      position: relative;
     }
     /* 幅 クラス　入学年度*/
     .col-4 {

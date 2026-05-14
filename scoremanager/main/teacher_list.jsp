@@ -17,16 +17,16 @@
         <form method="get" class="form">
             <div class="row">
                 <div class="col-4">
-                    <label for="student-f1-select">学校コード</label>
-                    <select  id="student-f1-select" name="f1" >
+                    <label for="school-select">学校コード</label>
+                    <select  id="school-select" name="f1" >
                         <option value="0"selected disabled>--------</option>
                         <option value="upcd" label="昇順">昇順</option>
                         <option value="downcd" label="降順">降順</option>
                     </select>
                 </div>
                 <div class="col-4">
-                    <label for="student-f1-select">名前</label>
-                    <select  id="student-f1-select" name="f1" >
+                    <label for="name-select">名前</label>
+                    <select  id="name-select" name="f1" >
                         <option value="0"selected disabled>--------</option>
                         <option value="upname" label="昇順">昇順</option>
                         <option value="downname" label="降順">降順</option>
