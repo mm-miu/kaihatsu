@@ -410,6 +410,12 @@
     .test-menu-card.test_regist{
       background-color: #ffc3c3;
     }
+    /* 成績登録　検索ボタンの調節 */
+    .button-2.submit{
+      margin-top: 10px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
     /* 成績参照　カード */
     .test-menu-card.test_list{
       background-color: #ffc3c3;
@@ -417,9 +423,6 @@
     /* 成績参照 h4　科目情報　学生情報*/
     .content-title{
       margin-left: 10px;
-    }
-    .button-2.submit{
-      margin-top: 10px;
     }
     /* 学生番号で検索　検索ボタンの細かい調節
      */
