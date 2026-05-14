@@ -391,7 +391,7 @@
       margin-top: -20px;
     }
 
-    
+
 
     /* 成績メニュー menu_test.jsp*/
     .test-menu-card{
@@ -436,7 +436,7 @@
     }
     /* 成績参照注意書き */
     .p_note{
-      clear: deepskyblue;
+      color: cornflowerblue;
     }
 
 
