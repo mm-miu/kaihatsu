@@ -391,6 +391,7 @@
       margin-top: -20px;
     }
 
+    
 
     /* 成績メニュー menu_test.jsp*/
     .test-menu-card{
@@ -439,6 +440,7 @@
     }
 
 
+
     /* 科目管理の削除用ボタン */
     .border button {
       border: 1px solid #333;
@@ -447,6 +449,7 @@
       color: white;
       padding: 3px 3px;
     }
+
 
 
     /* CSV読み込みメニュー */
@@ -478,6 +481,7 @@
     .csv-menu-card.subject_CSV{
       background-color: #CCFFFF;
     }
+
 
     /*CSVファイル選択追加画面
     　student_CSV.jsp subject_CSV.jsp test_CSV.jsp  */
@@ -515,8 +519,6 @@
       min-height: 100px;
       margin-bottom: 20px;
     }
-    
-
   </style>
 
 </head>

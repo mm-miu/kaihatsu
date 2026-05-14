@@ -10,8 +10,8 @@ pageEncoding="UTF-8" %>
     <c:param name="content">
         <h2 class="main-title">ユーザー情報登録</h2>
         <label><p class="message">登録が完了しました</p></label>
-        <p>初期パスワードは"password"になります</p><br>
-        <p>初ログイン後変更ページより変更してください</p>
+        <p>初期パスワードは"password"になります</p>
+        <p>初ログイン後変更ページより変更してください</p><br>
         <a href="TeacherCreate.action">戻る</a>
         <a href="TeacherList.action">ユーザー一覧</a>
     </c:param>
