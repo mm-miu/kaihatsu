@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.School;
-import bean.Student;
 import bean.Teacher;
 
 public class TeacherDao extends Dao {
@@ -36,6 +35,7 @@ public class TeacherDao extends Dao {
                 teacher.setId(rs.getString("id"));
                 teacher.setName(rs.getString("name"));
                 teacher.setSchool(schoolDao.get(rs.getString("school_cd")));
+                teacher.setPassword(rs.getString("password"));
                 teacher.setAuthority(rs.getString("authority"));
             } else {
                 // 存在しない場合
@@ -173,162 +173,7 @@ public class TeacherDao extends Dao {
         return list;
     }
 
-    //list(低権力)
-    public List<Teacher> rowfilter(School school) throws Exception {
-        // リストを初期化
-        List<Teacher> list=new ArrayList<>();
-            // データベースへのコネクションを確立
-        Connection con=getConnection();
-        // プリペアードステートメント
-        PreparedStatement st=null;
-        try {
-            
-            // プリペアードステートメントにSQL文をセット
-            st=con.prepareStatement(
-                "SELECT NAME,SCHOOL_CD,ID,PASSWORD FROM TEACHER WHERE SCHOOL_CD=? order by AUTHORITY ,NAME"
-            );
-            // プリペアードステートメントに学校コードをバインド
-            st.setString(1, school.getCd());
-            // プリペアードステートメントを実行
-            ResultSet rs=st.executeQuery();
-            SchoolDao schoolDao=new SchoolDao();
-
-            // リザルトセットを全件走査
-            while (rs.next()) {
-                // リストにクラス番号を追加
-                Teacher t=new Teacher();
-                t.setSchool(schoolDao.get(rs.getString("school_cd")));
-                t.setName(rs.getString("name"));
-                
-                list.add(t);
-            }
-
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            // プリペアードステートメントを閉じる
-            if (st!=null) {
-                try {
-                    st.close();;
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
-            // コネクションを閉じる
-            if (con!=null) {
-                try {
-                    con.close();
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
-        }
-        return list;
-    }
-    //List(中権力)
-    public List<Teacher> Mdfilter(School school) throws Exception {
-        // リストを初期化
-        List<Teacher> list=new ArrayList<>();
-            // データベースへのコネクションを確立
-        Connection con=getConnection();
-        // プリペアードステートメント
-        PreparedStatement st=null;
-        try {
-            // プリペアードステートメントにSQL文をセット
-            st=con.prepareStatement(
-                "SELECT NAME,SCHOOL_CD,ID,PASSWORD FROM TEACHER Where school_cd=?");
-            // プリペアードステートメントに学校コードをバインド
-            st.setString(1, school.getCd());
-            // プリペアードステートメントを実行
-            ResultSet rs=st.executeQuery();
-                SchoolDao schoolDao=new SchoolDao();
-            // リザルトセットを全件走査
-            while (rs.next()) {
-                // リストにクラス番号を追加
-                Teacher t=new Teacher();
-                t.setSchool(schoolDao.get(rs.getString("school_cd")));
-                t.setName(rs.getString("name"));
-                t.setId(rs.getString("id"));
-                t.setPassword(rs.getString("password"));
-                list.add(t);
-            }
-
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            // プリペアードステートメントを閉じる
-            if (st!=null) {
-                try {
-                    st.close();;
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
-            // コネクションを閉じる
-            if (con!=null) {
-                try {
-                    con.close();
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
-        }
-        return list;
-    }
-
-    //List(高権力)
-    public List<Teacher> Hifilter() throws Exception {
-        // リストを初期化
-        List<Teacher> list=new ArrayList<>();
-            // データベースへのコネクションを確立
-        Connection con=getConnection();
-        // プリペアードステートメント
-        PreparedStatement st=null;
-        try {
-            // プリペアードステートメントにSQL文をセット
-            st=con.prepareStatement(
-                "SELECT NAME,SCHOOL_CD,ID,PASSWORD FROM TEACHER");
-            // プリペアードステートメントに学校コードをバインド
-            
-            // プリペアードステートメントを実行
-            ResultSet rs=st.executeQuery();
-                
-                
-            // リザルトセットを全件走査
-            while (rs.next()) {
-                // リストにクラス番号を追加
-                School sch=new School();
-                Teacher t=new Teacher();
-                sch.setName(rs.getString("school_cd"));
-                t.setSchool(sch);
-                t.setName(rs.getString("name"));
-                t.setId(rs.getString("id"));
-                t.setPassword(rs.getString("password"));
-                list.add(t);
-            }
-
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            // プリペアードステートメントを閉じる
-            if (st!=null) {
-                try {
-                    st.close();;
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
-            // コネクションを閉じる
-            if (con!=null) {
-                try {
-                    con.close();
-                } catch (SQLException sqle) {
-                    throw sqle;
-                }
-            }
-        }
-        return list;
-    }
+    
     // ユーザー登録
     public boolean save(Teacher teacher) throws Exception {
         // コネクションを確立

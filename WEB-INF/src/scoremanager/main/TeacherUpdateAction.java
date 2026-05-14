@@ -35,6 +35,7 @@ public class TeacherUpdateAction extends Action {
         List<School> sList= new ArrayList<>();
 
         String id=request.getParameter("id");
+        System.out.println(id+"a");
         
 
         Teacher te=tDao.get(id);
@@ -62,7 +63,7 @@ public class TeacherUpdateAction extends Action {
         
 
         // リクエストにデータをセット
-        request.setAttribute("id", id);
+        session.setAttribute("C_Id", id);
         request.setAttribute("name", te.getName());
         request.setAttribute("password",te.getPassword());
         request.setAttribute("school", te.getSchool().getCd());

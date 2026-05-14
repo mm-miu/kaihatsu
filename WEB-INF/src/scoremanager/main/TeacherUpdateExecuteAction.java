@@ -20,12 +20,12 @@ public class TeacherUpdateExecuteAction extends Action {
     ) throws Exception {
         HttpSession session=request.getSession(); // セッション
         Teacher teacher=(Teacher)session.getAttribute("user");
-        
+        String id=(String)session.getAttribute("C_Id");
         
 
         School sch=null;
         String name="";// 入力された名前
-        String id="";// 入力されたID
+        // 入力されたID
         String password="";// 入力されたパスワード
         String school="";//入力された学校コード
         String inauthority="";//入力された権限
@@ -37,8 +37,9 @@ public class TeacherUpdateExecuteAction extends Action {
         Map<String, String> errors=new HashMap<>();// エラーメッセージ
 
         // リクエストパラメーターの取得
-        id=request.getParameter("id");
         
+        
+        System.out.println(id+"b");
 
         password=request.getParameter("password");
         name=request.getParameter("name");
@@ -52,6 +53,7 @@ public class TeacherUpdateExecuteAction extends Action {
         else{if ("0".equals(inauthority)){f2="0";}
         else{ f2="1"; }
     }
+    
         
 
         
@@ -87,7 +89,7 @@ public class TeacherUpdateExecuteAction extends Action {
            
         
         if (password==null){
-            password="password";
+            password=tDao.get(id).getPassword();
         }
 
         // 数値に変換

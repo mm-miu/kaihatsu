@@ -1,0 +1,94 @@
+<%-- 学生一覧JSP --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<c:import url="/common/base.jsp">
+    <c:param name="title">
+        得点管理システム
+    </c:param>
+
+    <c:param name="scripts"></c:param>
+
+    <c:param name="content">
+        <style>        
+        .content-input input[type="checkbox"] {
+            width: 1%;
+            line-height: 5;
+        }
+        </style>
+
+
+        <h2 class="main-title">学生情報変更</h2>
+
+        <form action="TeacherUpdateExecute.action">
+           
+                <div class="content-input">
+                <label for="name">id</label>
+                ${C_Id}
+                <br>
+                <c:choose>
+                <c:when test="${user.id.equals(C_Id) || authority=='1'}">
+                <label for="name">パスワード</label>
+                <input type="password" id="password" name="password" value="${password}" required>
+                <label for="name">パスワードを表示</label>
+                <input type="checkbox" name="chk_d_ps" id="showPassword" >
+                <br>
+                
+                </c:when>
+                <c:otherwise>
+                    <label for="name">パスワード</label><br>
+                    ${password}<br>
+                </c:otherwise>
+                </c:choose>
+
+                <label for="name">氏名</label>
+                <input type="text" id="name" name="name" value="${name}" required>
+                <br>
+            </div>
+            
+            <c:if test="${ authority=='1'}">
+            <label for="class_num">所属校</label>
+            <select name="school_cd" >
+                <option value="0">--------</option>
+                <c:forEach var="sList" items="${schoolList}">
+                    <option value="${sList.cd}" label="${sList.name}">${sList.name}</option>
+                </c:forEach>
+            </select>
+                <br>
+            
+            <label for="authority">権限</label>
+            <select name="authority">
+                <option value="0">--------</option>
+                <c:forEach var="i" begin="1" end="3">
+                    <option value="${i}">${i}</option>
+                </c:forEach>
+            </select>
+            </c:if>
+            
+               
+            <br>
+            
+            <div class="button-2">
+                <button name="login" type="submit">変更</button>
+                <br>
+            </div>
+        </form>
+
+        <a href="TeacherList.action">戻る</a>
+    </c:param>
+
+</c:import>
+
+<script>
+    const checkbox = document.getElementById("showPassword");
+    const password = document.getElementById("password");
+
+    checkbox.addEventListener("change",function(){
+        if(checkbox.checked){
+            password.type = "text";
+        }else{
+            password.type = "password";
+        }
+    });
+</script>
