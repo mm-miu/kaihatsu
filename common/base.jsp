@@ -329,7 +329,14 @@
     button:hover {
       background-color: #5a6268;
     }
-
+    
+    button:active{
+      /*ボタンを押したとき*/
+      -webkit-transform: translateY(5px);
+      transform: translateY(3px);/*下に動く*/
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+      border-bottom: none;
+    }
     /* 表*/
     /* テーブル */
     table{
