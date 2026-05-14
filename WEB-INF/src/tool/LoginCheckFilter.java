@@ -25,6 +25,11 @@ public class LoginCheckFilter implements Filter {
             return;
         }
 
+        if (path.equals("/error.jsp")) {
+            chain.doFilter(request, response);
+            return;
+}
+
         if (session == null || session.getAttribute("user") == null) {
             res.sendRedirect(req.getContextPath() + "/scoremanager/login.jsp");
         } else {
