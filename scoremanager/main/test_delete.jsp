@@ -7,7 +7,7 @@
     <h2 class="main-title">成績情報削除</h2>
 
     <!-- メッセージを表示 -->
-    <p><c:out value="${message}" /></p>
+    <label><p class="message"><c:out value="${message}" /></p></label>
 
     <!-- 元の一覧へ戻るリンク -->
     <p><a href="TestList.action?student_no=${studentNo}">一覧へ戻る</a></p>
