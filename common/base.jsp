@@ -356,7 +356,7 @@
     }
     /* ホバー */
     tr:hover{
-      background-color: #dde3e9;
+      background-color: #f0f3f6;
     }
 
     /* 検索時、入学年度未記入エラー文 */

@@ -35,10 +35,10 @@
             </div>
             
         </form>
-      
+
+        <div>ログイン中のユーザー</div>      
         <c:choose>
             <c:when test="${AllList.size()>0}">
-                <div>検索結果：${AllList.size()}件</div>
                 <table class="table">
                     <tr>
                         <th>学校コード</th>
@@ -63,8 +63,9 @@
                     </c:forEach>
                 </table>
 
-                <hr>
+                <br><hr><br>
 
+                <div>ユーザー一覧：${AllList.size()}件</div>
                 <c:choose>
                 <c:when test="${ authority=='1' || authority=='2'}">
                 <table class="table">
