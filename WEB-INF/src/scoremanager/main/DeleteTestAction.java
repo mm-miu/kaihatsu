@@ -22,7 +22,7 @@ public class DeleteTestAction extends Action {
         try {
             dao = new TestDao();//DB操作用のクラスをインスタンス化
             deleted = dao.delete(studentNo, subjectCd, schoolCd, no);//削除処理を実行
-            message = deleted ? "削除しました。" : "対象データが見つかりませんでした。";
+            message = deleted ? "削除に成功しました。" : "対象データが見つかりませんでした。";
         } catch (Exception e) {
             message = "削除処理中にエラーが発生しました";
             e.printStackTrace();
