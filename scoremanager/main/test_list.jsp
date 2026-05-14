@@ -9,7 +9,7 @@
         <h2 class="main-title">成績参照</h2>
 
         <label>
-            <p style="color: deepskyblue;">科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</p>
+            <p class="p_note">科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</p>
         </label>
 
         <!-- 上段：科目情報で検索 -->

@@ -24,9 +24,6 @@
                         <option value="downcd" label="降順">降順</option>
                     </select>
                 </div>
-            </div>
-
-            <div class="row">
                 <div class="col-4">
                     <label for="student-f1-select">名前</label>
                     <select  id="student-f1-select" name="f1" >
@@ -65,8 +62,10 @@
                     </tr>
                     </c:forEach>
                 </table>
-                <c:choose>
+
+                <hr>
                 
+                <c:choose>
                 <c:when test="${ authority=='1' || authority=='2'}">
                 <table class="table">
                     <tr>

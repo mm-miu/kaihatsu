@@ -432,6 +432,10 @@
       height: 3em;
       padding-top: 35px;
     }
+    /* 成績参照注意書き */
+    .p_note{
+      clear: deepskyblue;
+    }
 
 
     /* 科目管理の削除用ボタン */

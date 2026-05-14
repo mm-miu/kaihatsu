@@ -22,10 +22,10 @@
                     value="${empty cd ? '半角でログイン名を入力してください' : id}" maxlength="10" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
-                    <p style="color:gold">${errors.cd}</p>
+                    <p style="color:red">${errors.cd}</p>
                 </c:if>
                 <c:if test="${not empty errors.cd_count}">
-                    <p style="color:gold">${errors.cd_count}</p>
+                    <p style="color:red">${errors.cd_count}</p>
                 </c:if>
             </div>
 
@@ -35,10 +35,10 @@
                     value="${empty cd ? '名前を入力してください' : name}" maxlength="10" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
-                    <p style="color:gold">${errors.cd}</p>
+                    <p style="color:red">${errors.cd}</p>
                 </c:if>
                 <c:if test="${not empty errors.cd_count}">
-                    <p style="color:gold">${errors.cd_count}</p>
+                    <p style="color:red">${errors.cd_count}</p>
                 </c:if>
             </div>
 
