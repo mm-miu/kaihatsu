@@ -109,7 +109,7 @@
       margin-bottom: 20px;
       color: #CCCCFF;
     }
-    /* テキストボックス内の文字 */
+    /* テキストボックス　名前、パスワード */
     .login-box input[type="text"],
     .login-box input[type="password"] {
       width: 100%;
@@ -128,11 +128,13 @@
       border: none;
       border-radius: 5px;
     }
-    /* hover時 */
+    /* ログインボタン　ホバー */
     .login-box input[type="submit"]:hover {
       background-color: #1565c0;
     }
-    .login-box input[type="checkbox"] {
+    /* パス表示ボタン　チェック後 */
+    input[type="checkbox"] {
+      transform: scale(1.5);
       accent-color: mediumpurple;
     }
 
@@ -247,7 +249,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      align-items: flex-end;
+
       background: white;
       padding: 15px;
       border-radius: 10px;
@@ -264,26 +266,48 @@
     .col-4, .col-2 {
       display: flex;
       flex-direction: column;
+      position: relative;
     }
-    /* 幅 */
+    /* 幅 クラス　入学年度*/
     .col-4 {
       flex: 1;
     }
+    /* 在学中　チェックボックス */
     .col-2 {
       width: 120px;
       padding-top: 25px;
+    }
+    /* チェックボックス　位置調節 */
+    .col-2.bt{
+      margin-top: auto;
     }
     /* ラベル */
     label {
       margin-bottom: 5px;
     }
-    /* セレクト */
+    /* プルダウン　セレクト */
     select{
       width: 100%;
       padding: 5px;
       border-radius: 4px;
-      border: 1px solid #AAAAAA;
+      border: 1.5px solid #AAAAAA;
     }
+    /* 項目(データ)の部分 */
+    option {
+      background-color: #ffffff; /* 中身を白に戻す */
+      color: #000;
+    }
+    /* プルダウン　ホバー */
+    select:hover {
+      background-color: #e9ecef;
+    }
+    /* プルダウン　フォーカス */
+    select:focus {
+      border-color: #93b5ff;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(74,144,226,0.2);
+    }
+    /* ボーダー線を項目欄に表示させない */
     option[disabled][selected] {
       display: none;
     }
@@ -305,7 +329,14 @@
     button:hover {
       background-color: #5a6268;
     }
-
+    
+    button:active{
+      /*ボタンを押したとき*/
+      -webkit-transform: translateY(5px);
+      transform: translateY(3px);/*下に動く*/
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+      border-bottom: none;
+    }
     /* 表*/
     /* テーブル */
     table{
@@ -320,7 +351,6 @@
       padding: 8px;
       text-align: left;
       background-color: #e9ecef;
-
       position: sticky;
       top: 0;
       z-index: 0;
@@ -333,7 +363,7 @@
     }
     /* ホバー */
     tr:hover{
-      background-color: #dde3e9;
+      background-color: #f0f3f6;
     }
 
     /* 検索時、入学年度未記入エラー文 */
@@ -359,12 +389,15 @@
     .button-2 button{
       margin-top: 20px;
     }
+    /* 変更画面の在学中チェックボタンの調節 */
     .is_attend{
       margin-top: 10px;
     }
+    /* 変更画面の変更ボタンの調節*/
     .button-2.change{
       margin-top: -20px;
     }
+
 
 
     /* 成績メニュー menu_test.jsp*/
@@ -386,6 +419,12 @@
     .test-menu-card.test_regist{
       background-color: #ffc3c3;
     }
+    /* 成績登録　検索ボタンの調節 */
+    .button-2.submit{
+      margin-top: 10px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
     /* 成績参照　カード */
     .test-menu-card.test_list{
       background-color: #ffc3c3;
@@ -397,8 +436,17 @@
     /* 学生番号で検索　検索ボタンの細かい調節
      */
     .col-2.test{
+      padding-left: 1em;
+      padding-right: 1em;
+      height: 3em;
       padding-top: 35px;
     }
+    /* 成績参照注意書き */
+    .p_note{
+      color: cornflowerblue;
+    }
+
+
 
     /* 科目管理の削除用ボタン */
     .border button {
@@ -408,6 +456,7 @@
       color: white;
       padding: 3px 3px;
     }
+
 
 
     /* CSV読み込みメニュー */
@@ -439,6 +488,7 @@
     .csv-menu-card.subject_CSV{
       background-color: #CCFFFF;
     }
+
 
     /*CSVファイル選択追加画面
     　student_CSV.jsp subject_CSV.jsp test_CSV.jsp  */
@@ -476,8 +526,6 @@
       min-height: 100px;
       margin-bottom: 20px;
     }
-    
-
   </style>
 
 </head>

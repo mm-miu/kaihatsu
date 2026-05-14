@@ -34,7 +34,7 @@
                     </select>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2 bt">
                     <label for="student-f3-check">在学中
                         <!-- パラメーターf3が存在している場合checkedを追加 -->
                         <input class="form-check-input" type="checkbox"

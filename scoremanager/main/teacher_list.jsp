@@ -17,20 +17,17 @@
         <form method="get" class="form">
             <div class="row">
                 <div class="col-4">
-                    <label for="student-f1-select">学校コード</label>
-                    <select  id="student-f1-select" name="f1" >
-                        <option value="0">--------</option>
+                    <label for="school-select">学校コード</label>
+                    <select  id="school-select" name="f1" >
+                        <option value="0"selected disabled>--------</option>
                         <option value="upcd" label="昇順">昇順</option>
                         <option value="downcd" label="降順">降順</option>
                     </select>
                 </div>
-            </div>
-
-            <div class="row">
                 <div class="col-4">
-                    <label for="student-f1-select">名前</label>
-                    <select  id="student-f1-select" name="f1" >
-                        <option value="0">--------</option>
+                    <label for="name-select">名前</label>
+                    <select  id="name-select" name="f1" >
+                        <option value="0"selected disabled>--------</option>
                         <option value="upname" label="昇順">昇順</option>
                         <option value="downname" label="降順">降順</option>
                     </select>
@@ -38,33 +35,38 @@
             </div>
             
         </form>
-      
+
+        <div>ログイン中のユーザー</div>      
         <c:choose>
             <c:when test="${AllList.size()>0}">
-                <div>検索結果：${AllList.size()}件</div>
                 <table class="table">
                     <tr>
                         <th>学校コード</th>
                        
                         <th>氏名</th>
                         <th>id</th>
+                        <th></th>
                         
                     </tr>
+                <c:forEach var="T_My" items="${MyList}">
                     <tr>
-                        <c:forEach var="T_My" items="${MyList}">
+                        
                     
                         <td>${T_My.school.getName()}</td>  
                         <td>${T_My.name}</td>
                         <td>${T_My.id}</td>
                         
                             
-                        <td><a href="StudentUpdate.action?no=${T_My.id}">変更</a></td>
+                        <td><a href="TeacherUpdate.action?id=${T_My.id}">変更</a></td>
                         
                     </tr>
                     </c:forEach>
                 </table>
+
+                <br><hr><br>
+
+                <div>ユーザー一覧：${AllList.size()}件</div>
                 <c:choose>
-                
                 <c:when test="${ authority=='1' || authority=='2'}">
                 <table class="table">
                     <tr>
@@ -72,6 +74,7 @@
                         
                         <th>氏名</th>
                         <th>id</th>
+                        <th></th>
                         
                     </tr>
                         <c:forEach var="T_all" items="${AllList}">

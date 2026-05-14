@@ -19,26 +19,26 @@
             <div class="content-input">
                 <label for="id">ID</label>
                 <input type="text" id="id" name="id" 
-                    value="${empty cd ? '半角でログイン名を入力してください' : id}" maxlength="10" required>
+                    value="${id}" placeholder="半角でログイン名を入力してください" maxlength="10" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
-                    <p style="color:gold">${errors.cd}</p>
+                    <p style="color:red">${errors.cd}</p>
                 </c:if>
                 <c:if test="${not empty errors.cd_count}">
-                    <p style="color:gold">${errors.cd_count}</p>
+                    <p style="color:red">${errors.cd_count}</p>
                 </c:if>
             </div>
 
             <div class="content-input">
                 <label for="name">名前</label>
                 <input type="text" id="name" name="name" 
-                    value="${empty cd ? '名前を入力してください' : name}" maxlength="10" required>
+                    value="${name}" placeholder="名前を入力してください" maxlength="10" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
-                    <p style="color:gold">${errors.cd}</p>
+                    <p style="color:red">${errors.cd}</p>
                 </c:if>
                 <c:if test="${not empty errors.cd_count}">
-                    <p style="color:gold">${errors.cd_count}</p>
+                    <p style="color:red">${errors.cd_count}</p>
                 </c:if>
             </div>
 
