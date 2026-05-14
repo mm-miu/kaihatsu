@@ -60,6 +60,6 @@
                 </tbody>
             </table>
         </c:if>
-
+        <a href="TestList.action">戻る</a>
     </c:param>
 </c:import>

@@ -109,6 +109,7 @@
         </table>
     </c:if>
 </section>
+<a href="TestList.action">戻る</a>
 
 </c:param>
 </c:import>
