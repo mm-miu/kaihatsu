@@ -19,7 +19,7 @@
             <div class="content-input">
                 <label for="id">ID</label>
                 <input type="text" id="id" name="id" 
-                    value="${empty cd ? '半角でログイン名を入力してください' : id}" maxlength="10" required>
+                    value="${id}" placeholder="半角でログイン名を入力してください" maxlength="10" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
                     <p style="color:red">${errors.cd}</p>
@@ -32,7 +32,7 @@
             <div class="content-input">
                 <label for="name">名前</label>
                 <input type="text" id="name" name="name" 
-                    value="${empty cd ? '名前を入力してください' : name}" maxlength="10" required>
+                    value="${name}" placeholder="名前を入力してください" maxlength="10" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
                     <p style="color:red">${errors.cd}</p>
