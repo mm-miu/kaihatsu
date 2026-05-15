@@ -526,6 +526,12 @@
       min-height: 100px;
       margin-bottom: 20px;
     }
+
+    /* ユーザー管理チェックボックス調節 */
+      .content-input input[type="checkbox"] {
+      width: 1%;
+      line-height: 5;
+    }
   </style>
 
 </head>

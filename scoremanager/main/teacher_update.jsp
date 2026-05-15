@@ -11,33 +11,26 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-        <style>        
-        .content-input input[type="checkbox"] {
-            width: 1%;
-            line-height: 5;
-        }
-        </style>
-
-
         <h2 class="main-title">学生情報変更</h2>
 
         <form action="TeacherUpdateExecute.action">
            
-                <div class="content-input">
-                <label for="name">id</label>
+            <div class="content-input">
+                <label for="name">id：</label>
                 ${C_Id}
                 <br>
                 <c:choose>
                 <c:when test="${user.id.equals(C_Id) || authority=='1'}">
-                <label for="name">パスワード</label>
+                <label for="password">パスワード</label>
                 <input type="password" id="password" name="password" value="${password}" required>
-                <label for="name">パスワードを表示</label>
-                <input type="checkbox" name="chk_d_ps" id="showPassword" >
-                <br>
+                <label for="showPassword">パスワードを表示
+                    <input type="checkbox" name="chk_d_ps" id="showPassword" >
+                </label>
+                <br><br>
                 
                 </c:when>
                 <c:otherwise>
-                    <label for="name">パスワード</label><br>
+                    <label for="pass">パスワード</label><br>
                     ${password}<br>
                 </c:otherwise>
                 </c:choose>
