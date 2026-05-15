@@ -8,6 +8,18 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="ClassNumList.action">クラス一覧</a></li>
+                        <li>クラス情報変更</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
         <h2 class="main-title">クラス情報変更</h2>
         <label><p class="message">変更が完了しました</p></label>
         <a href="ClassNumList.action">クラス一覧</a>
