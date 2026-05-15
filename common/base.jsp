@@ -63,6 +63,30 @@
       padding: 20px;
     }
 
+    /* パンくずリスト */
+    #breadcrumb {
+      font-size: smaller;
+    }
+    /* 行頭の・を消す */
+    #breadcrumb ol {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    /* 横並びにする */
+    #breadcrumb ol li {
+      display: inline;
+    }
+    /* 間に＞を置く */
+    #breadcrumb ol li::after {
+      content: "＞";
+      padding-left: 7px;
+    }
+    /* 最後の＞を消す */
+    #breadcrumb ol li:last-child::after {
+      content: none;
+    }
+
     /* コンテンツタイトル h2*/
     .main-title {
       font-weight: bold;
