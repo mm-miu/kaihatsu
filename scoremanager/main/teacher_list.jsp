@@ -32,8 +32,8 @@
                         <option value="downname" label="降順" <c:if test="${selectedF2 == 'downname'}">selected</c:if>>降順</option>
                     </select>
                 </div>
-                <div class="col-4" style="display:flex; align-items:flex-end">
-                    <button type="submit" class="btn">検索</button>
+                <div class="col-2">
+                    <button type="submit" >検索</button>
                 </div>
             </div>
         </form>
