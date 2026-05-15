@@ -9,8 +9,18 @@
     </c:param>
 
     <c:param name="content">
-
-        <h2 class="main-title">科目情報CSV読み込み</h2>
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="MenuCSV.action">CSV</a></li>
+                        <li>科目CSV読み込み</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <h2 class="main-title">科目CSV読み込み</h2>
 
         <form action="SubjectCSVExecute.action"
               method="POST"

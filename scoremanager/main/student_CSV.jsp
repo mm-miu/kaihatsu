@@ -8,6 +8,17 @@
     </c:param>
 
     <c:param name="content">
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="MenuCSV.action">CSV</a></li>
+                        <li>学生CSV読み込み</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
 
         <h2 class="main-title">学生CSV読み込み</h2>
 
