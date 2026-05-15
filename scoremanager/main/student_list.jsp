@@ -5,6 +5,21 @@
 
 <c:set var="content">
     <section>
+        <!-- wrapper -->
+        <div id="wrapper">
+            <!-- メイン -->
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li>学生一覧</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- メイン -->
+        </div>
+        <!-- /wrapper -->
+
         <h2 class="main-title">学生管理</h2>
         <div class="new">
             <a href="StudentCreate.action">新規登録</a>
