@@ -492,7 +492,7 @@
       flex: 1;
       height: 170px;
       border-radius: 10px;
-      margin-top: 25px;
+      margin-bottom: 20px;
       justify-content: center;
       align-items: center;
       text-decoration: none;
