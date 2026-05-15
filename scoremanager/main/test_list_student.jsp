@@ -5,6 +5,18 @@
     <c:param name="title">得点管理システム - 成績参照（学生別）</c:param>
     <c:param name="content">
 
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="TestList.action">成績参照</a></li>
+                        <li>成績参照（学生別）</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
         <h2 class="main-title">成績参照（学生別）</h2>
 
         <!-- 氏名表示 -->

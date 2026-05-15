@@ -9,7 +9,19 @@
 
     <c:param name="scripts"></c:param>
 
+
     <c:param name="content">
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="TestList.action">成績参照</a></li>
+                        <li>成績管理</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
         <h2 class="main-title">成績管理</h2>
         <form method="get">
             <div class="col-4">

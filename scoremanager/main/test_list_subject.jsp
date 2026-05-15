@@ -6,6 +6,18 @@
 
 <c:param name="content">
 
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="TestList.action">成績参照</a></li>
+                        <li>成績参照（科目別）</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
 <h2 class="main-title">成績参照（科目別）</h2>
 
 <!-- 上段：検索欄（test_list.jsp と同じ） -->
