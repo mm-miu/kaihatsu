@@ -5,6 +5,16 @@
 
     <c:set var="content">
         <section>
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
             <h2 class="main-title">メニュー</h2>
             <div class="menu-grid">
                 <a href="StudentList.action" class="menu-card student">
