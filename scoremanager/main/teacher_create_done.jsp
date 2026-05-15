@@ -8,6 +8,19 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
+    <c:param name="content">
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="TeacherList.action">ユーザー管理</a></li>
+                        <li>ユーザー登録</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
         <h2 class="main-title">ユーザー情報登録</h2>
         <label><p class="message">登録が完了しました</p></label>
         <p>初期パスワードは"password"になります</p>

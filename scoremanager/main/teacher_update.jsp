@@ -8,10 +8,20 @@
         得点管理システム
     </c:param>
 
-    <c:param name="scripts"></c:param>
-
     <c:param name="content">
-        <h2 class="main-title">学生情報変更</h2>
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="TeacherList.action">ユーザー管理</a></li>
+                        <li>ユーザー情報変更</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="main-title">ユーザー情報変更</h2>
 
         <form action="TeacherUpdateExecute.action">
            
