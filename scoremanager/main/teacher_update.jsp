@@ -44,7 +44,7 @@
             <c:if test="${ authority=='1'}">
                 <label for="class_num">所属校</label>
                 <select name="school_cd" >
-                    <option value="0">--------</option>
+                    <option value="0" selected disabled>--------</option>
                     <c:forEach var="sList" items="${schoolList}">
                         <option value="${sList.cd}" label="${sList.name}"
                             <c:if test="${sList.cd==school}">
@@ -58,7 +58,7 @@
                 
                 <label for="authority">権限</label>
                 <select name="authority">
-                    <option value="0">--------</option>
+                    <option value="0" selected disabled>--------</option>
                     <c:forEach var="i" begin="1" end="3">
                         <option value="${i}"
                             <c:if test="${i==authority}">
