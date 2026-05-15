@@ -366,6 +366,7 @@
       box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
       border-bottom: none;
     }
+    
     /* 表*/
     /* テーブル */
     table{
