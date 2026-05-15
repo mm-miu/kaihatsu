@@ -5,9 +5,7 @@
 
 <c:set var="content">
     <section>
-        <!-- wrapper -->
         <div id="wrapper">
-            <!-- メイン -->
             <div id="main">
                 <div id="breadcrumb">
                     <ol>
@@ -16,9 +14,7 @@
                     </ol>
                 </div>
             </div>
-            <!-- メイン -->
         </div>
-        <!-- /wrapper -->
 
         <h2 class="main-title">学生管理</h2>
         <div class="new">
