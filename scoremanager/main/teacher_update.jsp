@@ -21,19 +21,19 @@
                 <input type="hidden" name="C_Id" value="${C_Id}">
                 <br>
                 <c:choose>
-                <c:when test="${user.id.equals(C_Id) || authority=='1'}">
-                <label for="password">パスワード</label>
-                <input type="password" id="password" name="password" value="${password}" required>
-                <label for="showPassword">パスワードを表示
-                    <input type="checkbox" name="chk_d_ps" id="showPassword" >
-                </label>
-                <br><br>
-                
-                </c:when>
-                <c:otherwise>
-                    <label for="pass">パスワード</label><br>
-                    ${password}<br>
-                </c:otherwise>
+                    <c:when test="${user.id.equals(C_Id) || authority=='1'}">
+                        <label for="password">パスワード</label>
+                        <input type="password" id="password" name="password" value="${password}" required>
+                        <label for="showPassword">パスワードを表示
+                            <input type="checkbox" name="chk_d_ps" id="showPassword" >
+                        </label>
+                        <br><br>
+                        
+                    </c:when>
+                    <c:otherwise>
+                        <label for="pass">パスワード</label><br>
+                        ${password}<br>
+                    </c:otherwise>
                 </c:choose>
 
                 <label for="name">氏名</label>
@@ -42,31 +42,32 @@
             </div>
             
             <c:if test="${ authority=='1'}">
-            <label for="class_num">所属校</label>
-            <select name="school_cd" >
-                <option value="0">--------</option>
-                <c:forEach var="sList" items="${schoolList}">
-                    <option value="${sList.cd}" label="${sList.name}"
-                    <c:if test="${sList.cd==school_cd}">
-                            selected
-                        </c:if>
-                        >${sList.name}
+                <label for="class_num">所属校</label>
+                <select name="school_cd" >
+                    <option value="0">--------</option>
+                    <c:forEach var="sList" items="${schoolList}">
+                        <option value="${sList.cd}" label="${sList.name}"
+                            <c:if test="${sList.cd==school}">
+                                    selected
+                            </c:if>
+                            >${sList.name}
                         </option>
-                </c:forEach>
-            </select>
+                    </c:forEach>
+                </select>
                 <br>
-            
-            <label for="authority">権限</label>
-            <select name="authority">
-                <option value="0">--------</option>
-                <c:forEach var="i" begin="1" end="3">
-                    <option value="${i}"
-                    <c:if test="${i==authority}">
-                            selected
-                        </c:if>
-                        >${i}</option>
-                </c:forEach>
-            </select>
+                
+                <label for="authority">権限</label>
+                <select name="authority">
+                    <option value="0">--------</option>
+                    <c:forEach var="i" begin="1" end="3">
+                        <option value="${i}"
+                            <c:if test="${i==authority}">
+                                    selected
+                            </c:if>
+                            >${i}
+                        </option>
+                    </c:forEach>
+                </select>
             </c:if>
             
                
