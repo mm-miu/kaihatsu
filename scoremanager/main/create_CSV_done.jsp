@@ -9,7 +9,18 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
-
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="MenuCSV.action">CSV</a></li>
+                        <li>${title}CSV書き込み</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
         <h2 class="main-title">${title}CSV書き込み</h2>
         <textarea id="copytxt" rows="10" cols="50" readonly>${csvData}</textarea><br>
         <button type="button" onclick="copyText('copytxt')">コピー</button><br><br>
