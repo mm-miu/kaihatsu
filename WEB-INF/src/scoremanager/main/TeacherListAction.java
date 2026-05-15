@@ -24,6 +24,31 @@ public class TeacherListAction extends Action {
         String id = teacher.getId();
         f1 = request.getParameter("f1");
         f2 = request.getParameter("f2");
+
+
+        //検索機能
+        String Scd = null; //Sortの第1引数
+        String Sna = null; //Sortの第２引数
+
+        //f1 -> Scdマッピング
+        if ("downcs".equalsIgnoreCase(f1)) {
+            Scd = "2"; //school_cd DESC
+        } else if ("upcd".equalsIgnoreCase(f1)) {
+            Scd = "1"; //昇順(Sort側は２以外を昇順扱い)
+        } else {
+            Scd = null;
+        }
+
+        //f2 -> Snaマッピング
+        if ("downname".equalsIgnoreCase(f2)) {
+            Sna = "2"; //NAME DESC
+        } else if ("upname".equalsIgnoreCase(f2)) {
+            Sna ="1"; //昇順
+        } else {
+            Sna = null;
+        }
+
+
         TeacherDao TDao= new TeacherDao();
         
         
@@ -47,13 +72,15 @@ public class TeacherListAction extends Action {
         // DBからデータ取得
         // ログインユーザーの学校コードをもとにクラス番号の一覧を取得
         Mylist=TDao.myfilter(teacher.getSchool(),teacher.getId());
-        AllList=TDao.Sort(f1,f2,teacher);
+        AllList=TDao.Sort(Scd,Sna,teacher);
             
         // レスポンス値をセット
         // リクエストに入学年度をセット
         request.setAttribute("authority",authority);
         request.setAttribute("MyList",Mylist);
         request.setAttribute("AllList",AllList);
+        request.setAttribute("selectedF1", f1);
+        request.setAttribute("selectedF2", f2);
         
 
         // JSPへフォワード
