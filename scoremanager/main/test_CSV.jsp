@@ -10,6 +10,18 @@
 
     <c:param name="content">
 
+        <div id="wrapper">
+            <div id="main">
+                <div id="breadcrumb">
+                    <ol>
+                        <li><a href="Menu.action">MENU</a></li>
+                        <li><a href="MenuCSV.action">成績参照</a></li>
+                        <li>成績CSV読み込み</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
         <h2 class="main-title">成績CSV読み込み</h2>
 
         <form action="TestCSVExecute.action"
