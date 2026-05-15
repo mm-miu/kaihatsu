@@ -52,7 +52,6 @@
     }
     /* サイドバー文字*/
     .sidebar a {
-      text-decoration: none;
       margin-bottom: 5px;
       color: blue;
     }
@@ -60,7 +59,7 @@
     /* コンテンツ 枠*/
     .main{
       flex: 1;
-      padding: 20px;
+      padding:10px;     
     }
 
     /* パンくずリスト */
@@ -86,6 +85,10 @@
     #breadcrumb ol li:last-child::after {
       content: none;
     }
+    /* リンク下線を消去 */
+    a{
+      text-decoration: none;
+    }
 
     /* コンテンツタイトル h2*/
     .main-title {
@@ -93,7 +96,8 @@
       background-color: #e9ecef;
       padding: 10px;
       border-radius: 5px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      margin-top: 10px;
     }
     /* 登録や削除の完了画面のメッセージ */
     .message{
