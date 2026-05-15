@@ -24,6 +24,7 @@
       text-align: right;
       background-color: #dfdffd;
       padding: 10px;
+      padding-bottom: -5;
     }
     /* span　ユーザー名 */
     span{
