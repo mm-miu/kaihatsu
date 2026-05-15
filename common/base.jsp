@@ -329,9 +329,9 @@
     button:hover {
       background-color: #5a6268;
     }
-    
+
+    /*ボタンの動き*/
     button:active{
-      /*ボタンを押したとき*/
       -webkit-transform: translateY(5px);
       transform: translateY(3px);/*下に動く*/
       box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
@@ -365,7 +365,6 @@
     tr:hover{
       background-color: #f0f3f6;
     }
-
     /* 検索時、入学年度未記入エラー文 */
     .errors_student_list{
       width: 100%;
@@ -399,7 +398,7 @@
     }
 
 
-
+    /* 成績 */
     /* 成績メニュー menu_test.jsp*/
     .test-menu-card{
       flex: 1;
@@ -447,7 +446,7 @@
     }
 
 
-
+    /* 科目 */
     /* 科目管理の削除用ボタン */
     .border button {
       border: 1px solid #333;
@@ -458,7 +457,7 @@
     }
 
 
-
+    /* CSV */
     /* CSV読み込みメニュー */
     /* カード自体 */
     .csv-menu-card{
@@ -529,7 +528,6 @@
 
 
     /* ユーザー管理 */
-    
     /* ユーザー管理チェックボックス調節 */
     .content-input input[type="checkbox"] {
       width: 1%;
