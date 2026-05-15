@@ -15,7 +15,7 @@
                 <div id="breadcrumb">
                     <ol>
                         <li><a href="Menu.action">MENU</a></li>
-                        <li><a href="MenuCSV.action">成績参照</a></li>
+                        <li><a href="MenuCSV.action">CSV</a></li>
                         <li>成績CSV読み込み</li>
                     </ol>
                 </div>

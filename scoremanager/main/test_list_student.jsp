@@ -10,7 +10,7 @@
                 <div id="breadcrumb">
                     <ol>
                         <li><a href="Menu.action">MENU</a></li>
-                        <li><a href="TestList.action">成績参照</a></li>
+                        <li><a href="MenuTest.action">成績管理</a></li>
                         <li>成績参照（学生別）</li>
                     </ol>
                 </div>
