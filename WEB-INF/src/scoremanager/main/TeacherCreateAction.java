@@ -41,21 +41,25 @@ public class TeacherCreateAction extends Action {
         Map<String, String> errors=new HashMap<>();// エラーメッセージ
         List<School> sList= new ArrayList<>();
         
-            InitialContext ic=new InitialContext();
-            DataSource ds=(DataSource)ic.lookup("java:/comp/env/jdbc/kaihatsu");
-            Connection con=ds.getConnection();
+        InitialContext ic = new InitialContext();
+        DataSource ds = (DataSource) ic.lookup("java:/comp/env/jdbc/kaihatsu");
 
-            PreparedStatement st=con.prepareStatement("select * from school");
-            ResultSet rs=st.executeQuery();
+        try (
+            Connection con = ds.getConnection();
+            PreparedStatement st = con.prepareStatement("select * from school");
+            ResultSet rs = st.executeQuery();
+        ) {
 
-            while (rs.next()){
+            while (rs.next()) {
                 School s = new School();
                 s.setCd(rs.getString("cd"));
                 s.setName(rs.getString("name"));
                 sList.add(s);
             }
-            request.setAttribute("schoolList",sList);
-            request.setAttribute("authority",authority);
+        }
+
+        request.setAttribute("schoolList", sList);
+        request.setAttribute("authority", authority);
 
 
         // JSPへフォワード

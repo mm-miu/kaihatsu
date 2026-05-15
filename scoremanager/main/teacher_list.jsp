@@ -83,7 +83,7 @@
                         <td>${T_all.id}</td>
                         
                             
-                        <td><a href="StudentUpdate.action?id=${T_all.id}">変更</a></td>
+                        <td><a href="TeacherUpdate.action?id=${T_all.id}">変更</a></td>
                         
                     </tr>
                     </c:forEach>

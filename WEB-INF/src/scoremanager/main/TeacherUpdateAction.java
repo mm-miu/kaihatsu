@@ -44,22 +44,25 @@ public class TeacherUpdateAction extends Action {
         // DBからデータ取得
         // ログインユーザーの権限をもとに学校コードの一覧を取得
 
-        InitialContext ic=new InitialContext();
-            DataSource ds=(DataSource)ic.lookup("java:/comp/env/jdbc/kaihatsu");
-            Connection con=ds.getConnection();
+        InitialContext ic = new InitialContext();
+        DataSource ds = (DataSource) ic.lookup("java:/comp/env/jdbc/kaihatsu");
 
-            PreparedStatement st=con.prepareStatement("select * from school");
-            ResultSet rs=st.executeQuery();
+        try (
+            Connection con = ds.getConnection();
+            PreparedStatement st = con.prepareStatement("select * from school");
+            ResultSet rs = st.executeQuery();
+        ) {
 
-            while (rs.next()){
+            while (rs.next()) {
                 School s = new School();
                 s.setCd(rs.getString("cd"));
                 s.setName(rs.getString("name"));
                 sList.add(s);
             }
-            request.setAttribute("schoolList",sList);
-            request.setAttribute("authority",authority);
+        }
 
+        request.setAttribute("schoolList", sList);
+        request.setAttribute("authority", authority);
         
 
         // リクエストにデータをセット
