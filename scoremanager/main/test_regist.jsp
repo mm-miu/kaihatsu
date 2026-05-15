@@ -17,7 +17,7 @@
                     <ol>
                         <li><a href="Menu.action">MENU</a></li>
                         <li><a href="MenuTest.action">成績管理</a></li>
-                        <li>成績参照</li>
+                        <li>成績登録</li>
                     </ol>
                 </div>
             </div>
