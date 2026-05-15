@@ -4,6 +4,17 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <c:set var="content">
+    <div id="wrapper">
+        <div id="main">
+            <div id="breadcrumb">
+                <ol>
+                    <li><a href="Menu.action">MENU</a></li>
+                    <li>ユーザー管理</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
     <section>
         <h2 class="main-title">ユーザー管理</h2>
         <c:choose>
