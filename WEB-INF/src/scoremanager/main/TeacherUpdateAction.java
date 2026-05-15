@@ -63,7 +63,7 @@ public class TeacherUpdateAction extends Action {
         
 
         // リクエストにデータをセット
-        session.setAttribute("C_Id", id);
+        request.setAttribute("C_Id", id);
         request.setAttribute("name", te.getName());
         request.setAttribute("password",te.getPassword());
         request.setAttribute("school", te.getSchool().getCd());

@@ -18,6 +18,7 @@
             <div class="content-input">
                 <label for="name">id：</label>
                 ${C_Id}
+                <input type="hidden" name="C_Id" value="${C_Id}">
                 <br>
                 <c:choose>
                 <c:when test="${user.id.equals(C_Id) || authority=='1'}">
@@ -45,7 +46,12 @@
             <select name="school_cd" >
                 <option value="0">--------</option>
                 <c:forEach var="sList" items="${schoolList}">
-                    <option value="${sList.cd}" label="${sList.name}">${sList.name}</option>
+                    <option value="${sList.cd}" label="${sList.name}"
+                    <c:if test="${sList.cd==school_cd}">
+                            selected
+                        </c:if>
+                        >${sList.name}
+                        </option>
                 </c:forEach>
             </select>
                 <br>
@@ -54,7 +60,11 @@
             <select name="authority">
                 <option value="0">--------</option>
                 <c:forEach var="i" begin="1" end="3">
-                    <option value="${i}">${i}</option>
+                    <option value="${i}"
+                    <c:if test="${i==authority}">
+                            selected
+                        </c:if>
+                        >${i}</option>
                 </c:forEach>
             </select>
             </c:if>

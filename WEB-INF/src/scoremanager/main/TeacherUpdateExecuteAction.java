@@ -20,7 +20,7 @@ public class TeacherUpdateExecuteAction extends Action {
     ) throws Exception {
         HttpSession session=request.getSession(); // セッション
         Teacher teacher=(Teacher)session.getAttribute("user");
-        String id=(String)session.getAttribute("C_Id");
+        String id=(String)request.getParameter("C_Id");
         
 
         School sch=null;
@@ -38,8 +38,6 @@ public class TeacherUpdateExecuteAction extends Action {
 
         // リクエストパラメーターの取得
         
-        
-        System.out.println(id+"b");
 
         password=request.getParameter("password");
         name=request.getParameter("name");
