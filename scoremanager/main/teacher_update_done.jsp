@@ -20,7 +20,7 @@ pageEncoding="UTF-8" %>
             </div>
         </div>
         
-        <h2 class="main-title">ユーザー情報登録</h2>
+        <h2 class="main-title">ユーザー情報変更</h2>
         <label><p class="message">更新が完了しました</p></label>
         
         <a href="TeacherList.action">ユーザー一覧</a>
