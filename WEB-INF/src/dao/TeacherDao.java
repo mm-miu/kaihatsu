@@ -205,7 +205,7 @@ public class TeacherDao extends Dao {
                 st=con.prepareStatement(
                     "update teacher set  password=?, name=?, school_cd=?, authority=? where id=?"
                 );
-                st.setString(1, teacher.getPassword());
+                st.setString(1, "password");
                 st.setString(2, teacher.getName());
                 st.setString(3, teacher.getSchool().getCd());
                 st.setString(4, teacher.getAuthority());
