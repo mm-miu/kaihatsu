@@ -21,6 +21,10 @@ public class LoginAction extends Action {
                 session.setAttribute("user", user);
                 response.sendRedirect("main/menu.jsp");
                 return;
+            } else {
+                request.setAttribute("id", id);
+                request.getRequestDispatcher("/error.jsp").forward(request, response);
+                return;
             }
         
         } catch (Exception e) {
