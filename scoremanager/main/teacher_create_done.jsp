@@ -8,7 +8,6 @@ pageEncoding="UTF-8" %>
     </c:param>
 
     <c:param name="content">
-    <c:param name="content">
         <div id="wrapper">
             <div id="main">
                 <div id="breadcrumb">
@@ -20,7 +19,7 @@ pageEncoding="UTF-8" %>
                 </div>
             </div>
         </div>
-        
+
         <h2 class="main-title">ユーザー情報登録</h2>
         <label><p class="message">登録が完了しました</p></label>
         <p>初期パスワードは"password"になります</p>
