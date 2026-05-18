@@ -202,16 +202,7 @@ public class TeacherDao extends Dao {
             } else {
                 // 学生が存在した場合
                 // プリペアードステートメントにUPDATE文をセット
-                st=con.prepareStatement(
-                    "update teacher set  password=?, name=?, school_cd=?, authority=? where id=?"
-                );
-                st.setString(1, "password");
-                st.setString(2, teacher.getName());
-                st.setString(3, teacher.getSchool().getCd());
-                st.setString(4, teacher.getAuthority());
-                st.setString(5, teacher.getId());
-               
-                
+                return false;
             }
             // プリペアードステートメントを実行
             count=st.executeUpdate();

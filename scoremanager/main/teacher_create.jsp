@@ -26,6 +26,9 @@
         <form action="TeacherCreateExecute.action">
             
             <div class="content-input">
+                <c:if test="${not empty errors.not_save}">
+                    <p style="color:red">${errors.not_save}</p>
+                </c:if>
                 <label for="id">ID</label>
                 <input type="text" id="id" name="id" 
                     value="${id}" placeholder="半角でログイン名を入力してください" maxlength="10" required>
@@ -36,6 +39,7 @@
                 <c:if test="${not empty errors.id_count}">
                     <p style="color:red">${errors.id_count}</p>
                 </c:if>
+                
             </div>
 
             <div class="content-input">
