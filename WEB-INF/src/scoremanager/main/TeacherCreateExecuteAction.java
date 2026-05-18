@@ -90,6 +90,17 @@ public class TeacherCreateExecuteAction extends Action {
         
 
         boolean result=tDao.save(te);
+        if (result==false){
+            errors.put("not_save","教師の登録に失敗しました");
+            request.setAttribute("errors", errors);
+            request.setAttribute("id", id);
+            request.setAttribute("name", name);
+            request.setAttribute("school", school);
+            request.setAttribute("authority",authority);
+            request.setAttribute("schoolList", sDao.getAll());
+            request.getRequestDispatcher("teacher_create.jsp").forward(request, response);
+            return;
+        }
 
         // JSPへフォワード
         request.getRequestDispatcher("teacher_create_done.jsp").forward(request, response);
