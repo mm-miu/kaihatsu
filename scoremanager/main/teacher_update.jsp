@@ -31,7 +31,7 @@
                 <input type="hidden" name="C_Id" value="${C_Id}">
                 <br>
                 <c:choose>
-                    <c:when test="${user.id.equals(C_Id) || authority=='1'}">
+                    <c:when test="${user.id.equals(C_Id) || my_authority=='1'}">
                         <label for="password">パスワード</label>
                         <input type="password" id="password" name="password" value="${password}" required>
                         <label for="showPassword">パスワードを表示
@@ -53,7 +53,7 @@
                 <br>
             </div>
             
-            <c:if test="${ authority=='1'}">
+            <c:if test="${ my_authority=='1'}">
                 <label for="class_num">所属校</label>
                 <select name="school_cd" >
                     <option value="0" selected disabled>--------</option>
@@ -68,7 +68,7 @@
                 </select>
                 <br>
                 
-                <label for="authority">権限</label>
+                <label for="my_authority">権限</label>
                 <select name="authority">
                     <option value="0" selected disabled>--------</option>
                     <c:forEach var="i" begin="1" end="3">

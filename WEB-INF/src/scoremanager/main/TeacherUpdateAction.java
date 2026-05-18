@@ -28,7 +28,7 @@ public class TeacherUpdateAction extends Action {
         Teacher teacher=(Teacher)session.getAttribute("user");
         
         //権限
-        String authority =teacher.getAuthority();
+        String myAuthority =teacher.getAuthority();
 
         TeacherDao tDao=new TeacherDao();// 先生DAO
         SchoolDao sDao=new SchoolDao();// 学校DAO
@@ -49,7 +49,8 @@ public class TeacherUpdateAction extends Action {
         request.setAttribute("password",te.getPassword());
         request.setAttribute("school", te.getSchool().getCd());
         request.setAttribute("schoolList", sList);
-        request.setAttribute("authority", authority);
+        request.setAttribute("my_authority", myAuthority);
+        request.setAttribute("authority", te.getAuthority());
         
         
 
