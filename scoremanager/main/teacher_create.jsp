@@ -30,8 +30,8 @@
                 <input type="text" id="id" name="id" 
                     value="${id}" placeholder="半角でログイン名を入力してください" maxlength="10" required>
                 <br>
-                <c:if test="${not empty errors.cd}">
-                    <p style="color:red">${errors.cd}</p>
+                <c:if test="${not empty errors.no}">
+                    <p style="color:red">${errors.no}</p>
                 </c:if>
                 <c:if test="${not empty errors.cd_count}">
                     <p style="color:red">${errors.cd_count}</p>

@@ -5,6 +5,7 @@ import jakarta.servlet.http.*;
 import bean.Teacher;
 import dao.TeacherDao;
 import bean.School;
+import dao.SchoolDao;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class TeacherCreateExecuteAction extends Action {
         String school="";
         Teacher te=null;
         TeacherDao tDao = new TeacherDao();
+        SchoolDao sDao = new SchoolDao();
         LocalDate todaysDate=LocalDate.now();// LocalDateインスタンスを取得
 
         Map<String, String> errors=new HashMap<>();// エラーメッセージ
@@ -36,7 +38,7 @@ public class TeacherCreateExecuteAction extends Action {
         name=request.getParameter("name");
         if ("1".equals(authority)){
             school=request.getParameter("school");
-            System.out.println(school);
+            
         }else{
             school=teacher.getSchool().getCd();
         }
@@ -48,8 +50,10 @@ public class TeacherCreateExecuteAction extends Action {
             request.setAttribute("id", id);
             request.setAttribute("name", name);
             request.setAttribute("school", school);
+            request.setAttribute("authority",authority);
+            request.setAttribute("schoolList", sDao.getAll());
             
-            request.getRequestDispatcher("student_create.jsp")
+            request.getRequestDispatcher("teacher_create.jsp")
                 .forward(request, response);
             return;}
         
@@ -58,12 +62,14 @@ public class TeacherCreateExecuteAction extends Action {
         // 学校コード
 
         if (tDao.existsTeacherNo(school, id)) {
-            errors.put("no", "学生番号が重複しています");
+            errors.put("no", "IDが重複しています");
             request.setAttribute("errors", errors);
             request.setAttribute("id", id);
             request.setAttribute("name", name);
             request.setAttribute("school", school);
-            request.getRequestDispatcher("student_create.jsp")
+            request.setAttribute("authority",authority);
+            request.setAttribute("schoolList", sDao.getAll());
+            request.getRequestDispatcher("teacher_create.jsp")
                 .forward(request, response);
             return;
         }

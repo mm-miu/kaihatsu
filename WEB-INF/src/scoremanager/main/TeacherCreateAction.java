@@ -37,26 +37,13 @@ public class TeacherCreateAction extends Action {
         String name="";
         LocalDate todaysDate=LocalDate.now();// LocalDateインスタンスを取得
         
-        TeacherDao sDao=new TeacherDao();// 先生DAO
+        TeacherDao tDao=new TeacherDao();// 先生DAO
+        SchoolDao sDao=new SchoolDao();
         Map<String, String> errors=new HashMap<>();// エラーメッセージ
         List<School> sList= new ArrayList<>();
+        sList=sDao.getAll();
         
-        InitialContext ic = new InitialContext();
-        DataSource ds = (DataSource) ic.lookup("java:/comp/env/jdbc/kaihatsu");
-
-        try (
-            Connection con = ds.getConnection();
-            PreparedStatement st = con.prepareStatement("select * from school");
-            ResultSet rs = st.executeQuery();
-        ) {
-
-            while (rs.next()) {
-                School s = new School();
-                s.setCd(rs.getString("cd"));
-                s.setName(rs.getString("name"));
-                sList.add(s);
-            }
-        }
+        
 
         request.setAttribute("schoolList", sList);
         request.setAttribute("authority", authority);

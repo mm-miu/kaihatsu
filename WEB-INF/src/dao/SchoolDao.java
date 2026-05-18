@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.School;
 
@@ -63,5 +65,49 @@ public class SchoolDao extends Dao {
             }
         }
         return school;
+    }
+
+    public List<School> getAll() throws Exception {
+        List<School> list= new ArrayList<>(); 
+         School school=new School();
+        // データベースへのコネクションを確立
+        Connection con=getConnection();
+        // プリペアードステートメント
+        PreparedStatement st=null;
+
+        try {
+            // プリペアードステートメントにSQL文をセット
+            st=con.prepareStatement("select * from school");
+            // プリペアードステートメントに学校コードをバインド
+            // プリペアードステートメントを実行
+            ResultSet rs=st.executeQuery();
+
+           while (rs.next()) {
+                School s = new School();
+                s.setCd(rs.getString("cd"));
+                s.setName(rs.getString("name"));
+                list.add(s);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            // プリペアードステートメントを閉じる
+            if (st!=null) {
+                try {
+                    st.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+            // コネクションを閉じる
+            if (con!=null) {
+                try {
+                    con.close();
+                } catch (SQLException sqle) {
+                    throw sqle;
+                }
+            }
+        }
+        return list;
     }
 }
