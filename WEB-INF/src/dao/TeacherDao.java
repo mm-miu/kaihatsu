@@ -203,7 +203,6 @@ public class TeacherDao extends Dao {
                 // 学生が存在した場合
                 // プリペアードステートメントにUPDATE文をセット
                 return false;
-                
             }
             // プリペアードステートメントを実行
             count=st.executeUpdate();

@@ -78,6 +78,7 @@ public class TeacherCreateExecuteAction extends Action {
         te=new Teacher();
         te.setId(id);
         te.setName(name);
+        te.setAuthority(authority);
         if ("1".equals(authority)){
             School sch= new School();
             sch.setCd(school);
