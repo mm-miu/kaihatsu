@@ -31,7 +31,7 @@ public class TeacherListAction extends Action {
         String Sna = null; //Sortの第２引数
 
         //f1 -> Scdマッピング
-        if ("downcs".equalsIgnoreCase(f1)) {
+        if ("downcd".equalsIgnoreCase(f1)) {
             Scd = "2"; //school_cd DESC
         } else if ("upcd".equalsIgnoreCase(f1)) {
             Scd = "1"; //昇順(Sort側は２以外を昇順扱い)
