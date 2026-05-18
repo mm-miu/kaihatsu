@@ -24,8 +24,8 @@ pageEncoding="UTF-8" %>
         <label><p class="message">登録が完了しました</p></label>
         <p>初期パスワードは"password"になります</p>
         <p>初ログイン後変更ページより変更してください</p><br>
-        <a href="TeacherCreate.action">戻る</a>
-        <a href="TeacherList.action">ユーザー一覧</a>
+        <a href="TeacherCreate.action">戻る　</a>
+        <a href="TeacherList.action">ユーザー一覧　</a>
         <a href="/kaihatsu/scoremanager/main/Logout.action">ログアウト</a>
     </c:param>
 </c:import>
