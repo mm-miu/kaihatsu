@@ -30,11 +30,11 @@
                 <input type="text" id="id" name="id" 
                     value="${id}" placeholder="半角でログイン名を入力してください" maxlength="10" required>
                 <br>
-                <c:if test="${not empty errors.cd}">
-                    <p style="color:red">${errors.cd}</p>
+                <c:if test="${not empty errors.id}">
+                    <p style="color:red">${errors.id}</p>
                 </c:if>
-                <c:if test="${not empty errors.cd_count}">
-                    <p style="color:red">${errors.cd_count}</p>
+                <c:if test="${not empty errors.id_count}">
+                    <p style="color:red">${errors.id_count}</p>
                 </c:if>
             </div>
 
@@ -43,12 +43,6 @@
                 <input type="text" id="name" name="name" 
                     value="${name}" placeholder="名前を入力してください" maxlength="10" required>
                 <br>
-                <c:if test="${not empty errors.cd}">
-                    <p style="color:red">${errors.cd}</p>
-                </c:if>
-                <c:if test="${not empty errors.cd_count}">
-                    <p style="color:red">${errors.cd_count}</p>
-                </c:if>
             </div>
 
             

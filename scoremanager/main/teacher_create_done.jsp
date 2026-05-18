@@ -26,5 +26,6 @@ pageEncoding="UTF-8" %>
         <p>初ログイン後変更ページより変更してください</p><br>
         <a href="TeacherCreate.action">戻る</a>
         <a href="TeacherList.action">ユーザー一覧</a>
+        <a href="/kaihatsu/scoremanager/main/Logout.action">ログアウト</a>
     </c:param>
 </c:import>

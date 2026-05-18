@@ -58,12 +58,12 @@ public class TeacherCreateExecuteAction extends Action {
         // 学校コード
 
         if (tDao.existsTeacherNo(school, id)) {
-            errors.put("no", "学生番号が重複しています");
+            errors.put("id_count", "idが重複しています");
             request.setAttribute("errors", errors);
             request.setAttribute("id", id);
             request.setAttribute("name", name);
             request.setAttribute("school", school);
-            request.getRequestDispatcher("student_create.jsp")
+            request.getRequestDispatcher("teacher_create.jsp")
                 .forward(request, response);
             return;
         }
