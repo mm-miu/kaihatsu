@@ -62,7 +62,8 @@ public class TeacherCreateExecuteAction extends Action {
         // 学校コード
 
         if (tDao.existsTeacherNo(school, id)) {
-            errors.put("no", "IDが重複しています");
+            
+            errors.put("id_count", "idが重複しています");
             request.setAttribute("errors", errors);
             request.setAttribute("id", id);
             request.setAttribute("name", name);
