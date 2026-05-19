@@ -57,6 +57,25 @@ public class StudentCreateExecuteAction extends Action {
                 .forward(request, response);
             return;
         }
+
+        if (classNum==null || classNum.equals("0")) {
+            errors.put("class_num", "クラスを選択してください");
+            request.setAttribute("errors", errors);
+            request.setAttribute("ent_year", entYearStr);
+            request.setAttribute("no", no);
+            request.setAttribute("name", name);
+            List<String> list=cNumDao.filter(teacher.getSchool());
+            request.setAttribute("class_num_set", list);
+            List<Integer> entYearSet=new ArrayList<>();
+            for (int i=year-10; i<year+1; i++) {
+                entYearSet.add(i);
+            }
+            request.setAttribute("ent_year_set", entYearSet);
+            request.getRequestDispatcher("student_create.jsp")
+                .forward(request, response);
+            return;
+        }
+        
         // 数値に変換
         entYear=Integer.parseInt(entYearStr);
         // 学校コード

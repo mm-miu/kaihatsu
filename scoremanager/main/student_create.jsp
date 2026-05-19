@@ -62,7 +62,10 @@
                     <option value="${num}">${num}</option>
                 </c:forEach>
             </select>
-            <br>
+            <c:if test="${not empty errors.class_num}">
+                <p style="color:red">${errors.class_num}</p>
+            </c:if>
+      
             
             <div class="button-2">
                 <button name="end" type="submit">登録して終了</button>
