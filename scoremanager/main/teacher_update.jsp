@@ -51,7 +51,7 @@
                 <label for="name">氏名</label>
                 <input type="text" id="name" name="name" 
                     value="${name}"
-                    placeholder="${name}" required>
+                    placeholder="${name}" maxlength="10" required>
                 <br>
             </div>
             
