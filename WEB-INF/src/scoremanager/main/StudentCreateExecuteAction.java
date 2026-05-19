@@ -75,7 +75,7 @@ public class StudentCreateExecuteAction extends Action {
                 .forward(request, response);
             return;
         }
-        
+
         // 数値に変換
         entYear=Integer.parseInt(entYearStr);
         // 学校コード
@@ -109,6 +109,24 @@ public class StudentCreateExecuteAction extends Action {
         student.setSchool(teacher.getSchool());
 
         boolean result=sDao.save(student);
+        if (result==false){
+            errors.put("not_save","学生の登録に失敗しました");
+            request.setAttribute("errors", errors);
+            request.setAttribute("no", no);
+            request.setAttribute("ent_year", entYearStr);
+            request.setAttribute("name", name);
+            request.setAttribute("class_num", classNum);
+            List<String> list=cNumDao.filter(teacher.getSchool());
+            request.setAttribute("class_num_set", list);
+            List<Integer> entYearSet=new ArrayList<>();
+            for (int i=year-10; i<year+1; i++) {
+                entYearSet.add(i);
+            }
+            request.setAttribute("ent_year_set", entYearSet);
+            request.getRequestDispatcher("student_create.jsp")
+                .forward(request, response);
+            return;
+        }
 
         // JSPへフォワード
         request.getRequestDispatcher("student_create_done.jsp").forward(request, response);

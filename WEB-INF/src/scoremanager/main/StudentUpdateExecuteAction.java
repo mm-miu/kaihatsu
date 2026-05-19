@@ -51,7 +51,7 @@ public class StudentUpdateExecuteAction extends Action {
         student.setAttend(isAttend);
         student.setSchool(teacher.getSchool());
 
-        boolean result=sDao.save(student);
+        boolean result=sDao.update(student);
 
         // JSPへフォワード
         request.getRequestDispatcher("student_update_done.jsp").forward(request, response);

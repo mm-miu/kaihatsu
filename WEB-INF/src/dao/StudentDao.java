@@ -339,14 +339,7 @@ public class StudentDao extends Dao {
             } else {
                 // 学生が存在した場合
                 // プリペアードステートメントにUPDATE文をセット
-                st=con.prepareStatement(
-                    "update student set name=?, ent_year=?, class_num=?, is_attend=? where no=?"
-                );
-                st.setString(1, student.getName());
-                st.setInt(2, student.getEntYear());
-                st.setString(3, student.getClassNum());
-                st.setBoolean(4, student.isAttend());
-                st.setString(5, student.getNo());
+                return false;
             }
             // プリペアードステートメントを実行
             count=st.executeUpdate();

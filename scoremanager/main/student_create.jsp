@@ -24,6 +24,9 @@
         <h2 class="main-title">学生情報登録</h2>
 
         <form action="StudentCreateExecute.action">
+            <c:if test="${not empty errors.not_save}">
+                <p style="color:red">${errors.not_save}</p>
+            </c:if>
             <label for="ent_year">入学年度</label>
             <select id="ent_year" name="ent_year">
                 <option value="0" selected disabled>--------</option>
