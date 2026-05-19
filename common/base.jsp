@@ -566,7 +566,12 @@
     /* 権限ポップオーバー仮 */
     .permission-wrapper {
       position: relative;
-      display: inline-block;
+      float: right;
+      
+    }
+
+    h5{
+      margin: 0;
     }
 
     .permission-title {
@@ -577,12 +582,14 @@
     .permission-tooltip {
       display: none;
       position: absolute;
-      top: 120%;
-      left: 0;
-      width: 320px;
+      top: -200%;
+      right: 200%;
+      width: 400px;
 
-      background: #222;
-      color: #fff;
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #000;
+      border-color: #000;
       padding: 12px;
       border-radius: 8px;
       font-size: 13px;

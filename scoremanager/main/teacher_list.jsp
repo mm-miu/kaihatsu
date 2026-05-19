@@ -76,18 +76,26 @@
                     </c:forEach>
                 </table>
 
-                <br><hr><br>
+                <br><hr>
 
                 <div class="permission-wrapper">
                     <h5 class="permission-title">権限</h5>
+                        <div class="permission-tooltip">
+                        <div><b>■ 権限1</b></div>
+                        <div>・閲覧／変更：すべて可能</div>
+                        <div>・新規登録：すべて可能</div><br>
 
-                    <div class="permission-tooltip">
-                        <div><b>権限1：</b>全ての閲覧・変更が可能</div>
-                        <div><b>権限2：</b>自身の学校のユーザーの閲覧・変更が可能</div>
-                        <div><b>権限3：</b>自身の閲覧・変更のみ可能（学校コード・氏名は閲覧可）</div>
-                    </div>
+                        <div><b>■ 権限2</b></div>
+                        <div>・閲覧／変更：自身の学校のユーザーまで可能</div>
+                        <div>・新規登録：ID・氏名のみ可能</div><br>
+
+                        <div><b>■ 権限3</b></div>
+                        <div>・閲覧／変更：自身のみ可能（学校コード・氏名は閲覧可）</div>
+                        <div>・新規登録：不可</div>
+                        </div>
                 </div>
-
+                
+                <br>
                 <div>ユーザー一覧：${AllList.size()}件</div>
                 <c:choose>
                 <c:when test="${ authority=='1' || authority=='2'}">

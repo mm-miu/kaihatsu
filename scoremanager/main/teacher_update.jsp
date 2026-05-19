@@ -23,6 +23,20 @@
 
         <h2 class="main-title">ユーザー情報変更</h2>
 
+            <div class="permission-wrapper">
+                <h5 class="permission-title">権限</h5>
+                    <div class="permission-tooltip">
+                    <div><b>■ 権限1</b></div>
+                    <div>・変更：すべて可能</div>
+
+                    <div><b>■ 権限2</b></div>
+                    <div>・変更：パスワードと名前の変更可能</div>
+
+                    <div><b>■ 権限3</b></div>
+                    <div>・変更：パスワードと名前の変更可能</div>
+                    </div>
+            </div>
+
         <form action="TeacherUpdateExecute.action">
            
             <div class="content-input">
