@@ -24,16 +24,19 @@
         <h2 class="main-title">ユーザー情報変更</h2>
 
             <div class="permission-wrapper">
-                <h5 class="permission-title">権限</h5>
+                <input type="checkbox" id="permissionToggle" hidden>
+                <label class="permission-title" for="permissionToggle">
+                    権限
+                </label>
                     <div class="permission-tooltip">
-                    <div><b>■ 権限1</b></div>
-                    <div>・変更：すべて可能</div>
+                        <div><b>■ 権限1</b></div>
+                        <div>・変更：すべて可能</div>
 
-                    <div><b>■ 権限2</b></div>
-                    <div>・変更：パスワードと名前の変更可能</div>
+                        <div><b>■ 権限2</b></div>
+                        <div>・変更：自身のパスワードと名前の変更可能／自身の学校ユーザーの名前変更可能</div>
 
-                    <div><b>■ 権限3</b></div>
-                    <div>・変更：パスワードと名前の変更可能</div>
+                        <div><b>■ 権限3</b></div>
+                        <div>・変更：自身のパスワードと名前の変更可能／他のユーザーの変更不可</div>
                     </div>
             </div>
 

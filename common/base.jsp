@@ -567,7 +567,8 @@
     .permission-wrapper {
       position: relative;
       float: right;
-      
+      margin-right: 20px;
+      font-weight: normal; /* 標準の太さ */
     }
 
     h5{
@@ -584,7 +585,7 @@
       position: absolute;
       top: -200%;
       right: 200%;
-      width: 400px;
+      width: 500px;
 
       background: #ffffff;
       color: #000000;
@@ -599,9 +600,28 @@
       z-index: 1000;
     }
 
+    /* hoverでも表示 */
     .permission-wrapper:hover .permission-tooltip {
       display: block;
     }
+
+    /* クリックで固定表示 */
+    #permissionToggle:checked ~ .permission-tooltip {
+      display: block;
+    }
+
+    .permission-wrapper:hover .permission-tooltip {
+      display: block;
+    }
+
+    .permission-title:hover {
+      color: #0066FF;
+    }
+    #permissionToggle:checked ~ .permission-title {
+      color: blueviolet;
+      font-weight: bold;
+    }
+
   </style>
 
 </head>

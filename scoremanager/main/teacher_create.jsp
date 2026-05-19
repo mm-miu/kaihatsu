@@ -24,8 +24,11 @@
         <h2 class="main-title">ユーザー登録</h2>
         
             <div class="permission-wrapper">
-                <h5 class="permission-title">権限</h5>
-                    <div class="permission-tooltip">
+                <input type="checkbox" id="permissionToggle" hidden>
+                <label class="permission-title" for="permissionToggle">
+                    権限
+                </label>
+                <div class="permission-tooltip">
                     <div><b>■ 権限1</b></div>
                     <div>・閲覧／変更：すべて可能</div>
                     <div>・新規登録：すべて可能</div><br>
@@ -37,7 +40,8 @@
                     <div><b>■ 権限3</b></div>
                     <div>・閲覧／変更：自身のみ可能（学校コード・氏名は閲覧可）</div>
                     <div>・新規登録：不可</div>
-                    </div>
+                </div>
+                
             </div>
 
         <form action="TeacherCreateExecute.action">
