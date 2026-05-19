@@ -562,6 +562,39 @@
       width: 1%;
       line-height: 5;
     }
+
+    /* 権限ポップオーバー仮 */
+    .permission-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .permission-title {
+      cursor: help;
+      border-bottom: 1px dotted #999;
+    }
+
+    .permission-tooltip {
+      display: none;
+      position: absolute;
+      top: 120%;
+      left: 0;
+      width: 320px;
+
+      background: #222;
+      color: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.6;
+
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .permission-wrapper:hover .permission-tooltip {
+      display: block;
+    }
   </style>
 
 </head>

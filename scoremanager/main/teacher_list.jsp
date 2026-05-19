@@ -78,6 +78,16 @@
 
                 <br><hr><br>
 
+                <div class="permission-wrapper">
+                    <h5 class="permission-title">権限</h5>
+
+                    <div class="permission-tooltip">
+                        <div><b>権限1：</b>全ての閲覧・変更が可能</div>
+                        <div><b>権限2：</b>自身の学校のユーザーの閲覧・変更が可能</div>
+                        <div><b>権限3：</b>自身の閲覧・変更のみ可能（学校コード・氏名は閲覧可）</div>
+                    </div>
+                </div>
+
                 <div>ユーザー一覧：${AllList.size()}件</div>
                 <c:choose>
                 <c:when test="${ authority=='1' || authority=='2'}">
