@@ -211,20 +211,16 @@ public class SubjectDao extends Dao {
         }
     }
 
-    public boolean readInsertCSV(
-        Part csv,
-        School school) throws Exception {
-
+public boolean readInsertCSV(Part csv, School school) throws Exception {
+    String sql = "insert into subject(cd, name, school_cd) values(?, ?, ?)";
     int count = 0;
 
-    try (
-        BufferedReader br =
-            new BufferedReader(
-                new InputStreamReader(
-                    csv.getInputStream(),
-                    "UTF-8"))
-    ) {
+    try (Connection con = getConnection();
+         PreparedStatement ps = con.prepareStatement(sql);
+         BufferedReader br = new BufferedReader(
+                 new InputStreamReader(csv.getInputStream(), "UTF-8"))) {
 
+        con.setAutoCommit(false);
         String line;
 
         while ((line = br.readLine()) != null) {
@@ -251,24 +247,19 @@ public class SubjectDao extends Dao {
                 continue;
             }
 
-            // Subject生成
-            Subject subject = new Subject();
-
-            subject.setCd(cd);
-            subject.setName(name);
-
-            // 学校セット
-            subject.setSchool(school);
-
             // DB登録
-            if (save(subject)) {
-                count++;
-            }
+            ps.setString(1, cd);
+            ps.setString(2, name);
+            ps.setString(3, school.getCd());
+            count += ps.executeUpdate();
         }
+
+        con.commit();
     }
 
     return count > 0;
 }
+
 
 public String createCSV(School school, boolean unusedFlag) throws Exception {
 
