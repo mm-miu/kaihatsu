@@ -24,6 +24,7 @@ public class TestListSubjectDao extends Dao {
         " AND t.SCHOOL_CD = sub.SCHOOL_CD " +
         "WHERE s.ent_year = ? " +
         " AND s.class_num = ? " +
+        " AND s.SCHOOL_CD = ? " +
         " AND sub.CD = ? " +
         " AND sub.SCHOOL_CD = ? " +
         "ORDER BY s.NO, t.NO";
@@ -39,8 +40,9 @@ public class TestListSubjectDao extends Dao {
 
             ps.setInt(1, entYear);
             ps.setString(2, classNum);
-            ps.setString(3, subject.getCd());
-            ps.setString(4, school.getCd());
+            ps.setString(3, school.getCd());
+            ps.setString(4, subject.getCd());
+            ps.setString(5, school.getCd());
 
             try (ResultSet rs = ps.executeQuery()) {
                 list = postFilter(rs);
