@@ -30,6 +30,7 @@
                 <input type="text" id="cd" name="cd"
                     value="${cd}"
                     placeholder="科目コードを入力してください"
+                    pattern="^[A-Z0-9]{3}$" title="半角英数字3文字で入力してください。(例：A01)"
                     maxlength="3" required>
                 <br>
                 <c:if test="${not empty errors.cd}">
