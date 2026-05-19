@@ -13,14 +13,17 @@ public class TestListSubjectDao extends Dao {
     private final String baseSql =
         "SELECT " +
         " s.ent_year, s.NO AS student_no, s.NAME, s.class_num, " +
-        " t.No AS test_id, " +
+        " t.NO AS test_id, " +
         " t.POINT AS point " +
         "FROM student s " +
-        "JOIN test t ON s.NO = t.student_no "+
+        "JOIN test t " +
+        " ON s.NO = t.student_no " +
+        " AND s.SCHOOL_CD = t.SCHOOL_CD " +
         "WHERE s.ent_year = ? " +
         " AND s.class_num = ? " +
         " AND t.SUBJECT_CD = ? " +
-        " AND t.SCHOOL_CD = ? " +//AIにはいらないといわれたが設計書通りならいるはず
+        " AND t.SCHOOL_CD = ? " +
+        " AND s.SCHOOL_CD = ? " +
         "ORDER BY s.NO, t.NO";
 
     public List<TestListSubject> filter(int entYear, String classNum, Subject subject, School school) {
@@ -35,7 +38,8 @@ public class TestListSubjectDao extends Dao {
             ps.setInt(1, entYear);
             ps.setString(2, classNum);
             ps.setString(3, subject.getCd());//SUBJECT_CD
-            ps.setString(4, school.getCd());//SCHOOL_CD
+            ps.setString(4, school.getCd());
+            ps.setString(5, school.getCd());
 
             try (ResultSet rs = ps.executeQuery()) {
                 list = postFilter(rs);
