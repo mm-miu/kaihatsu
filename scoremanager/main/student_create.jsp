@@ -41,8 +41,10 @@
                 </c:if>
 
                 <label for="no">学生番号</label><br>
-                <input type="number" id="no" name="no" value="${no}" 
-                    placeholder="学生番号を入力してください"  maxlength="10" required>
+                <input type="text" id="no" name="no" value="${no}" 
+                    placeholder="学生番号を入力してください"
+                    title="数字で入力してください"
+                    pattern="\d+" maxlength="10" required>
                 <br>
             </div>
 

@@ -26,7 +26,7 @@
         <form action="ClassNumCreateExecute.action">
             <div class="content-input">
                 <label for="num">クラス番号</label>
-                <input type="text" id="num" name="num" 
+                <input type="number" id="num" name="num" 
                     value="${num}"
                     placeholder="クラス番号を入力してください"
                     pattern="\d+" maxlength="3" required>
