@@ -12,12 +12,16 @@ import bean.TestListStudent;
 
 public class TestListStudentDao extends Dao{
     
-    private String baseSql="SELECT sub.name AS subjectName, sub.cd AS subjectCd, ts.no AS num, ts.point, ts.student_no AS studentNo, ts.school_cd AS schoolCd," + 
-        "FROM student AS st "  + 
-        "JOIN test AS ts " + 
-        "ON st.no = ts.student_no " + 
-        "JOIN subject AS sub " + 
-        "ON sub.cd = ts.subject_cd " + 
+    private String baseSql =
+        "SELECT sub.name AS subjectName, sub.cd AS subjectCd, " +
+        "ts.no AS num, ts.point, ts.student_no AS studentNo, ts.school_cd AS schoolCd " +
+        "FROM student st " +
+        "JOIN test ts " +
+        "ON st.no = ts.student_no " +
+        "AND st.school_cd = ts.school_cd " +
+        "JOIN subject sub " +
+        "ON sub.cd = ts.subject_cd " +
+        "AND sub.school_cd = ts.school_cd " +
         "WHERE st.school_cd = ? ";
     
     public List<TestListStudent> postFilter(ResultSet rSet) throws Exception{
