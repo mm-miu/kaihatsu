@@ -462,7 +462,7 @@ public class StudentDao extends Dao {
     }
 
 
-    public boolean readInsertCSV(Part csv) throws Exception {
+    public boolean readInsertCSV(Part csv, School school) throws Exception {
 
         String sql = "insert into student(no, name, ent_year, class_num, is_attend, school_cd) values(?, ?, ?, ?, ?, ?)";
         int count = 0;
@@ -493,7 +493,7 @@ public class StudentDao extends Dao {
                 ps.setString(3, data[2].trim());
                 ps.setString(4, data[3].trim());
                 ps.setString(5, data[4].trim());
-                ps.setString(6, data[5].trim());
+                ps.setString(6, school.getCd());
                 count += ps.executeUpdate();
             }
             con.commit();
