@@ -169,7 +169,7 @@ public class ClassNumDao extends Dao {
     }
 
 
-    public boolean save(ClassNum classNum, String newClassNum) throws Exception {
+    public boolean update(ClassNum classNum, String newClassNum) throws Exception {
      
         // コネクションを確立
         Connection con = getConnection();

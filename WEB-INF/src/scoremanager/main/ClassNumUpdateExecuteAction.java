@@ -53,7 +53,7 @@ public class ClassNumUpdateExecuteAction extends Action {
         classNum.setClass_num(num);
         classNum.setSchool(teacher.getSchool());
 
-        boolean result = cNumDao.save(classNum, newNum);
+        boolean result = cNumDao.update(classNum, newNum);
         boolean result2 = sDao.cNumUpdate(num, newNum);
 
         if (result && result2) {
