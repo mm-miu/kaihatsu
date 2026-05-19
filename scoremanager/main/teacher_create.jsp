@@ -31,7 +31,9 @@
                 </c:if>
                 <label for="id">ID</label>
                 <input type="text" id="id" name="id" 
-                    value="${id}" placeholder="半角でログイン名を入力してください" maxlength="10" required>
+                    value="${id}" placeholder="半角でログイン名を入力してください" 
+                    pattern="^[A-Za-z0-9]{1,10}$" title="半角英数字10文字以内で入力してください。"
+                    maxlength="10" required>
                 <br>
                 <c:if test="${not empty errors.id}">
                     <p style="color:red">${errors.id}</p>

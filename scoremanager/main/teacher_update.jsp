@@ -33,7 +33,9 @@
                 <c:choose>
                     <c:when test="${user.id.equals(C_Id) || my_authority=='1'}">
                         <label for="password">パスワード</label>
-                        <input type="password" id="password" name="password" value="${password}" required>
+                        <input type="password" id="password" name="password" value="${password}"
+                        pattern="^[A-Za-z0-9]{1,30}$" title="半角英数字30文字以内で入力してください。" maxlength="30"
+                        required>
                         <label for="showPassword">パスワードを表示
                             <input type="checkbox" name="chk_d_ps" id="showPassword" >
                         </label>
