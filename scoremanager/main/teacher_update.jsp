@@ -39,8 +39,10 @@
                         <div>・変更：自身のパスワードと名前の変更可能／他のユーザーの変更不可</div>
                     </div>
             </div>
-
-        <form action="TeacherUpdateExecute.action">
+            
+            <c:choose>
+            <c:when test="${my_authority=='1' || my_authority=='2'  && user.school.cd.equals(school)|| user.id.equals(C_Id)}">
+            <form action="TeacherUpdateExecute.action">
            
             <div class="content-input">
                 <label for="name">id：</label>
@@ -109,6 +111,12 @@
                 <br>
             </div>
         </form>
+
+        </c:when>
+        <c:otherwise>
+            <p>ユーザー情報を変更する権限がありません。</p>
+        </c:otherwise>
+        </c:choose>
 
         <a href="TeacherList.action">戻る</a>
     </c:param>
