@@ -464,7 +464,7 @@ public class StudentDao extends Dao {
 
     public boolean readInsertCSV(Part csv, School school) throws Exception {
 
-        String sql = "insert into student(no, name, ent_year, class_num, is_attend, school_cd) values(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO STUDENT(NO, NAME, ENT_YEAR, CLASS_NUM, IS_ATTEND, SCHOOL_CD) VALUES(?, ?, ?, ?, ?, ?)";
         int count = 0;
 
         try (Connection con = getConnection();
@@ -474,8 +474,19 @@ public class StudentDao extends Dao {
                         
             con.setAutoCommit(false);
             String line;
+            boolean isFirstLine = true;
 
             while ((line = br.readLine()) != null) {
+
+                // 一行目判定
+                if (isFirstLine) {
+                    isFirstLine = false;
+
+                    // ヘッダーならスキップ
+                    if (line.startsWith("NO,")) {
+                        continue;
+                    }
+                }
 
                 // 空行スキップ
                 if (line.isBlank()) {
@@ -507,6 +518,10 @@ public class StudentDao extends Dao {
 
         StringBuilder sb = new StringBuilder();
 
+        // ヘッダー
+        sb.append("NO,NAME,ENT_YEAR,CLASS_NUM,IS_ATTEND,SCHOOL_CD");
+        sb.append("\n");
+        
         // データ
         for (Student s : students) {
 

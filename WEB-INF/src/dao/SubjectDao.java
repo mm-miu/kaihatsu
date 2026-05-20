@@ -212,7 +212,7 @@ public class SubjectDao extends Dao {
     }
 
 public boolean readInsertCSV(Part csv, School school) throws Exception {
-    String sql = "insert into subject(cd, name, school_cd) values(?, ?, ?)";
+    String sql = "INSERT INTO SUBJECT(CD, NAME, SCHOOL_CD) VALUES(?, ?, ?)";
     int count = 0;
 
     try (Connection con = getConnection();
@@ -222,9 +222,20 @@ public boolean readInsertCSV(Part csv, School school) throws Exception {
 
         con.setAutoCommit(false);
         String line;
+        boolean isFirstLine = true;
 
         while ((line = br.readLine()) != null) {
 
+            // 一行目判定
+            if (isFirstLine) {
+                isFirstLine = false;
+
+                // ヘッダーならスキップ
+                if (line.startsWith("CD,")) {
+                    continue;
+                }
+            }
+            
             // 空行スキップ
             if (line.isBlank()) {
                 continue;
@@ -266,6 +277,9 @@ public String createCSV(School school, boolean unusedFlag) throws Exception {
     List<Subject> subjects = filter(school);
 
     StringBuilder sb = new StringBuilder();
+    // ヘッダー
+    sb.append("CD, NAME, SCHOOL_CD");
+    sb.append("\n");
 
     // データ
     for (Subject s : subjects) {

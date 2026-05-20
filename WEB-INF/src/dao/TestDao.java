@@ -297,7 +297,20 @@ public class TestDao extends Dao {
             con.setAutoCommit(false);
 
             String line;
+            boolean isFirstLine = true;
+
             while ((line = br.readLine()) != null) {
+
+                // 一行目判定
+                if (isFirstLine) {
+                    isFirstLine = false;
+
+                    // ヘッダーならスキップ
+                    if (line.startsWith("STUDENT_NO,")) {
+                        continue;
+                    }
+                }
+
                 // 空行スキップ
                 if (line == null || line.trim().isEmpty()) {
                    continue;
@@ -348,6 +361,10 @@ public class TestDao extends Dao {
         List<Test> tests = filter(0, null, null, 0, school);
 
         StringBuilder sb = new StringBuilder();
+
+        // ヘッダー
+        sb.append("STUDENT_NO, SUBJECT_CD, SCHOOL_CD, NO, POINT");
+        sb.append("\n");
 
         // データ
         for (Test t : tests) {
