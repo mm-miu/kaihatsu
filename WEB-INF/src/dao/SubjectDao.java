@@ -222,9 +222,20 @@ public boolean readInsertCSV(Part csv, School school) throws Exception {
 
         con.setAutoCommit(false);
         String line;
+        boolean isFirstLine = true;
 
         while ((line = br.readLine()) != null) {
 
+            // 一行目判定
+            if (isFirstLine) {
+                isFirstLine = false;
+
+                // ヘッダーならスキップ
+                if (line.startsWith("cd,")) {
+                    continue;
+                }
+            }
+            
             // 空行スキップ
             if (line.isBlank()) {
                 continue;
@@ -266,6 +277,9 @@ public String createCSV(School school, boolean unusedFlag) throws Exception {
     List<Subject> subjects = filter(school);
 
     StringBuilder sb = new StringBuilder();
+    // ヘッダー
+    sb.append("cd, name, school_cd");
+    sb.append("\n");
 
     // データ
     for (Subject s : subjects) {

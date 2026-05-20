@@ -474,8 +474,19 @@ public class StudentDao extends Dao {
                         
             con.setAutoCommit(false);
             String line;
+            boolean isFirstLine = true;
 
             while ((line = br.readLine()) != null) {
+
+                // 一行目判定
+                if (isFirstLine) {
+                    isFirstLine = false;
+
+                    // ヘッダーならスキップ
+                    if (line.startsWith("no,")) {
+                        continue;
+                    }
+                }
 
                 // 空行スキップ
                 if (line.isBlank()) {
@@ -507,6 +518,10 @@ public class StudentDao extends Dao {
 
         StringBuilder sb = new StringBuilder();
 
+        // ヘッダー
+        sb.append("no,name,ent_year,class_num,is_attend,school_cd");
+        sb.append("\n");
+        
         // データ
         for (Student s : students) {
 
